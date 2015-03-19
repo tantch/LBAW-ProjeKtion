@@ -177,7 +177,12 @@ margin-top: 10%;
 
 }
 
-#registerBox{
+#registerBox, #projectBox, #taskBox{
     margin-top: 10%;
     padding-bottom: 2%;
+}
+
+#faq{
+
+color:#337ab7;
 }
