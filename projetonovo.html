@@ -60,6 +60,44 @@
                     <li>
                         <a href="index.html#contactos">Contactos</a>
                     </li>
+
+                    <li class="dropdown">
+
+                      <!-- parte sempre visivel -->
+                      <a href="#" class="dropdown-toggle account" data-toggle="dropdown">
+                        <!-- mudar o avatar aqui-->
+                        <div class="avatar">
+                          <img src="img/avatar.jpg" class="img-circle" alt="avatar" />
+                        </div>
+
+                        <i class="fa fa-angle-down pull-right"></i><!-- setinha, da para mnudar o fa -->
+                        <!-- mensagem e nome-->
+                        <div class="user-mini pull-right">
+                          <span class="welcome">Welcome,</span>
+
+                          <span>Administrator</span> <!-- £username-->
+                        </div>
+
+                      </a>
+                      <!-- dropdown com opcoes e logout , facil de alterar-->
+                      <ul class="dropdown-menu">
+                        <li>
+                          <a href="ajax/page_messages.html" class="ajax-link">
+                            <i class="fa fa-envelope"></i>
+                            <span>Messages</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#">
+                            <i class="fa fa-power-off"></i>
+                            <span>Logout</span>
+                          </a>
+                        </li>
+                      </ul>
+
+                    </li>
+
+
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -75,7 +113,7 @@
         <li><a href="projetonovo.html">Projeto Novo</a></li>
       </ol>
     </div>
-    
+
 
     <!-- Header -->
     <a name="novoprojeto"></a>
@@ -83,19 +121,19 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <div id="registerBox" class="panel panel-default">                            
+                    <div id="registerBox" class="panel panel-default">
                                 <h2 class="">Novo Projeto</h2>
-                                    
+
                                 <div class="form-group col-lg-12">
                                     <label>Nome do Projeto</label>
                                     <input type="" name="" class="form-control" id="" value="">
                                 </div>
-                                    
+
                                 <div class="form-group col-lg-6">
                                     <label>Data de Conclusão</label>
                                     <input type="date" name="" class="form-control" id="" value="">
                                 </div>
-                                    
+
                                 <div class="form-group col-lg-6">
                                     <label>Cliente</label>
                                     <input type="password" name="" class="form-control" id="" value="">
@@ -137,20 +175,20 @@
                                             <button type="submit" class="btn btn-default">Criar Projeto</button>
                                         </div>
                                     </div>
-                                </form> 
+                                </form>
                             </div>
                         </div>
-                       
-                </div> 
+
+                </div>
             </div>
         </div>
-    
+
         <!-- /.container -->
 
 
     <!-- Page Content -->
 
-	
+
 
     <!-- Footer -->
     <footer>
@@ -275,8 +313,8 @@ $(document).ready(function() {
 });
 </script>
 
-            
-       
+
+
 
 </body>
 

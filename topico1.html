@@ -57,6 +57,44 @@
           <li>
             <a href="projeto.html">Projeto</a>
           </li>
+
+          <li class="dropdown">
+
+            <!-- parte sempre visivel -->
+            <a href="#" class="dropdown-toggle account" data-toggle="dropdown">
+              <!-- mudar o avatar aqui-->
+              <div class="avatar">
+                <img src="img/avatar.jpg" class="img-circle" alt="avatar" />
+              </div>
+
+              <i class="fa fa-angle-down pull-right"></i><!-- setinha, da para mnudar o fa -->
+              <!-- mensagem e nome-->
+              <div class="user-mini pull-right">
+                <span class="welcome">Welcome,</span>
+
+                <span>Administrator</span> <!-- £username-->
+              </div>
+
+            </a>
+            <!-- dropdown com opcoes e logout , facil de alterar-->
+            <ul class="dropdown-menu">
+              <li>
+                <a href="ajax/page_messages.html" class="ajax-link">
+                  <i class="fa fa-envelope"></i>
+                  <span>Messages</span>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <i class="fa fa-power-off"></i>
+                  <span>Logout</span>
+                </a>
+              </li>
+            </ul>
+
+          </li>
+
+
         </ul>
       </div>
       <!-- /.navbar-collapse -->
