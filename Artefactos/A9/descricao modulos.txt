@@ -1,0 +1,89 @@
+M02: LOGIN / REGISTO
+
+R201: Login 
+URL: pages/login.php
+UI: UI01
+PERMISSIONS: VIS
+
+R202: LOGIN 
+URL: actions/login.php
+METHOD: POST
+BODY REQUEST: + Username : string
+	      + Password : string
+REDIRECTS: R201 ON ERROR
+	   R401 ON SUCESS
+
+R203: REGISTER
+URL: pages/register.php
+UI: UI03
+PERMISSION: VIS
+
+R204: REGISTER
+METHOD: POST
+BODYREQUEST: + Username: string
+	     + Password: string
+	     + Email: string
+	     + EmailConf: string
+REDIRECTS: R201 ON SUCESS
+	   R203 ON ERROR
+
+////////////////////////////////////////////////////////
+M03 -> Perfil Editar Pesq. Users
+
+R301: Consultar Perfil
+URL: pages/perfil.php
+METHOD: GET
+PARAMEERS: +idUser: Integer //chaveprimária de Users
+UI: UI07
+PERMISSIONS: USER NCUSER
+SQL:(LINK PARA A QUERY DE:
+	-USERNAME
+	-NOME
+	-D.nASCIMENTO
+	-GENERO
+	-MORADA
+	-TELEFONE
+	-MAIL
+	-ESTATISTICA DO USER EM PROJS (fazer calculo)
+
+R302: Editar Perfil
+URL: pages/editarperfil.pgp
+METHOD: GET
+PARAMETERES: + idUser: Integer
+UI: UI08
+PERMISSION:USER
+SQL: IR BUSCAR:
+	-name
+	-phone
+	-email
+	-pw
+
+R303: Editar Perfil
+URL: actions/editarperfil.php
+METHOD: POST
+REQUEST BODY: +idUser: integer
+	      ?name
+	      ?phone
+	      ?email
+	      ?pw
+REDIRECTS: R301 ON SUCESS
+	   R302 ON ERROR
+PERMISSIONS: USER
+SQL: PARA ALTERAR:
+	?NAME
+	?PHONE
+	?EMAIL
+	?PW
+	do Users de idUser
+
+R304: Procurar User
+URL: api/procuraruser.php
+METHOD: GET
+PARAMETERS: ?Username
+	    ?email
+	    ?name
+RESPONSE BODY: JSON XXX (ADEFINIR
+PERMISSIONS: USER, NCUSER,ADM
+SQL: PROCURA USER POR:
+	OU:(Username,email,Name)
+	
