@@ -1,0 +1,406 @@
+/*!
+ * Start Bootstrap - Landing Page Bootstrap Theme (http://startbootstrap.com)
+ * Code licensed under the Apache License v2.0.
+ * For details, see http://www.apache.org/licenses/LICENSE-2.0.
+ */
+
+body,
+html {
+    width: 100%;
+    height: 100%;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Lato","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight: 700;
+}
+
+
+.dropdown-menu {
+  position: absolute;
+  z-index: 2001;
+  left: 100%;
+  float: none;
+  margin: 0;
+  border: 0;
+  top:70px;
+  -webkit-border-radius: 0 4px 4px 0;
+  -moz-border-radius: 0 4px 4px 0;
+  border-radius: 0 4px 4px 0;
+  background: #6AA6D6;
+  box-shadow: none;
+  visibility:hidden;
+}
+
+.dropdown-menu {
+  visibility:visible;
+  top:70px;
+}
+.dropdown-menu:hover {
+  visibility:visible;
+  top:70px;
+}
+.dropdown-menu > li > a {
+  padding:9px 15px 9px 40px;
+  color:#f0f0f0;
+}
+.dropdown-menu > li:first-child > a {
+  top:70px;
+  -webkit-border-radius: 0 4px 0 0;
+  -moz-border-radius: 0 4px 0 0;
+  border-radius: 0 4px 0 0;
+}
+.dropdown-menu > li:last-child > a {
+  top:70px;
+  -webkit-border-radius: 0 0 4px 0;
+  -moz-border-radius: 0 0 4px 0;
+  border-radius: 0 0 4px 0;
+}
+
+ul.DTTT_dropdown.dropdown-menu {
+  top:70px;
+  z-index: 2003;
+  background: rgba(0, 0, 0, 0.7) !important;
+  padding: 0;
+  border: 0;
+  margin: 0;
+  -webkit-border-radius: 0 0 4px 4px;
+  -moz-border-radius: 0 0 4px 4px;
+  border-radius: 0 0 4px 4px;
+  min-width: 157px;
+  top:70px;
+}
+ul.DTTT_dropdown.dropdown-menu li {
+  top:70px;
+  position: relative;
+}
+ul.DTTT_dropdown.dropdown-menu > li > a {
+  top:70px;
+  position: relative;
+  display: block;
+  padding: 5px 10px !important;
+  color: #f0f0f0 !important;
+}
+ul.DTTT_dropdown.dropdown-menu > li:first-child > a {
+  top:70px;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+}
+ul.DTTT_dropdown.dropdown-menu > li:last-child > a {
+  top:70px;
+  -webkit-border-radius: 0 0 4px 4px;
+  -moz-border-radius: 0 0 4px 4px;
+  border-radius: 0 0 4px 4px;
+}
+ul.DTTT_dropdown.dropdown-menu > li:hover > a {
+  top:70px;
+  background:rgba(0, 0, 0, 0.3);
+  color:#f0f0f0;
+}
+
+.btn + .dropdown-menu {
+
+  top:70px;
+  margin-top: 50px;
+  background: rgba(0, 0, 0, 0.7) !important; padding: 0; border: 0;
+  right: 0;
+  left: auto;
+  min-width: 100%;
+}
+
+.btn + .dropdown-menu > li > a {
+  top:70px;
+  padding: 5px 10px !important;
+  color: #f0f0f0;
+}
+
+.avatar {
+  width: 40px;
+  float: left;
+  margin-right: 10px;
+}
+.avatar > img {
+  width:40px;
+  height:40px;
+  margin-bottom: 14px;
+}
+.user-mini > span {
+  display: block;
+  font-size: 10px;
+
+  margin-bottom: -4px;
+}
+
+.user-mini > span.welcome {
+  font-weight: bold;
+  margin-top: 0px;
+}
+
+.topnav {
+    font-size: 14px;
+}
+
+.lead {
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.intro-header {
+    padding-top: 50px; /* If you're making other pages, make sure there is 50px of padding to make sure the navbar doesn't overlap content! */
+    padding-bottom: 25%;
+    text-align: center;
+    color: #337ab7;
+    background: url(../img/intro-bg.jpg) no-repeat center center;
+    background-size: cover;
+}
+
+.intro-message {
+    position: relative;
+    padding-top: 20%;
+    padding-bottom: 20%;
+}
+
+.intro-message > h1 {
+    margin: 0;
+    text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
+    font-size: 5em;
+}
+
+.intro-divider {
+    width: 400px;
+    border-top: 1px so  d #f8f8f8;
+    border-bottom: 1px solid rgba(0,0,0,0.2);
+}
+
+.intro-message > h3 {
+    text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
+}
+
+@media(max-width:767px) {
+    .intro-message {
+        padding-bottom: 15%;
+    }
+
+    .intro-message > h1 {
+        font-size: 3em;
+    }
+
+    ul.intro-social-buttons > li {
+        display: block;
+        margin-bottom: 20px;
+        padding: 0;
+    }
+
+    ul.intro-social-buttons > li:last-child {
+        margin-bottom: 0;
+    }
+
+    .intro-divider {
+        width: 100%;
+    }
+}
+
+
+.network-name {
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 2px;
+}
+
+.content-section-a {
+    padding: 50px 0;
+    background-color: #f8f8f8;
+}
+
+
+
+.section-heading {
+    margin-bottom: 30px;
+}
+
+.section-heading-spacer {
+    float: left;
+    width: 200px;
+    border-top: 3px solid #e7e7e7;
+}
+
+.banner {
+    padding: 100px 0;
+    color: #f8f8f8;
+    background: url(../img/banner-bg.jpg) no-repeat center center;
+    background-size: cover;
+}
+
+.banner h2 {
+    margin: 0;
+    text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
+    font-size: 3em;
+}
+
+.banner ul {
+    margin-bottom: 0;
+}
+
+.banner-social-buttons {
+    float: right;
+    margin-top: 0;
+}
+
+@media(max-width:1199px) {
+    ul.banner-social-buttons {
+        float: left;
+        margin-top: 15px;
+    }
+}
+
+@media(max-width:767px) {
+    .banner h2 {
+        margin: 0;
+        text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
+        font-size: 3em;
+    }
+
+    ul.banner-social-buttons > li {
+        display: block;
+        margin-bottom: 20px;
+        padding: 0;
+    }
+
+    ul.banner-social-buttons > li:last-child {
+        margin-bottom: 0;
+    }
+}
+
+footer {
+    padding: 50px 0;
+    background-color: #f8f8f8;
+}
+
+p.copyright {
+    margin: 15px 0 0;
+}
+
+
+#loginBox {
+margin-left: 30%;
+margin-right: 30%;
+margin-top: 10%;
+
+}
+
+#registerBox, #projectBox, #taskBox{
+    margin-top: 10%;
+    padding-bottom: 2%;
+}
+
+#faq{
+
+color:#337ab7;
+}
+
+#editBox{
+
+  margin-top: 5%;
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+#breadcrumb{
+padding-top: 35px;
+}
+
+#messages-list {
+  margin-top: 10px;
+  padding: 0;
+
+}
+.mid-container{
+  height:95%;
+  padding-top: 50px;
+  background: #DFDFDF;
+}
+
+.one-list-message {
+  background: #F1F1F1;
+  border-bottom: 1px solid #CCC;
+  padding: 15px 15px 15px 25px;
+  margin: 0;
+}
+.one-list-message .checkbox {
+  margin: 0;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.one-list-message .message-title {
+  overflow: hidden;
+  white-space: nowrap;
+  width: 80%;
+}
+.one-list-message .message-date {
+  overflow: hidden;
+  white-space: nowrap;
+  font-size: 11px;
+  line-height: 20px;
+  text-align: center;
+  position: absolute;
+  right: 10px;
+  font-weight: bold;
+  background: #D8D8D8;
+  padding: 0;
+  width: 50px;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  color: #000;
+}
+#new-post{
+  padding-top:30px;
+
+}
+.page-feed .box{
+  margin-top: 10px;
+}
+.page-feed .avatar {
+  width: 60px;
+  float: left;
+  margin: 10px 15px;
+  text-align: center;
+  overflow: hidden;
+}
+.page-feed .avatar img {
+  width: 60px;
+  height: 60px;
+  border: 1px solid #F8F8F8;
+}
+.page-feed-content {
+  position: relative;
+  padding: 3px 15px 5px;
+  background: #FCFCFC;
+  margin-left:90px;
+  min-height: 80px;
+}
+.page-feed-content small.time {
+  font-style: italic;
+}
+.page-feed .page-feed-content:before {
+  font-family: FontAwesome;
+  content: "\f0d9";
+  position: absolute;
+  left: -10px;
+  top: 15px;
+  font-size: 30px;
+  color: #fcfcfc;
+}
+
+@media (max-width: 400px) {
+  .panel-menu a.account {
+    padding: 5px 0px 5px 0;
+  }
