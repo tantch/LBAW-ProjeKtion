@@ -25,7 +25,7 @@
               <form class=" " enctype="multipart/form-data" action="../../actions/editarperfil.php" method="post">
                 <div class="form-group">
                   <label for="fullname">Full Name:</label>
-                  <input class="form-control" name="fullname" type="text" value="Adrian Demian" id="fullname" required>
+                  <input class="form-control" name="fullname" type="text" id="fullname" required>
                 </div>
                 <div class="form-group">
                   <label for="address">Address:</label>
@@ -52,12 +52,7 @@
 
                 <div class="form-group">
                   <label for="password">Password:</label>
-                  <input class="form-control" name="password" type="password" value="password" id="password">
-                </div>
-
-                <div class="form-group">
-                  <label for="password_confirmation">Password Confirmation:</label>
-                  <input class="form-control" name="password_confirmation" type="password" value="" id="password_confirmation">
+                  <input class="form-control" name="password" type="password" value="password" id="password" required>
                 </div>
 
                 <div class="form-group">

@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2015-06-03 20:14:47
+<?php /* Smarty version Smarty-3.1.15, created on 2015-06-03 20:33:32
          compiled from "/usr/users2/mieic2012/ei12037/public_html/LBAW/proto/templates/user/editarperfil.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:944147459556f1241765e93-84567812%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '23d13ae4d31cbdfb140fdf5186abb86b71b2ca81' => 
     array (
       0 => '/usr/users2/mieic2012/ei12037/public_html/LBAW/proto/templates/user/editarperfil.tpl',
-      1 => 1433355284,
+      1 => 1433356112,
       2 => 'file',
     ),
   ),
@@ -47,7 +47,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
               <form class=" " enctype="multipart/form-data" action="../../actions/editarperfil.php" method="post">
                 <div class="form-group">
                   <label for="fullname">Full Name:</label>
-                  <input class="form-control" name="fullname" type="text" value="Adrian Demian" id="fullname" required>
+                  <input class="form-control" name="fullname" type="text" id="fullname" required>
                 </div>
                 <div class="form-group">
                   <label for="address">Address:</label>
@@ -74,7 +74,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 
                 <div class="form-group">
                   <label for="password">Password:</label>
-                  <input class="form-control" name="password" type="password" value="password" id="password">
+                  <input class="form-control" name="password" type="password" value="password" id="password" required>
                 </div>
 
                 <div class="form-group">

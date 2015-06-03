@@ -9,7 +9,7 @@ include_once ($BASE_DIR . '/database/db_util.php');
   }
 
 $hashed_pass=hash('sha256',$_POST['inpt_pass'],false);
-echo $hashed_pass;
+
 
 if(isset($_POST['inpt_username'])){
   $user=getUserSessByUName($_POST['inpt_username']);
