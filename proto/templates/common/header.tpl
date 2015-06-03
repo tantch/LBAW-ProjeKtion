@@ -12,6 +12,8 @@
 
     <link href="{$BASE_URL}css/bootstrap.min.css" rel="stylesheet">
     <link href="{$BASE_URL}css/landing-page.css" rel="stylesheet">
+    <link href="{$BASE_URL}css/fileinput.css" rel="stylesheet">
+    <link href="{$BASE_URL}css/fileinput.min.css" rel="stylesheet">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
     <script src="{$BASE_URL}javascript/scroll.js"></script>

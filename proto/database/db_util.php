@@ -1,6 +1,5 @@
 <?php
 
-
 function getUserByUName($username){
   global $conn;
   $stmt=$conn->prepare("SELECT * FROM users WHERE username=:uname");
@@ -45,6 +44,24 @@ function createUser($username,$name,$password,$email){
   $stmt->execute(array($username,$password,$name,$email));
 
 
+}
+
+function fetchProfilePic($userid){
+  global $conn;
+  try{
+    $stmt=$conn->prepare("SELECT profilepic FROM Users WHERE iduser=?");
+    $stmt->execute(array($userid));
+    $url=$stmt->fetch();
+  }catch(PDOException $e){
+    return 'http://udara.co/assets/default.png';
+  }
+  if((preg_match("/\b(?:(?:https?|ftp):\/\/|www\.)[-a-z0-9+&@#\/%?=~_|!:,.;]*[-a-z0-9+&@#\/%=~_|]/i",$url[profilepic]))){
+    return $url[profilepic];
+  }
+  else{
+
+    return 'http://udara.co/assets/default.png';
+  }
 }
 
 ?>

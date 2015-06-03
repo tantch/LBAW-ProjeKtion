@@ -1,28 +1,26 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2015-05-22 10:24:03
+<?php /* Smarty version Smarty-3.1.15, created on 2015-05-01 06:51:48
          compiled from "/opt/lbaw/lbaw1415/public_html/proto/templates/user/home.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:391696493555ee7a3069ed0-06517374%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:204022009555430664509e83-45358250%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     'f82d6f6b462c4dda7c122bf20c086f75c8039557' => 
     array (
       0 => '/opt/lbaw/lbaw1415/public_html/proto/templates/user/home.tpl',
-      1 => 1431653113,
+      1 => 1430455556,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '391696493555ee7a3069ed0-06517374',
+  'nocache_hash' => '204022009555430664509e83-45358250',
   'function' => 
   array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.15',
-  'unifunc' => 'content_555ee7a315f297_56041780',
+  'unifunc' => 'content_554306645a7924_47748029',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_555ee7a315f297_56041780')) {function content_555ee7a315f297_56041780($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ('common/header.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0);?>
+<?php if ($_valid && !is_callable('content_554306645a7924_47748029')) {function content_554306645a7924_47748029($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ('common/header.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0);?>
 
-
-<script src="../../javascript/login_vale.js"></script>
 
 <a name="login" ></a>
 <div class="intro-header">
@@ -34,15 +32,15 @@ $_valid = $_smarty_tpl->decodeProperties(array (
           <div class="panel-body">
             <h1 class="text-center">Login</h1>
           </div>
-          <form class="form col-md-12 center-block" method="post" action="../../actions/login.php" enctype="multipart/form-data" name="form" >
+          <form class="form col-md-12 center-block" method="post" action="../../actions/login.php" enctype="multipart/form-data" >
             <div class="form-group">
-              <input type="text" class="form-control input-lg" placeholder="Username" name="inpt_username" id="inpt_username" required>
+              <input type="text" class="form-control input-lg" placeholder="Username" name="inpt_username">
             </div>
             <div class="form-group">
-              <input type="password" class="form-control input-lg" placeholder="Password" name="inpt_pass" id="inpt_pass" required>
+              <input type="password" class="form-control input-lg" placeholder="Password" name="inpt_pass">
             </div>
             <div class="form-group">
-              <button class="btn btn-primary btn-lg btn-block" type="submit" onClick="return validate();">Sign In</button>
+              <button class="btn btn-primary btn-lg btn-block" type="submit">Sign In</button>
               <span class="pull-right"><a href="register.php">Registar</a></span>
               <span class="pull-left"><a href="#faq">Need help?</a></span>
             </div>

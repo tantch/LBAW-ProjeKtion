@@ -1,20 +1,22 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2015-05-01 06:51:48
-         compiled from "/opt/lbaw/lbaw1415/public_html/proto/templates/common/header.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:1422031416554306645ae4c5-71467131%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /* Smarty version Smarty-3.1.15, created on 2015-05-29 11:56:45
+         compiled from "/usr/users2/mieic2012/ei12037/public_html/proto/templates/common/header.tpl" */ ?>
+<?php /*%%SmartyHeaderCode:19342912495550ccb0b95d45-07567915%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
-    'bca701f134a2e3e51c3c3af4ade4b565e1e4e7bc' => 
+    'c4d060f4b76f0379fe2a25940602d693374a0985' => 
     array (
-      0 => '/opt/lbaw/lbaw1415/public_html/proto/templates/common/header.tpl',
-      1 => 1430455555,
+      0 => '/usr/users2/mieic2012/ei12037/public_html/proto/templates/common/header.tpl',
+      1 => 1432893264,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '1422031416554306645ae4c5-71467131',
+  'nocache_hash' => '19342912495550ccb0b95d45-07567915',
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.15',
+  'unifunc' => 'content_5550ccb0c1d955_95203502',
   'variables' => 
   array (
     'BASE_URL' => 0,
@@ -25,10 +27,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'success' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.15',
-  'unifunc' => 'content_55430664619416_87537928',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_55430664619416_87537928')) {function content_55430664619416_87537928($_smarty_tpl) {?><!DOCTYPE html>
+<?php if ($_valid && !is_callable('content_5550ccb0c1d955_95203502')) {function content_5550ccb0c1d955_95203502($_smarty_tpl) {?><!DOCTYPE html>
 <html lang="en">
 <head>
 
@@ -44,6 +44,10 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 css/bootstrap.min.css" rel="stylesheet">
     <link href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
 css/landing-page.css" rel="stylesheet">
+    <link href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+css/fileinput.css" rel="stylesheet">
+    <link href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+css/fileinput.min.css" rel="stylesheet">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
     <script src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
@@ -63,7 +67,7 @@ javascript/bootstrap.min.js"></script>
 
     <?php }?>
   </header>
-  <div id="error_messages">
+  <div id="error_messages" class="state">
   <?php  $_smarty_tpl->tpl_vars['error'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['error']->_loop = false;
  $_from = $_smarty_tpl->tpl_vars['ERROR_MESSAGES']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
 foreach ($_from as $_smarty_tpl->tpl_vars['error']->key => $_smarty_tpl->tpl_vars['error']->value) {
@@ -73,7 +77,7 @@ $_smarty_tpl->tpl_vars['error']->_loop = true;
 <a class="close" href="#">X</a></div>
   <?php } ?>
   </div>
-  <div id="success_messages">
+  <div id="success_messages" class="state">
   <?php  $_smarty_tpl->tpl_vars['success'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['success']->_loop = false;
  $_from = $_smarty_tpl->tpl_vars['SUCCESS_MESSAGES']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
 foreach ($_from as $_smarty_tpl->tpl_vars['success']->key => $_smarty_tpl->tpl_vars['success']->value) {

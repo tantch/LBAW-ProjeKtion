@@ -55,6 +55,18 @@
           </div>
         </div>
 
+        <div class="panel panel-default">
+          <div class="span9">
+            <div class="container">
+              <div class="row">
+                <div class="col-lg-12">
+                  <a href="{$BASE_URL}pages/user/editarperfil.php"> Editar Perfil </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <div class="row">
           <div class="col-lg-12">
             <div id="projectBox"class="panel panel-default">

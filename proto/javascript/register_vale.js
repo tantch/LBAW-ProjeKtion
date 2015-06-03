@@ -1,7 +1,7 @@
 
 
 var ck_username = /^[A-Za-z0-9_]{1,20}$/;
-var ck_password =  /^[A-Za-z0-9]{6,20}$/;
+var ck_password =  /^(?=.*\d).{4,12}$/;
 var ck_name = /^[A-Za-z0-9 ]{3,20}$/;
 var ck_email = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i
 
