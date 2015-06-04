@@ -1,30 +1,32 @@
 <nav class="navbar navbar-default navbar-fixed-top topnav" role="navigation">
-        <div class="container topnav">
+        <div class="topnav container-fancy">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
 
-                <a class="navbar-brand topnav" href="#">ProjeKtion</a>
+              <a class="navbar-brand topnav" href="#">ProjeKtion</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-right">
+              <ul class="nav navbar-nav navbar-right">
+                <li>
+                  <a href="{$BASE_URL}pages/user/procuraruser.php">Pocurar utilizador</a>
+                </li>
+                <li class="dropdown">
 
-                    <li class="dropdown">
+                  <!-- parte sempre visivel -->
+                  <a href="#" class="dropdown-toggle account" data-toggle="dropdown">
+                    <!-- mudar o avatar aqui-->
+                    <div class="avatar">
+                      <img src={$USERPIC} class="img-circle" alt="avatar" />
+                    </div>
 
-                      <!-- parte sempre visivel -->
-                      <a href="#" class="dropdown-toggle account" data-toggle="dropdown">
-                        <!-- mudar o avatar aqui-->
-                        <div class="avatar">
-                          <img src={$USERPIC} class="img-circle" alt="avatar" />
-                        </div>
+                    <i class="fa fa-angle-down pull-right"></i><!-- setinha, da para mnudar o fa -->
+                    <!-- mensagem e nome-->
+                    <div class="user-mini pull-right">
+                      <span class="welcome">Bem-vindo,</span>
 
-                        <i class="fa fa-angle-down pull-right"></i><!-- setinha, da para mnudar o fa -->
-                        <!-- mensagem e nome-->
-                        <div class="user-mini pull-right">
-                          <span class="welcome">Bem-vindo,</span>
-
-                          <span>{$USERNAME}</span> <!-- £username-->
-                        </div>
+                      <span>{$USERNAME}</span> <!-- £username-->
+                    </div>
 
                       </a>
                       <!-- dropdown com opcoes e logout , facil de alterar-->

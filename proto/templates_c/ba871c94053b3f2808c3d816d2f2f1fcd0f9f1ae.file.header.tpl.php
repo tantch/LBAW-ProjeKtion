@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2015-06-03 16:41:59
+<?php /* Smarty version Smarty-3.1.15, created on 2015-06-04 17:14:59
          compiled from "/usr/users2/mieic2012/ei12037/public_html/LBAW/proto/templates/common/header.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:2080608208556f1237e89e88-84358824%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'ba871c94053b3f2808c3d816d2f2f1fcd0f9f1ae' => 
     array (
       0 => '/usr/users2/mieic2012/ei12037/public_html/LBAW/proto/templates/common/header.tpl',
-      1 => 1432893264,
+      1 => 1433430893,
       2 => 'file',
     ),
   ),
@@ -15,6 +15,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.15',
+  'unifunc' => 'content_556f12380045c7_92492716',
   'variables' => 
   array (
     'BASE_URL' => 0,
@@ -25,8 +27,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'success' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.15',
-  'unifunc' => 'content_556f12380045c7_92492716',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_556f12380045c7_92492716')) {function content_556f12380045c7_92492716($_smarty_tpl) {?><!DOCTYPE html>
 <html lang="en">
@@ -50,8 +50,10 @@ css/fileinput.css" rel="stylesheet">
 css/fileinput.min.css" rel="stylesheet">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+    <!--
     <script src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
 javascript/scroll.js"></script>
+    -->
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
     <script src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
 javascript/bootstrap.min.js"></script>

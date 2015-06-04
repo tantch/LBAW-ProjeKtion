@@ -325,8 +325,22 @@ padding-top: 35px;
 .mid-container{
   height:95%;
   padding-top: 50px;
-  background: #DFDFDF;
+  background: url('http://static.tumblr.com/ko3o6ju/OC6lsn1qx/wood.jpg') no-repeat center top fixed #FFF;
 }
+
+.container{
+  height:95%;
+  padding-top: 50px;
+  background: url('http://static.tumblr.com/ko3o6ju/OC6lsn1qx/wood.jpg') no-repeat center top fixed #FFF;
+}
+
+.container-fancy{
+ height:95%;
+  padding-top: 50px;
+  background: url('http://static.tumblr.com/ko3o6ju/OC6lsn1qx/wood.jpg') no-repeat center top fixed #FFF;
+
+}
+
 
 .one-list-message {
   background: #F1F1F1;

@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2015-06-03 20:33:32
+<?php /* Smarty version Smarty-3.1.15, created on 2015-06-03 23:30:00
          compiled from "/usr/users2/mieic2012/ei12037/public_html/LBAW/proto/templates/user/editarperfil.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:944147459556f1241765e93-84567812%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '23d13ae4d31cbdfb140fdf5186abb86b71b2ca81' => 
     array (
       0 => '/usr/users2/mieic2012/ei12037/public_html/LBAW/proto/templates/user/editarperfil.tpl',
-      1 => 1433356112,
+      1 => 1433366365,
       2 => 'file',
     ),
   ),
@@ -51,7 +51,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                 </div>
                 <div class="form-group">
                   <label for="address">Address:</label>
-                  <input class="form-control" name="address" type="text" value="Street nr, postal code, city" id="address">
+                  <input class="form-control" name="address" type="text" id="address">
                 </div>
                 <div class="form-group">
                   <label for="dnascimento">Birth date:</label>
@@ -64,12 +64,12 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                 </div>
                 <div class="form-group">
                   <label for="email">Phone:</label>
-                  <input class="form-control" name="phone" type="text" id="phone" placeholder="Enter your phone number">
+                  <input class="form-control" name="phone" type="text" id="phone" >
                 </div>
 
                 <div class="form-group">
                   <label for="email">Email:</label>
-                  <input class="form-control" name="email" type="email" value="contact@mosaicpro.biz" id="email">
+                  <input class="form-control" name="email" type="email" id="email">
                 </div>
 
                 <div class="form-group">
@@ -78,14 +78,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                 </div>
 
                 <div class="form-group">
-                  <label for="password_confirmation">Password Confirmation:</label>
-                  <input class="form-control" name="password_confirmation" type="password" value="" id="password_confirmation">
-                </div>
-
-                <div class="form-group">
 
                   <label for="picture">Profile picture:</label>
-                  <input class="form-control" name="picture" type="url" value="example.com/picture.png" id="picture">
+                  <input class="form-control" name="picture" type="url" id="picture">
 
                 </div>
 

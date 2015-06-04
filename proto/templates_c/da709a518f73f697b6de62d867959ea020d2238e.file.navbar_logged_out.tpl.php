@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2015-06-03 17:49:19
+<?php /* Smarty version Smarty-3.1.15, created on 2015-06-04 17:02:55
          compiled from "/usr/users2/mieic2012/ei12037/public_html/LBAW/proto/templates/common/navbar_logged_out.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:1763462852556f21ff0c62b7-58257446%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'da709a518f73f697b6de62d867959ea020d2238e' => 
     array (
       0 => '/usr/users2/mieic2012/ei12037/public_html/LBAW/proto/templates/common/navbar_logged_out.tpl',
-      1 => 1431356042,
+      1 => 1433429609,
       2 => 'file',
     ),
   ),
@@ -15,13 +15,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.15',
+  'unifunc' => 'content_556f21ff15ace9_47453395',
   'variables' => 
   array (
     'BASE_URL' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.15',
-  'unifunc' => 'content_556f21ff15ace9_47453395',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_556f21ff15ace9_47453395')) {function content_556f21ff15ace9_47453395($_smarty_tpl) {?><!-- Navigation -->
 <nav class="navbar navbar-default navbar-fixed-top topnav" role="navigation">
@@ -41,16 +41,17 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
         <li>
-          <a href="index.html#login">Login</a>
+          <a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+">Login</a>
         </li>
         <li>
-          <a href="index.html#oquefazemos">O Que Fazemos</a>
+          <a href="#oquefazemos">O Que Fazemos</a>
         </li>
         <li>
-          <a href="index.html#faq">FAQ</a>
+          <a href="#faq">FAQ</a>
         </li>
         <li>
-          <a href="index.html#contactos">Contactos</a>
+          <a href="#contactos">Contactos</a>
         </li>
 
       </ul>

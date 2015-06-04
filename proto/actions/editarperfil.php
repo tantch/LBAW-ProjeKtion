@@ -44,7 +44,6 @@ if(!preg_match($myregex,$dnascimento)){
   $dnascimento=null;
 }
 
-
 try{
   updateUserInfo($_SESSION['user_id'], $name, $address, $dnascimento, $genre, $phone, $email, $profilepic);
 

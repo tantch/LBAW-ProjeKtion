@@ -29,7 +29,7 @@
                 </div>
                 <div class="form-group">
                   <label for="address">Address:</label>
-                  <input class="form-control" name="address" type="text" value="Street nr, postal code, city" id="address">
+                  <input class="form-control" name="address" type="text" id="address">
                 </div>
                 <div class="form-group">
                   <label for="dnascimento">Birth date:</label>
@@ -42,12 +42,12 @@
                 </div>
                 <div class="form-group">
                   <label for="email">Phone:</label>
-                  <input class="form-control" name="phone" type="text" id="phone" placeholder="Enter your phone number">
+                  <input class="form-control" name="phone" type="text" id="phone" >
                 </div>
 
                 <div class="form-group">
                   <label for="email">Email:</label>
-                  <input class="form-control" name="email" type="email" value="contact@mosaicpro.biz" id="email">
+                  <input class="form-control" name="email" type="email" id="email">
                 </div>
 
                 <div class="form-group">
@@ -58,7 +58,7 @@
                 <div class="form-group">
 
                   <label for="picture">Profile picture:</label>
-                  <input class="form-control" name="picture" type="url" value="example.com/picture.png" id="picture">
+                  <input class="form-control" name="picture" type="url" id="picture">
 
                 </div>
 

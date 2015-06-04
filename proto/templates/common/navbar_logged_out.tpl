@@ -15,16 +15,16 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
         <li>
-          <a href="index.html#login">Login</a>
+          <a href="{$BASE_URL}">Login</a>
         </li>
         <li>
-          <a href="index.html#oquefazemos">O Que Fazemos</a>
+          <a href="#oquefazemos">O Que Fazemos</a>
         </li>
         <li>
-          <a href="index.html#faq">FAQ</a>
+          <a href="#faq">FAQ</a>
         </li>
         <li>
-          <a href="index.html#contactos">Contactos</a>
+          <a href="#contactos">Contactos</a>
         </li>
 
       </ul>
