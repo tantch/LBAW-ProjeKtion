@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2015-06-05 13:57:21
+<?php /* Smarty version Smarty-3.1.15, created on 2015-06-05 17:18:45
          compiled from "/usr/users2/mieic2012/ei12037/public_html/LBAW/proto/templates/user/procuraruser.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:1348202655705c4bb94698-98023106%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'c37088376783fdd61c729da0b08022f59b8a9baa' => 
     array (
       0 => '/usr/users2/mieic2012/ei12037/public_html/LBAW/proto/templates/user/procuraruser.tpl',
-      1 => 1433505439,
+      1 => 1433515666,
       2 => 'file',
     ),
   ),

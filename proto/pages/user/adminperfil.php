@@ -40,6 +40,9 @@ $smarty->assign('view_email', $viewing["email"]);
 $smarty->assign('view_picurl', fetchProfilePic($_GET["userid"]));
 $smarty->assign('projetos_decorrer',count($projects));
 $smarty->assign('projetos_acabados',getFinishedProjects($_GET["userid"]));
+$smarty->assign('isBanned', checkIfBanned($_GET["userid"]));
+
 $smarty->display('user/adminperfil.tpl');
+
 
 ?>

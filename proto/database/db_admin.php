@@ -18,11 +18,11 @@ function getFinishedProjects($userid){
 	return $stmt->fetch()['count'];
 }
 
-function banUser($userid){
+function banUser($userid,$Val){
 	try{
 		global $conn;
-		$stmt = $conn->prepare("UPDATE users SET banned=? WHERE idUser= ?");
-		$success = $stmt->execute(array(1,$userid));
+		$stmt = $conn->prepare("UPDATE users SET banned=? WHERE iduser= ?");
+		$success = $stmt->execute(array($Val,$userid));
 		return $success;
 	}catch(PDOException $e){
 		$log=$e->getMessage()+" | "+date(DATE_RFC2822)+" | "+$userid+"\n";
@@ -30,6 +30,33 @@ function banUser($userid){
 		return -1;
 	}
 }
+
+function checkIfBanned($userid){
+	try{
+		global $conn;
+		$stmt = $conn->prepare("SELECT banned FROM users WHERE iduser= ?");
+		$stmt->execute(array($userid));
+		return $stmt->fetch()['banned'];
+	}catch(PDOException $e){
+		$log=$e->getMessage()+" | "+date(DATE_RFC2822)+" | "+$userid+"\n";
+		error_log($log,3,$BASE_DIR+"/tmp/error.log");
+		return -1;
+	}
+}
+
+function deleteUser($userid){
+	try{
+		global $conn;
+		$stmt = $conn->prepare("DELETE FROM users WHERE iduser= ?");
+		$success=$stmt->execute(array($userid));
+	}catch(PDOException $e){
+		$log=$e->getMessage()+" | "+date(DATE_RFC2822)+" | "+$userid+"\n";
+		error_log($log,3,$BASE_DIR+"/tmp/error.log");
+		return -1;
+	}
+	return $success;
+}
+
 
 function getAdminInfo(){
   global $conn;
