@@ -39,7 +39,7 @@
                     {foreach $projects as $proj}
                     <tr>
                       <td>
-                        <a href="#nowhere">{$proj.nomeproj}</a>
+                        <a href="{$BASE_URL}pages/user/visaogeralprojeto.php?idprojeto={$proj.idprojeto}">{$proj.nomeproj}</a>
                       </td>
                       <td>
                         {$proj.funcaoproj}
@@ -49,25 +49,48 @@
                     {/foreach}
                   </tbody>
                 </table>
-                <a href="{$BASE_URL}pages/user/novoprojeto.php"> Novo Projeto</a>
+               
               </div>
+            </div>
+          </div>
+        </div>
+
+
+  <div class="panel panel-default">
+          <div class="span9">
+            <div class="row">
+              <div class="col-lg-12">
+               <a href="{$BASE_URL}pages/user/novoprojeto.php"> <h3>Novo Projeto </h3> </a>
+              </div>
+
             </div>
           </div>
         </div>
 
         <div class="panel panel-default">
           <div class="span9">
-            <div class="container">
-              <div class="row">
-                <div class="col-lg-12">
-                  <a href="{$BASE_URL}pages/user/editarperfil.php"> Editar Perfil </a>
-                </div>
+            <div class="row">
+              <div class="col-lg-12">
+              <a href="{$BASE_URL}pages/user/editarperfil.php"> <h3> Editar Perfil </h2></a>
               </div>
+
             </div>
           </div>
         </div>
 
-        <div class="row">
+        <div class="panel panel-default">
+          <div class="span9">
+            <div class="row">
+             <div class="row">
+              <div class="col-lg-12">
+                <a href="{$BASE_URL}pages/user/perfil.php?userid={$USERID}"> <h3> Visualizar Perfil </h3></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+          <div class="row">
           <div class="col-lg-12">
             <div id="projectBox"class="panel panel-default">
               <div class="span9">

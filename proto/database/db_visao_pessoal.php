@@ -2,7 +2,8 @@
 
 function getUserProjects($userid){
   global $conn;
-  $stmt = $conn->prepare("SELECT nomeproj,funcaoproj FROM papel JOIN projeto USING(idprojeto) WHERE iduser = ?");
+  $stmt = $conn->prepare("SELECT Papel.idProjeto, Projeto.nomeproj, Papel.FuncaoProj FROM Papel, Projeto
+  WHERE idUser= ? AND Projeto.idProjeto=Papel.idProjeto ORDER BY FuncaoProj DESC;");
   $stmt->execute(array($userid));
   return $stmt->fetchAll();
 }
@@ -13,7 +14,6 @@ function getChores($userid){
     WHERE idUser=? AND UserAlocadoTarefa.idTarefa=Tarefa.idTarefa
     AND Tarefa.idcategoria=Categoria.idcat AND Categoria.idProjeto=Projeto.idProjeto
     ORDER BY Tarefa.DFinal ASC");
-    $stmt->execute(array($userid));
-    return $stmt->fetchAll();
-  }
-  ?>
+  $stmt->execute(array($userid));
+  return $stmt->fetchAll();
+}

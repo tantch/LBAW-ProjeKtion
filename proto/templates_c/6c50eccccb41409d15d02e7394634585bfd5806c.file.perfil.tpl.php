@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2015-06-04 02:15:02
+<?php /* Smarty version Smarty-3.1.15, created on 2015-06-05 10:43:22
          compiled from "/usr/users2/mieic2012/ei12037/public_html/LBAW/proto/templates/user/perfil.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:1297821095556f7e2eed5307-13506693%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '6c50eccccb41409d15d02e7394634585bfd5806c' => 
     array (
       0 => '/usr/users2/mieic2012/ei12037/public_html/LBAW/proto/templates/user/perfil.tpl',
-      1 => 1433376901,
+      1 => 1433492288,
       2 => 'file',
     ),
   ),
@@ -53,10 +53,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                          <h1 class="">Perfil de <?php echo $_smarty_tpl->tpl_vars['view_username']->value;?>
 </h1>
                      </div>
+
                  </div>
-                 <div class="col-lg-12"><a href="" ><img title="profile image" class="img-responsive center-block" src=<?php echo $_smarty_tpl->tpl_vars['view_picurl']->value;?>
+                 <div class="col-lg-12"><a href="" ><br><img title="profile image" class="img-responsive center-block" src=<?php echo $_smarty_tpl->tpl_vars['view_picurl']->value;?>
  width="340em"></a>
-                 <br>
+                     <br>
                  </div>
              </div>
          </div>
@@ -67,7 +68,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                 <!--left col-->
                 
                 <ul class="list-group">
-                    <li class="list-group-item text-muted" contenteditable="false">Info</li>
+                    <li class="list-group-item text-muted" contenteditable="false"><h3>Info</h3></li>
                     <li class="list-group-item text-right"><span class="pull-left"><strong class="">Nome</strong></span> <?php echo $_smarty_tpl->tpl_vars['view_nome']->value;?>
 
                     </li>

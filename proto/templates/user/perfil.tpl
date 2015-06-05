@@ -19,9 +19,10 @@
                      <div class=" col-lg-12">
                          <h1 class="">Perfil de {$view_username}</h1>
                      </div>
+
                  </div>
-                 <div class="col-lg-12"><a href="" ><img title="profile image" class="img-responsive center-block" src={$view_picurl} width="340em"></a>
-                 <br>
+                 <div class="col-lg-12"><a href="" ><br><img title="profile image" class="img-responsive center-block" src={$view_picurl} width="340em"></a>
+                     <br>
                  </div>
              </div>
          </div>
@@ -32,7 +33,7 @@
                 <!--left col-->
                 
                 <ul class="list-group">
-                    <li class="list-group-item text-muted" contenteditable="false">Info</li>
+                    <li class="list-group-item text-muted" contenteditable="false"><h3>Info</h3></li>
                     <li class="list-group-item text-right"><span class="pull-left"><strong class="">Nome</strong></span> {$view_nome}
                     </li>
                     {if $view_dnascimento neq NULL}

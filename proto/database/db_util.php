@@ -30,6 +30,21 @@ function getUserInfoById($id){
   }
 }
 
+function getAdminId(){
+  global $conn;
+  $stmt=$conn->prepare("SELECT iduser FROM users WHERE admin=:admin");
+  $stmt->bindValue(':admin',1);
+  $found=$stmt->execute();
+  $adminId=$stmt->fetch();
+  if($found){
+    return $adminId['iduser'];
+  }
+  else{
+    print_r($stmt->errorInfo());
+    return -1;
+  }
+}
+
 function getUserByPattern($pattern){
 
   global $conn;

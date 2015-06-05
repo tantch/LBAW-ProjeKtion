@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2015-06-03 16:42:06
+<?php /* Smarty version Smarty-3.1.15, created on 2015-06-05 10:43:16
          compiled from "/usr/users2/mieic2012/ei12037/public_html/LBAW/proto/templates/user/visaopessoal.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:872144589556f123e615f81-66401422%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '85e0bbfa8af101efce0a528b10b1faadd5303065' => 
     array (
       0 => '/usr/users2/mieic2012/ei12037/public_html/LBAW/proto/templates/user/visaopessoal.tpl',
-      1 => 1432892041,
+      1 => 1433493280,
       2 => 'file',
     ),
   ),
@@ -15,17 +15,18 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.15',
+  'unifunc' => 'content_556f123e702184_10089076',
   'variables' => 
   array (
     'projects' => 0,
-    'proj' => 0,
     'BASE_URL' => 0,
+    'proj' => 0,
+    'USERID' => 0,
     'chores' => 0,
     'chore' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.15',
-  'unifunc' => 'content_556f123e702184_10089076',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_556f123e702184_10089076')) {function content_556f123e702184_10089076($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ('common/header.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0);?>
 
@@ -73,7 +74,9 @@ $_smarty_tpl->tpl_vars['proj']->_loop = true;
 ?>
                     <tr>
                       <td>
-                        <a href="#nowhere"><?php echo $_smarty_tpl->tpl_vars['proj']->value['nomeproj'];?>
+                        <a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+pages/user/visaogeralprojeto.php?idprojeto=<?php echo $_smarty_tpl->tpl_vars['proj']->value['idprojeto'];?>
+"><?php echo $_smarty_tpl->tpl_vars['proj']->value['nomeproj'];?>
 </a>
                       </td>
                       <td>
@@ -85,27 +88,52 @@ $_smarty_tpl->tpl_vars['proj']->_loop = true;
                     <?php } ?>
                   </tbody>
                 </table>
-                <a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
-pages/user/novoprojeto.php"> Novo Projeto</a>
+               
               </div>
+            </div>
+          </div>
+        </div>
+
+
+  <div class="panel panel-default">
+          <div class="span9">
+            <div class="row">
+              <div class="col-lg-12">
+               <a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+pages/user/novoprojeto.php"> <h3>Novo Projeto </h3> </a>
+              </div>
+
             </div>
           </div>
         </div>
 
         <div class="panel panel-default">
           <div class="span9">
-            <div class="container">
-              <div class="row">
-                <div class="col-lg-12">
-                  <a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
-pages/user/editarperfil.php"> Editar Perfil </a>
-                </div>
+            <div class="row">
+              <div class="col-lg-12">
+              <a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+pages/user/editarperfil.php"> <h3> Editar Perfil </h2></a>
               </div>
+
             </div>
           </div>
         </div>
 
-        <div class="row">
+        <div class="panel panel-default">
+          <div class="span9">
+            <div class="row">
+             <div class="row">
+              <div class="col-lg-12">
+                <a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+pages/user/perfil.php?userid=<?php echo $_smarty_tpl->tpl_vars['USERID']->value;?>
+"> <h3> Visualizar Perfil </h3></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+          <div class="row">
           <div class="col-lg-12">
             <div id="projectBox"class="panel panel-default">
               <div class="span9">
