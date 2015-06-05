@@ -13,6 +13,11 @@ if (isset($_SESSION['user_id'])) {
 		exit;
 	}
 }
+else{
+	$_SESSION['error_messages'][] = 'Not allowed!';
+	header("Location: $BASE_URL");
+	exit;
+}
 $viewing=getUserInfoById($_GET['userid']);
 if($viewing===-1 || !(isset($_GET['userid']))){
 	$_SESSION['error_messages'][] = 'Invalid url.';

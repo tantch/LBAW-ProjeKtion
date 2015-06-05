@@ -1,7 +1,7 @@
 
 
 $(document).ready(function(){
-  $('#results').html('<p style="padding:5px;">Search a user by inserting a keyword.</p>');
+  $('#results').html('<p style="padding:5px;">Comece a escrever para procurar um utilizador.</p>');
   $('#usersearch').keyup(function() {
 
     var searchVal = $(this).val();
@@ -9,9 +9,9 @@ $(document).ready(function(){
 
       $.get('../../api/procuraruser.php?usersearch='+searchVal, function(returnData) {
         if (!returnData) {
-          $('#results').html('<p style="padding:5px;">No results found.</p>');
+          $('#results').html('<p style="padding:5px;">Não foram encontrados resultados.</p>');
         } else {
-          $('#results').html('<p style="padding:5px;">Results:</p>');
+          $('#results').html('<p style="padding:5px;">Resultados:</p>');
           var parsedData = JSON.parse(returnData);
           for(var i=0;i<parsedData.length;i++){
             var output="".concat(parsedData[i][2]," (",parsedData[i][1],")");
@@ -23,7 +23,7 @@ $(document).ready(function(){
         }
       });
     } else {
-      $('#results').html('<p style="padding:5px;">Search a user by inserting a keyword.</p>');
+      $('#results').html('<p style="padding:5px;">Comece a escrever para procurar um utilizador.</p>');
     }
 
   });

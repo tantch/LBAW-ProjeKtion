@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2015-06-04 17:14:59
+<?php /* Smarty version Smarty-3.1.15, created on 2015-06-05 14:52:45
          compiled from "/usr/users2/mieic2012/ei12037/public_html/LBAW/proto/templates/common/header.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:2080608208556f1237e89e88-84358824%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'ba871c94053b3f2808c3d816d2f2f1fcd0f9f1ae' => 
     array (
       0 => '/usr/users2/mieic2012/ei12037/public_html/LBAW/proto/templates/common/header.tpl',
-      1 => 1433430893,
+      1 => 1433508311,
       2 => 'file',
     ),
   ),
@@ -57,6 +57,8 @@ javascript/scroll.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
     <script src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
 javascript/bootstrap.min.js"></script>
+    <script src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+javascript/closemessages.js"></script>
 </head>
 
 <body>
@@ -75,8 +77,8 @@ javascript/bootstrap.min.js"></script>
 foreach ($_from as $_smarty_tpl->tpl_vars['error']->key => $_smarty_tpl->tpl_vars['error']->value) {
 $_smarty_tpl->tpl_vars['error']->_loop = true;
 ?>
-    <div class="error"><?php echo $_smarty_tpl->tpl_vars['error']->value;?>
-<a class="close" href="#">X</a></div>
+    <div class="error" ><?php echo $_smarty_tpl->tpl_vars['error']->value;?>
+<a class="close" href="#" onclick="closemessages()">X</a></div>
   <?php } ?>
   </div>
   <div id="success_messages" class="state">
@@ -85,8 +87,8 @@ $_smarty_tpl->tpl_vars['error']->_loop = true;
 foreach ($_from as $_smarty_tpl->tpl_vars['success']->key => $_smarty_tpl->tpl_vars['success']->value) {
 $_smarty_tpl->tpl_vars['success']->_loop = true;
 ?>
-    <div class="success"><?php echo $_smarty_tpl->tpl_vars['success']->value;?>
-<a class="close" href="#">X</a></div>
+    <div class="success" ><?php echo $_smarty_tpl->tpl_vars['success']->value;?>
+<a class="close" href="#" onclick="closemessages()">X</a></div>
   <?php } ?>
   </div>
 <?php }} ?>

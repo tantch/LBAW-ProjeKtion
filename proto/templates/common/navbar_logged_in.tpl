@@ -1,9 +1,9 @@
 <nav class="navbar navbar-default navbar-fixed-top topnav" role="navigation">
-        <div class="topnav container-fancy">
+        <div class="topnav container-topnav">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
 
-              <a class="navbar-brand topnav" href="#">ProjeKtion</a>
+              <a class="navbar-brand topnav" href="{$BASE_URL}">ProjeKtion</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -31,12 +31,21 @@
                       </a>
                       <!-- dropdown com opcoes e logout , facil de alterar-->
                       <ul class="dropdown-menu">
+                      {if $USERID neq $ADMINID}
                         <li>
                           <a href="{$BASE_URL}pages/user/visaopessoal.php" class="ajax-link">
                             <i class="fa fa-user"></i>
                             <span>Visão Pessoal</span>
                           </a>
                         </li>
+                        {else}
+                        <li>
+                          <a href="{$BASE_URL}pages/user/admin.php" class="ajax-link">
+                            <i class="fa fa-user"></i>
+                            <span>Painel de Admin</span>
+                          </a>
+                        </li>
+                        {/if}
                         <li>
                           <a href="{$BASE_URL}actions/logout.php">
                             <i class="fa fa-power-off"></i>

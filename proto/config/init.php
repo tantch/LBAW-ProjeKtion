@@ -30,6 +30,7 @@
   $smarty->assign('USERNAME', $_SESSION['username']);
   $smarty->assign('USERID',$_SESSION['user_id']);
   $smarty->assign('USERPIC',fetchProfilePic($_SESSION['user_id']));
+  $smarty->assign('ADMINID',getAdminId());
 
   unset($_SESSION['success_messages']);
   unset($_SESSION['error_messages']);

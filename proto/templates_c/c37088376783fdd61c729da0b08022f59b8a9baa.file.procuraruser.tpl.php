@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2015-06-04 17:48:36
+<?php /* Smarty version Smarty-3.1.15, created on 2015-06-05 13:57:21
          compiled from "/usr/users2/mieic2012/ei12037/public_html/LBAW/proto/templates/user/procuraruser.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:1348202655705c4bb94698-98023106%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'c37088376783fdd61c729da0b08022f59b8a9baa' => 
     array (
       0 => '/usr/users2/mieic2012/ei12037/public_html/LBAW/proto/templates/user/procuraruser.tpl',
-      1 => 1433432908,
+      1 => 1433505439,
       2 => 'file',
     ),
   ),
@@ -17,6 +17,10 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'version' => 'Smarty-3.1.15',
   'unifunc' => 'content_55705c4bc03f55_57927990',
+  'variables' => 
+  array (
+    'BASE_URL' => 0,
+  ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_55705c4bc03f55_57927990')) {function content_55705c4bc03f55_57927990($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ('common/header.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0);?>
@@ -27,7 +31,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 	<div class="row">
 		<div id="breadcrumb" class="col-xs-12">
 			<ol class="breadcrumb pull-left">
-				<li><a href="visaopessoal.html">Área Pessoal 2</a></li>
+				<li><a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+pages/user/visaopessoal.php">Visão Pessoal</a></li>
 
 			</ol>
 			<div id="social" class="pull-right">

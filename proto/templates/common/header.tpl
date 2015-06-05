@@ -21,6 +21,7 @@
     -->
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
     <script src="{$BASE_URL}javascript/bootstrap.min.js"></script>
+    <script src="{$BASE_URL}javascript/closemessages.js"></script>
 </head>
 
 <body>
@@ -33,11 +34,11 @@
   </header>
   <div id="error_messages" class="state">
   {foreach $ERROR_MESSAGES as $error}
-    <div class="error">{$error}<a class="close" href="#">X</a></div>
+    <div class="error" >{$error}<a class="close" href="#" onclick="closemessages()">X</a></div>
   {/foreach}
   </div>
   <div id="success_messages" class="state">
   {foreach $SUCCESS_MESSAGES as $success}
-    <div class="success">{$success}<a class="close" href="#">X</a></div>
+    <div class="success" >{$success}<a class="close" href="#" onclick="closemessages()">X</a></div>
   {/foreach}
   </div>

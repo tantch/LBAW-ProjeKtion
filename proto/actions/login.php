@@ -2,11 +2,11 @@
 
 include_once ('../config/init.php');
 include_once ($BASE_DIR . '/database/db_util.php');
-  if ($_SESSION['user_id']) {
-    $_SESSION['error_messages'][] = 'already logged in';
-    header("Location: $BASE_URL");
-    exit;
-  }
+if ($_SESSION['user_id']) {
+  $_SESSION['error_messages'][] = 'already logged in';
+  header("Location: $BASE_URL");
+  exit;
+}
 
 $hashed_pass=hash('sha256',$_POST['inpt_pass'],false);
 
@@ -23,8 +23,14 @@ if(isset($_POST['inpt_username'])){
       $_SESSION['success_messages']='Login successful.';
       $_SESSION['username']=$user['username'];
       $_SESSION['user_id']=$user['iduser'];
-      header("Location: ". $BASE_URL . "pages/user/visaopessoal.php");
-      exit;
+      if(getAdminId()==$user['iduser']){
+        header("Location: ". $BASE_URL . "pages/user/admin.php");
+        exit;
+      }
+      else{
+        header("Location: ". $BASE_URL . "pages/user/visaopessoal.php");
+        exit;
+      }
     }
     else{
       $_SESSION['error_messages']= 'Wrong password.';

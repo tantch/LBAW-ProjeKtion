@@ -10,7 +10,12 @@ if (isset($_SESSION['user_id'])) {
 		exit;
 	}
 }
+else{
+	$_SESSION['error_messages'][] = 'Not allowed!';
+	header("Location: $BASE_URL");
+	exit;
+}
 
-
+$smarty->assign('numero_users',getUsersCount());
 $smarty->display('user/admin.tpl');
 ?>

@@ -2,7 +2,7 @@
 
 function getUserByUName($username){
   global $conn;
-  $stmt=$conn->prepare("SELECT * FROM users WHERE username=:uname");
+  $stmt=$conn->prepare("SELECT * FROM users WHERE username=:uname AND username!='Admin'");
   $stmt->bindValue(':uname',$username,PDO::PARAM_STR);
   $found=$stmt->execute();
   $columns=$stmt->fetch();
@@ -17,7 +17,7 @@ function getUserByUName($username){
 
 function getUserInfoById($id){
   global $conn;
-  $stmt=$conn->prepare("SELECT username,nome,dnascimento,genero,morada,email,profilepic FROM users WHERE iduser=:id");
+  $stmt=$conn->prepare("SELECT username,nome,dnascimento,genero,morada,email,profilepic FROM users WHERE iduser=:id AND username!='Admin'");
   $stmt->bindValue(':id',$id);
   $found=$stmt->execute();
   $columns=$stmt->fetch();
@@ -45,12 +45,29 @@ function getAdminId(){
   }
 }
 
+function getUsersCount(){
+  try{
+    global $conn;
+    $stmt=$conn->prepare("SELECT Count(*) FROM users");
+    $found=$stmt->execute();
+    $count=$stmt->fetch();
+
+  }catch(PDOException $e){
+    $log=$e->getMessage()+" | "+date(DATE_RFC2822)+" | "+$userid+"\n";
+    error_log($log,3,$BASE_DIR+"/tmp/error.log");
+    return -1;
+  }
+  return $count['count'];
+  
+}
+
+
 function getUserByPattern($pattern){
 
   global $conn;
- 
+
   $stmt=$conn->prepare("SELECT iduser,username,nome FROM users WHERE nome LIKE ".$pattern."OR username LIKE ".$pattern );
- 
+
   $found=$stmt->execute();
   $result = $stmt->fetchAll();
 

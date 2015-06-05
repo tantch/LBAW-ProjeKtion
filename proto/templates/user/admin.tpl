@@ -9,9 +9,10 @@
 <script src="plugins/tinymce/jquery.tinymce.min.js"></script>
 <!-- All functions for this theme + document.ready processing -->
 <script src="js/devoops.js"></script>
+<script type="text/javascript" src="../../javascript/searchUser.js"></script>
 
 
-<br><br><br>
+<br><br>
 <div id="dashboard-header" class="row">
 	<div class="col-xs-12 col-sm-8 col-md-3" style="text-align:center;">
 		<h3>Admin Page Overview</h3>
@@ -24,44 +25,78 @@
 			</tr>
 			<tr>
 				<th><i class="fa fa-users">Registed Users</i></th>
-				<th>14</th>
+				<th>{$numero_users}</th>
 			</tr>
 		</table>
 	</div>
 
 </div>
-<div class="container">
-	<div class="col-xs-11 col-sm-8 col-md-10">
+
+<div class="col-xs-11 col-sm-8 col-md-10">
+	<div class="container">
+
 		<div class="row infos">
 			<div class="box-content">
-				<h3> Recent activity </h3>
-				<table class="table table-hover">
-					<thead>
-						<tr >
-							<th><i class="fa fa-clock-o  fa-spin"></i></th>
-							<th>Name</th>
-							<th>Description</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<td>seconds ago</td>
-							<td>User Register</td>
-							<td>A new <a onclick="$('#ajax-content').empty();LoadAjaxContent('ajax/user1.html')" href="#">user</a> has registered by the name of "Pim"</td>
-						</tr>
-						<tr>
-							<td>1 hour ago</td>
-							<td>New Project</td>
-							<td>A new project by the name "Cgra-1" has been created</td>
-						</tr>
-						<tr>
-							<td>3 days ago</td>
-							<td>Project Deleted</td>
-							<td>The project "LBAW-22" has just been deleted</td>
-						</tr>
-					</tbody>
-				</table>
+				<H2 class="text-center">Pesquisa de users</H2>
+				<div id="messages" class="container-fluid">
+					<div class="row" id="test">
+						<div class="col-sm-6 col-sm-offset-3">
+							<form class="" id="searchForm" method="get">
+								<div class="form-group">
+									<input class="form-control" type="text" id="usersearch" name="usersearch" onfocus="this.value = this.value" autofocus="autofocus">
+								</div>
+								<input type="submit" hidden="true">
+							</form>
+							<div id="results">
+								<br>
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
+		</div>
+
+
+		<div class="container">
+
+			<div class="row infos">
+				<div class="box-content">
+					<H2 class="text-center">Atividade recente</H2>
+					<div id="messages" class="container-fluid">
+						<div class="row" id="test">
+							<div class="col-sm-6 col-sm-offset-3">
+								<table class="table table-hover">
+									<thead>
+										<tr >
+											<th><i class="fa fa-clock-o  fa-spin"></i></th>
+											<th>Name</th>
+											<th>Description</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>seconds ago</td>
+											<td>User Register</td>
+											<td>A new <a onclick="$('#ajax-content').empty();LoadAjaxContent('ajax/user1.html')" href="#">user</a> has registered by the name of "Pim"</td>
+										</tr>
+										<tr>
+											<td>1 hour ago</td>
+											<td>New Project</td>
+											<td>A new project by the name "Cgra-1" has been created</td>
+										</tr>
+										<tr>
+											<td>3 days ago</td>
+											<td>Project Deleted</td>
+											<td>The project "LBAW-22" has just been deleted</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
 		</div>
 	</div>
 </div>

@@ -8,6 +8,10 @@ if($viewing===-1 || !(isset($_GET['userid']))){
 	header("Location: $BASE_URL");
 	exit;
 }
+if($_GET['userid']!=$ADMINID){
+	header("Location: ". $BASE_URL . "pages/user/adminperfil.php?userid=".$_GET[userid]);
+	exit;
+}
 $url="perfil.php?userid=".$_GET[userid];
 $smarty->assign('profileurl',$url);
 $smarty->assign('view_username', $viewing[username]);
