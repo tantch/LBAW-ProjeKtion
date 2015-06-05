@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2015-06-03 23:30:00
+<?php /* Smarty version Smarty-3.1.15, created on 2015-06-05 20:00:57
          compiled from "/usr/users2/mieic2012/ei12037/public_html/LBAW/proto/templates/user/editarperfil.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:944147459556f1241765e93-84567812%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '23d13ae4d31cbdfb140fdf5186abb86b71b2ca81' => 
     array (
       0 => '/usr/users2/mieic2012/ei12037/public_html/LBAW/proto/templates/user/editarperfil.tpl',
-      1 => 1433366365,
+      1 => 1433527140,
       2 => 'file',
     ),
   ),
@@ -17,6 +17,15 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'version' => 'Smarty-3.1.15',
   'unifunc' => 'content_556f12417f1ab5_63316410',
+  'variables' => 
+  array (
+    'view_nome' => 0,
+    'view_morada' => 0,
+    'view_dnascimento' => 0,
+    'view_telefone' => 0,
+    'view_email' => 0,
+    'view_picurl' => 0,
+  ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_556f12417f1ab5_63316410')) {function content_556f12417f1ab5_63316410($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ('common/header.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0);?>
@@ -46,41 +55,47 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 
               <form class=" " enctype="multipart/form-data" action="../../actions/editarperfil.php" method="post">
                 <div class="form-group">
-                  <label for="fullname">Full Name:</label>
-                  <input class="form-control" name="fullname" type="text" id="fullname" required>
+                  <label for="fullname">Name:</label>
+                  <input class="form-control" name="fullname" type="text" id="fullname" value="<?php echo $_smarty_tpl->tpl_vars['view_nome']->value;?>
+">
                 </div>
                 <div class="form-group">
                   <label for="address">Address:</label>
-                  <input class="form-control" name="address" type="text" id="address">
+                  <input class="form-control" name="address" type="text" id="address" value="<?php echo $_smarty_tpl->tpl_vars['view_morada']->value;?>
+"  >
                 </div>
                 <div class="form-group">
                   <label for="dnascimento">Birth date:</label>
-                  <input class="form-control" name="dnascimento" type="date"  id="dnascimento">
+                  <input class="form-control" name="dnascimento" type="date"  id="dnascimento" value="<?php echo $_smarty_tpl->tpl_vars['view_dnascimento']->value;?>
+">
                 </div>
                 <div class="form-group">
                   <label for="dnascimento">Genre:</label>
-                  <p> Male <input class="form-control" name="genre" type="radio"  id="genre" value="male">
-                  Female <input class="form-control" name="genre" type="radio"  id="genre" value="female">
+                  <p> Male <input class="form-control" name="genre" type="radio"  id="genre" value="M">
+                  Female <input class="form-control" name="genre" type="radio"  id="genre" value="F" checked>
                 </div>
                 <div class="form-group">
                   <label for="email">Phone:</label>
-                  <input class="form-control" name="phone" type="text" id="phone" >
+                  <input class="form-control" name="phone" type="text" id="phone" value="<?php echo $_smarty_tpl->tpl_vars['view_telefone']->value;?>
+">
                 </div>
 
                 <div class="form-group">
                   <label for="email">Email:</label>
-                  <input class="form-control" name="email" type="email" id="email">
+                  <input class="form-control" name="email" type="email" id="email" value="<?php echo $_smarty_tpl->tpl_vars['view_email']->value;?>
+">
                 </div>
 
                 <div class="form-group">
-                  <label for="password">Password:</label>
+                  <label for="password">*Password:</label>
                   <input class="form-control" name="password" type="password" value="password" id="password" required>
                 </div>
 
                 <div class="form-group">
 
                   <label for="picture">Profile picture:</label>
-                  <input class="form-control" name="picture" type="url" id="picture">
+                  <input class="form-control" name="picture" type="url" id="picture" value="<?php echo $_smarty_tpl->tpl_vars['view_picurl']->value;?>
+">
 
                 </div>
 

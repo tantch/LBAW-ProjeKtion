@@ -2,6 +2,7 @@
 
 <script src="../../javascript/login_vale.js"></script>
 
+{if !$USERID}
 <a name="login" ></a>
 <div class="intro-header">
   <div class="container">
@@ -36,6 +37,7 @@
   <!-- /.container -->
 
 </div>
+{/if}
 <!-- /.intro-header -->
 
 <!-- Page Content -->

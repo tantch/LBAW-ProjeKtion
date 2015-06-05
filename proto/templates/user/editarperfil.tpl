@@ -24,41 +24,41 @@
 
               <form class=" " enctype="multipart/form-data" action="../../actions/editarperfil.php" method="post">
                 <div class="form-group">
-                  <label for="fullname">Full Name:</label>
-                  <input class="form-control" name="fullname" type="text" id="fullname" required>
+                  <label for="fullname">Name:</label>
+                  <input class="form-control" name="fullname" type="text" id="fullname" value="{$view_nome}">
                 </div>
                 <div class="form-group">
                   <label for="address">Address:</label>
-                  <input class="form-control" name="address" type="text" id="address">
+                  <input class="form-control" name="address" type="text" id="address" value="{$view_morada}"  >
                 </div>
                 <div class="form-group">
                   <label for="dnascimento">Birth date:</label>
-                  <input class="form-control" name="dnascimento" type="date"  id="dnascimento">
+                  <input class="form-control" name="dnascimento" type="date"  id="dnascimento" value="{$view_dnascimento}">
                 </div>
                 <div class="form-group">
                   <label for="dnascimento">Genre:</label>
-                  <p> Male <input class="form-control" name="genre" type="radio"  id="genre" value="male">
-                  Female <input class="form-control" name="genre" type="radio"  id="genre" value="female">
+                  <p> Male <input class="form-control" name="genre" type="radio"  id="genre" value="M">
+                  Female <input class="form-control" name="genre" type="radio"  id="genre" value="F" checked>
                 </div>
                 <div class="form-group">
                   <label for="email">Phone:</label>
-                  <input class="form-control" name="phone" type="text" id="phone" >
+                  <input class="form-control" name="phone" type="text" id="phone" value="{$view_telefone}">
                 </div>
 
                 <div class="form-group">
                   <label for="email">Email:</label>
-                  <input class="form-control" name="email" type="email" id="email">
+                  <input class="form-control" name="email" type="email" id="email" value="{$view_email}">
                 </div>
 
                 <div class="form-group">
-                  <label for="password">Password:</label>
+                  <label for="password">*Password:</label>
                   <input class="form-control" name="password" type="password" value="password" id="password" required>
                 </div>
 
                 <div class="form-group">
 
                   <label for="picture">Profile picture:</label>
-                  <input class="form-control" name="picture" type="url" id="picture">
+                  <input class="form-control" name="picture" type="url" id="picture" value="{$view_picurl}">
 
                 </div>
 

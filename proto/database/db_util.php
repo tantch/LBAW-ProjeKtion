@@ -80,34 +80,32 @@ function getUserByPattern($pattern){
  }
 }
 
-  function getUserSessByUName($username){
-    global $conn;
-    $stmt=$conn->prepare("SELECT iduser,username,password FROM users WHERE username=:uname");
-    $stmt->bindValue(':uname',$username,PDO::PARAM_STR);
-    $found=$stmt->execute();
-    $columns=$stmt->fetch();
-    if($found){
-      return $columns;
-    }
-    else{
-      print_r($stmt->errorInfo());
-      return -1;
-    }
-  }
-
-function createUser($username,$name,$password,$email){
-
+function getUserSessByUName($username){
   global $conn;
-  echo "here";
-  $stmt=$conn->prepare("INSERT INTO users (username,password,nome,email) VALUES (?,?,?,?)");
-  if(!$stmt){
-    echo $conn.errorInfo();
+  $stmt=$conn->prepare("SELECT iduser,username,password FROM users WHERE username=:uname");
+  $stmt->bindValue(':uname',$username,PDO::PARAM_STR);
+  $found=$stmt->execute();
+  $columns=$stmt->fetch();
+  if($found){
+    return $columns;
   }
   else{
-    echo "here3";
+    print_r($stmt->errorInfo());
+    return -1;
   }
-  $stmt->execute(array($username,$password,$name,$email));
+}
 
+function createUser($username,$name,$password,$email){
+  try{
+    global $conn;
+    echo "here";
+    $conn->prepare("INSERT INTO users (username,password,nome,email) VALUES (?,?,?,?)");
+    $stmt->execute(array($username,$password,$name,$email));
+  }catch(PDOException $e){
+    $log=$e->getMessage()+" | "+date(DATE_RFC2822)+" | non-user \n";
+    error_log($log,3,$BASE_DIR+"/tmp/error.log");
+    return -1;
+  }
 
 }
 

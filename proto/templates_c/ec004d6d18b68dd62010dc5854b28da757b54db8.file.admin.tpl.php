@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2015-06-05 17:05:55
+<?php /* Smarty version Smarty-3.1.15, created on 2015-06-05 20:11:32
          compiled from "/usr/users2/mieic2012/ei12037/public_html/LBAW/proto/templates/user/admin.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:7732909685570d4352551f2-62564426%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'ec004d6d18b68dd62010dc5854b28da757b54db8' => 
     array (
       0 => '/usr/users2/mieic2012/ei12037/public_html/LBAW/proto/templates/user/admin.tpl',
-      1 => 1433516398,
+      1 => 1433527873,
       2 => 'file',
     ),
   ),
@@ -38,7 +38,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 <script type="text/javascript" src="../../javascript/searchUser.js"></script>
 
 
-<br><br>
+<br><br><br><br>
 <div id="dashboard-header" class="row">
 	<div class="col-xs-12 col-sm-8 col-md-3" style="text-align:center;">
 		<h3>Admin Page Overview</h3>

@@ -12,16 +12,6 @@ if(!$_SESSION['user_id']) {
   exit;
 }
 
-
-
-if(!$_POST['name'] && !$_POST['address'] && !$_POST['dnascimento'] && !$_POST['genre'] && !$_POST['phone'] && !$_POST['email'] && !$_POST['password'] && !$_POST['password_confirmation'] && !$_POST['picture']) {
-  $_SESSION['error_messages'][] = 'No new user info';
-  header("Location: $BASE_URL/pages/user/editarperfil.php");
-  exit;
-
-}
-
-
 $name=$_POST['fullname'];
 $dnascimento=$_POST['dnascimento'];
 $address=$_POST['address'];
@@ -29,32 +19,35 @@ $genre=$_POST['genre'];
 $phone=$_POST['phone'];
 $email=$_POST['email'];
 $pass=$_POST['password'];
-
 $profilepic=$_POST['picture'];
 
-$userpassArray=getUserSessByUName($_SESSION[user_id]);
-$hashedpass=hash('sha256',$_POST['password'],false);
-if($hashed_pass!=$userpassArray[password]){
-  $_SESSION['error_messages'][] = "Wrong password";
-  header("Location: " . $BASE_URL . "pages/user/editarperfil.php");
-  exit;
+$user=getUserSessByUName($_SESSION[user_id]);
+
+$hashed_pass=hash('sha256',$_POST['password'],false);
+
+if($hashed_pass==$user['password']){
+ 
+  $myregex = '~^\d{2}/\d{2}/\d{4}$~';
+
+  if(!preg_match($myregex,$dnascimento)){
+    $dnascimento=null;
+  }
+
+  try{
+    updateUserInfo($_SESSION['user_id'], $name, $address, $dnascimento, $genre, $phone, $email, $profilepic);
+
+  }catch(PDOException $e){
+    $_SESSION['error_messages'][] = $e->getMessage();
+    header("Location: " . $BASE_URL . "pages/user/editarperfil.php");
+    exit;
+  }
+
+  $_SESSION['success_messages'][]='User info successfully updated.';
+  header("Location: $BASE_URL/pages/user/visaopessoal.php");
 }
-$myregex = '~^\d{2}/\d{2}/\d{4}$~';
-if(!preg_match($myregex,$dnascimento)){
-  $dnascimento=null;
-}
-
-try{
-  updateUserInfo($_SESSION['user_id'], $name, $address, $dnascimento, $genre, $phone, $email, $profilepic);
-
-}catch(PDOException $e){
-  $_SESSION['error_messages'][] = $e->getMessage();
-  header("Location: " . $BASE_URL . "pages/user/editarperfil.php");
-  exit;
-}
-
-$_SESSION['success_messages'][]='User info successfully updated.';
-header("Location: $BASE_URL/pages/user/visaopessoal.php");
 
 
+$_SESSION['error_messages'][] = "Wrong password";
+header("Location: " . $BASE_URL . "pages/user/editarperfil.php");
+exit;
 ?>

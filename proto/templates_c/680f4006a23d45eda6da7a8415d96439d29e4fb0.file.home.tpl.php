@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2015-06-03 16:41:59
+<?php /* Smarty version Smarty-3.1.15, created on 2015-06-05 20:15:20
          compiled from "/usr/users2/mieic2012/ei12037/public_html/LBAW/proto/templates/user/home.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:1713528717556f1237cb8dd3-30479797%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '680f4006a23d45eda6da7a8415d96439d29e4fb0' => 
     array (
       0 => '/usr/users2/mieic2012/ei12037/public_html/LBAW/proto/templates/user/home.tpl',
-      1 => 1431650140,
+      1 => 1433528118,
       2 => 'file',
     ),
   ),
@@ -15,15 +15,20 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
-  'has_nocache_code' => false,
   'version' => 'Smarty-3.1.15',
   'unifunc' => 'content_556f1237e29716_07257692',
+  'variables' => 
+  array (
+    'USERID' => 0,
+  ),
+  'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_556f1237e29716_07257692')) {function content_556f1237e29716_07257692($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ('common/header.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0);?>
 
 
 <script src="../../javascript/login_vale.js"></script>
 
+<?php if (!$_smarty_tpl->tpl_vars['USERID']->value) {?>
 <a name="login" ></a>
 <div class="intro-header">
   <div class="container">
@@ -58,6 +63,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   <!-- /.container -->
 
 </div>
+<?php }?>
 <!-- /.intro-header -->
 
 <!-- Page Content -->

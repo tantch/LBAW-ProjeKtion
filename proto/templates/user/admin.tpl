@@ -12,7 +12,7 @@
 <script type="text/javascript" src="../../javascript/searchUser.js"></script>
 
 
-<br><br>
+<br><br><br><br>
 <div id="dashboard-header" class="row">
 	<div class="col-xs-12 col-sm-8 col-md-3" style="text-align:center;">
 		<h3>Admin Page Overview</h3>
