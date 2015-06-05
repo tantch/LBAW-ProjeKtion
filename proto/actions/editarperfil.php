@@ -21,33 +21,27 @@ $email=$_POST['email'];
 $pass=$_POST['password'];
 $profilepic=$_POST['picture'];
 
-$user=getUserSessByUName($_SESSION[user_id]);
+$user=getUserSessByUName($_SESSION['username']);
 
 $hashed_pass=hash('sha256',$_POST['password'],false);
 
 if($hashed_pass==$user['password']){
- 
+
   $myregex = '~^\d{2}/\d{2}/\d{4}$~';
 
   if(!preg_match($myregex,$dnascimento)){
     $dnascimento=null;
   }
 
-  try{
-    updateUserInfo($_SESSION['user_id'], $name, $address, $dnascimento, $genre, $phone, $email, $profilepic);
-
-  }catch(PDOException $e){
-    $_SESSION['error_messages'][] = $e->getMessage();
-    header("Location: " . $BASE_URL . "pages/user/editarperfil.php");
-    exit;
-  }
-
+  
+  updateUserInfo($_SESSION['user_id'], $name, $address, $dnascimento, $genre, $phone, $email, $profilepic);
   $_SESSION['success_messages'][]='User info successfully updated.';
   header("Location: $BASE_URL/pages/user/visaopessoal.php");
 }
+else{
 
-
-$_SESSION['error_messages'][] = "Wrong password";
-header("Location: " . $BASE_URL . "pages/user/editarperfil.php");
-exit;
+  $_SESSION['error_messages'][] = "Wrong password.";
+  header("Location: " . $BASE_URL . "pages/user/editarperfil.php");
+  exit;
+}
 ?>
