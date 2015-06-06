@@ -19,6 +19,7 @@ UI: UI03
 PERMISSION: VIS
 
 R204: REGISTER
+
 METHOD: POST
 BODYREQUEST: + Username: string
 	     + Password: string
@@ -47,7 +48,7 @@ SQL:(LINK PARA A QUERY DE:
 	-ESTATISTICA DO USER EM PROJS (fazer calculo)
 
 R302: Editar Perfil
-URL: pages/editarperfil.pgp
+URL: pages/editarperfil.php
 METHOD: GET
 PARAMETERES: + idUser: Integer
 UI: UI08
