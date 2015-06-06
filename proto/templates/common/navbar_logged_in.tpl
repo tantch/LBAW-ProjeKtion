@@ -12,7 +12,7 @@
                   <a href="{$BASE_URL}pages/user/procuraruser.php">Pocurar utilizador</a>
                 </li>
                 <li class="dropdown">
-
+                  
                   <!-- parte sempre visivel -->
                   <a href="#" class="dropdown-toggle account" data-toggle="dropdown">
                     <!-- mudar o avatar aqui-->

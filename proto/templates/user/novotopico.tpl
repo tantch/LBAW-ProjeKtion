@@ -17,8 +17,6 @@
       </div>
     </div>
   </div>
-
-
     <!-- Header -->
     <a name="novoprojeto"></a>
     <div class="intro-header">
@@ -38,6 +36,8 @@
                   <label>Texto</label>
                   <textarea class="form-control" name="description" form="surveyForm" style="height=200 px;">Digite o seu texto.</textarea>
                 </div>
+                <input type="hidden" name="idproj" value="{$idproj}">
+                <input type="hidden" name="idcriador" value="{$USERID}">
                 <div class="form-group">
                   <div class="col-xs-2 col-xs-offset-5">
                     <button type="submit" class="btn btn-default">Criar tópico</button>

@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2015-06-06 02:04:39
+<?php /* Smarty version Smarty-3.1.15, created on 2015-06-06 16:30:32
          compiled from "/usr/users2/mieic2012/ei12037/public_html/LBAW/proto/templates/user/novotopico.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:1774795137557251f3959e39-09823151%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '9773ca9c76e3ed62b30630ce8f1777b508654e6f' => 
     array (
       0 => '/usr/users2/mieic2012/ei12037/public_html/LBAW/proto/templates/user/novotopico.tpl',
-      1 => 1433556275,
+      1 => 1433607598,
       2 => 'file',
     ),
   ),
@@ -22,6 +22,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'BASE_URL' => 0,
     'idproj' => 0,
     'nomeproj' => 0,
+    'USERID' => 0,
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
@@ -50,8 +51,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       </div>
     </div>
   </div>
-
-
     <!-- Header -->
     <a name="novoprojeto"></a>
     <div class="intro-header">
@@ -72,6 +71,10 @@ actions/create_topic.php" class="form-horizontal">
                   <label>Texto</label>
                   <textarea class="form-control" name="description" form="surveyForm" style="height=200 px;">Digite o seu texto.</textarea>
                 </div>
+                <input type="hidden" name="idproj" value="<?php echo $_smarty_tpl->tpl_vars['idproj']->value;?>
+">
+                <input type="hidden" name="idcriador" value="<?php echo $_smarty_tpl->tpl_vars['USERID']->value;?>
+">
                 <div class="form-group">
                   <div class="col-xs-2 col-xs-offset-5">
                     <button type="submit" class="btn btn-default">Criar tópico</button>

@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2015-06-05 14:18:12
+<?php /* Smarty version Smarty-3.1.15, created on 2015-06-06 20:00:51
          compiled from "/usr/users2/mieic2012/ei12037/public_html/LBAW/proto/templates/common/navbar_logged_in.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:850508598556f12380184d7-57386753%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '26eec45f638055c41ed518199ba7f799028592ae' => 
     array (
       0 => '/usr/users2/mieic2012/ei12037/public_html/LBAW/proto/templates/common/navbar_logged_in.tpl',
-      1 => 1433506606,
+      1 => 1433613268,
       2 => 'file',
     ),
   ),
@@ -43,7 +43,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 pages/user/procuraruser.php">Pocurar utilizador</a>
                 </li>
                 <li class="dropdown">
-
+                  
                   <!-- parte sempre visivel -->
                   <a href="#" class="dropdown-toggle account" data-toggle="dropdown">
                     <!-- mudar o avatar aqui-->

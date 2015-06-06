@@ -1,39 +1,30 @@
 <?php
 include_once('../config/init.php');
 include_once($BASE_DIR .'database/db_project.php');
+include_once($BASE_DIR .'database/db_forum.php');
 
-  if (!$_SESSION['user_id']) {
-    $_SESSION['error_messages'][] = 'Not allowed!';
-    header("Location: $BASE_URL");
-    exit;
-  }
+if (!$_SESSION['user_id']) {
+  $_SESSION['error_messages'][] = 'Not allowed!';
+  header("Location: $BASE_URL");
+  exit;
+}
 
-  if (!$_POST['name'] || !$_POST['description']) {
-    $_SESSION['error_messages'][] = 'Complete todos os campos.';
-    header("Location: $BASE_URL/pages/user/novotopico.php");
-    exit;
-  }
-  $userid = $_SESSION['user_id'];
-  $name = $_POST['name'];
-  $fdate = $_POST['fdate'];
+if (!$_POST['name'] || !$_POST['description']) {
+  $_SESSION['error_messages'][] = 'Complete todos os campos.';
+  header("Location: $BASE_URL/pages/user/novotopico.php");
+  exit;
+}
 
-  try {
+$idtopico=createTopic($_POST['idproj'],$_POST['name'] ,$_POST['description'],$_POST['idcriador']);
 
-    createProject($userid, $name,$fdate);
+if($idtopico==-1){
+  
+ $_SESSION['error_messages'][] = 'Houve um erro interno. Os nossos engenheiros serão informados e resolverão a situação. Tente novalemnte mais tarde';
+  header("Location: $BASE_URL");
+  exit;
+}
 
-  } catch (PDOException $e) {
-
-    $_SESSION['error_messages'][] = 'Error creating project: ' . $e->getMessage();
-
-    $_SESSION['form_values'] = $_POST;
-    header("Location: $BASE_URL/pages/user/novoprojeto.php");
-    exit;
-  }
-
-  $_SESSION['success_messages'][] = 'project created';
-  header("Location: $BASE_URL/pages/user/visaopessoal.php");
+$_SESSION['success_messages'][] = 'Topic successfully created';
+header("Location: $BASE_URL/pages/user/topico.php?idprojeto=".$_POST['idproj']."&idtopico=".$idtopico);
 
 ?>
-
-//TODO: acabar de adaptar este codigo para topico
-//TODO: passar neste form os dois inputs escondidos (idprojeto idcriador)
