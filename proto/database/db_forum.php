@@ -16,6 +16,20 @@ function createTopic($idproj,$nometopico,$descricao,$idcriador){
 	return $lastId;
 }
 
+function createAnswer($idtopico,$texto,$iduser){
+	try{
+		global $conn;
+		$stmt = $conn->prepare("INSERT INTO resposta (idtopico,texto,iduser) VALUES ( ?,?,?)");
+		$success=$stmt->execute(array($idtopico,$texto,$iduser));
+	}catch(PDOException $e){
+		$log=$e->getMessage()+" | "+date(DATE_RFC2822)+" | "+$USERID+"\n";
+		$dir=$BASE_DIR+"/error.log";
+		error_log($log,3,$dir);
+		return -1;
+	}
+	return $success;
+}
+
 function getTopics($idprojeto){
 	try{
 		global $conn;
@@ -52,7 +66,7 @@ function getAnswers($idtopico){
 			FROM resposta, users
 			WHERE resposta.iduser=users.iduser
 			AND idTopico = ?
-			ORDER BY dcriacaor DESC");
+			ORDER BY dcriacaor ASC");
 		$stmt->execute(array($idtopico));
 		$answers=$stmt->fetchAll();
 		return $answers;
@@ -63,3 +77,4 @@ function getAnswers($idtopico){
 	}
 }
 ?>
+

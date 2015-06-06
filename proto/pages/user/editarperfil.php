@@ -1,14 +1,14 @@
 <?php
 include_once('../../config/init.php');
 if (!$_SESSION['user_id']) {
-	$_SESSION['error_messages'][] = 'Not allowed!';
+	$_SESSION['error_messages'][] = 'Precisa de iniciar sessão para usufruir desta funcionalidade';
 	header("Location: $BASE_URL");
 	exit;
 }
 
 $viewing=getUserInfoById($_SESSION['user_id']);
 if($viewing===-1){
-	$_SESSION['error_messages'][] = 'Invalid url.';
+	$_SESSION['error_messages'][] = 'Houve um erro interno. Os nossos engenheiros serão informados e resolverão a situação. Tente novamente mais tarde.';
 	header("Location: $BASE_URL");
 	exit;
 }

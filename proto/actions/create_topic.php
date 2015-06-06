@@ -4,7 +4,7 @@ include_once($BASE_DIR .'database/db_project.php');
 include_once($BASE_DIR .'database/db_forum.php');
 
 if (!$_SESSION['user_id']) {
-  $_SESSION['error_messages'][] = 'Not allowed!';
+  $_SESSION['error_messages'][] = 'Não pode criar um tópico porque não tem acesso a este fórum.';
   header("Location: $BASE_URL");
   exit;
 }
@@ -24,7 +24,7 @@ if($idtopico==-1){
   exit;
 }
 
-$_SESSION['success_messages'][] = 'Topic successfully created';
+$_SESSION['success_messages'][] = 'O tópico foi criado com sucesso.';
 header("Location: $BASE_URL/pages/user/topico.php?idprojeto=".$_POST['idproj']."&idtopico=".$idtopico);
 
 ?>

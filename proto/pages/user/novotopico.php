@@ -18,7 +18,7 @@ foreach($users as $user){
 
 
 if(!$hasAccess){
-	$_SESSION['error_messages'][] = 'Not allowed.';
+	$_SESSION['error_messages'][] = 'Não pode criar um tópico se não pertence a este projeto.';
 	header("Location: $BASE_URL");
 	exit;
 }
