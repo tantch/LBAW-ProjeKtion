@@ -82,9 +82,11 @@ function getAnswersFTS($texto){
 	
 	try{
 		
-		$stmt=$conn->prepare("SELECT * 
-			FROM resposta
-			WHERE  to_tsvector(texto) @@ plainto_tsquery(?)
+		$stmt=$conn->prepare("SELECT users.username , topico.nometopico, topico.descricao, topico.dcriacao
+			FROM resposta, topico, users
+			WHERE  resposta.idTopico = topico.idTopico
+			AND users.iduser = topico.idcriador
+			AND to_tsvector(texto) @@ plainto_tsquery(?)
 			ORDER BY dcriacaor DESC
 			LIMIT 10");
 		$stmt->execute(array($texto));
