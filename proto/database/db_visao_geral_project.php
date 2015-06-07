@@ -1,41 +1,50 @@
 <?php
-/*
-function getSelectedProject($projectid){
-  global $conn;
-  $stmt = $conn->prepare("SELECT Projeto.nomeproj FROM Projeto WHERE Projeto.idProjeto = ?");
-  $stmt->execute(array($projectid));
-  return $stmt->fetch();
-}*/
 
-function getCategories($projectid)
- {
- global $conn;
-  $stmt = $conn->prepare("SELECT idCat, NomeCat FROM Categoria WHERE idProjeto=?; ");
-  $stmt->execute(array($projectid));
-  return $stmt->fetchAll();
+function allChores($idproject){
+  try{
+   global $conn;
+   $stmt = $conn->prepare("SELECT idcat,idtarefa,nomecat,nometarefa,descricaotarefa,idcriador,dcriacao,dfinal,estadotarefa,tipotarefa,idaceitepor FROM categoria
+    INNER JOIN tarefa
+    ON categoria.idcat = tarefa.idcategoria
+    WHERE categoria.idprojeto = ?
+    ORDER BY idcat ASC");
+   $stmt->execute(array($idproject));
+   $chores= $stmt->fetchAll();
+ }catch(PDOException $e){
+   $log=$e->getMessage()+" | "+date(DATE_RFC2822)+" | "+$USERID+"\n";
+   error_log($log,3,$BASE_DIR."/tmp/error.log");
+   return -1;
+ }
+ return $chores;
+
 }
 
-function getChoresCategory($categoriaid)
- {
- global $conn;
-  $stmt = $conn->prepare("SELECT * FROM Tarefa WHERE idCategoria=?");
-  $stmt->execute(array($categoriaid));
-  return $stmt->fetchAll();
-}
-
-function allChoresbyCategory($projectid)
-{
-$categories = getCategories($projectid);
-
-foreach($categories as $cat)
-{
-  $chores=getChoresCategory($cat.idCat);
-  array_push($allChores,$chores);
-}
-return $allChores;
+function usersAsigned($idprojeto){
+  try{
+   global $conn;
+   $stmt = $conn->prepare("SELECT DISTINCT useralocadotarefa.idtarefa,users.iduser,username,nome 
+    FROM projeto,tarefa,categoria,users,useralocadotarefa
+    WHERE projeto.idprojeto=?
+    AND projeto.idprojeto=categoria.idprojeto
+    AND tarefa.idcategoria=categoria.idcat
+    AND useralocadotarefa.iduser=users.iduser");
+   $stmt->execute(array($idprojeto));
+   $chores= $stmt->fetchAll();
+ }catch(PDOException $e){
+   $log=$e->getMessage()+" | "+date(DATE_RFC2822)+" | "+$USERID+"\n";
+   error_log($log,3,$BASE_DIR."/tmp/error.log");
+   return -1;
+ }
+ return $chores;
 
 }
 
 
 ?>
 
+SELECT DISTINCT useralocadotarefa.idtarefa,users.iduser,username,nome 
+FROM projeto,tarefa,categoria,users,useralocadotarefa
+WHERE projeto.idprojeto=66
+AND projeto.idprojeto=categoria.idprojeto
+AND tarefa.idcategoria=categoria.idcat
+AND useralocadotarefa.iduser=users.iduser

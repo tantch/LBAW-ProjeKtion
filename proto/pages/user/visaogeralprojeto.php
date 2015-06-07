@@ -15,10 +15,13 @@ else{
   $projName=$projInfo['nomeproj'];
 
   $categories=fetchAssociatedCategories($idprojeto); 
-  $allChores= allChoresbyCategory($idprojeto);
-  echo($allChores);
+  $allChores= allChores($idprojeto);
+  $allAssignedToChore=usersAsigned($idprojeto);
+  
+  $smarty->assign('assignements', $allAssignedToChore);
   $smarty->assign('categories', $categories);
   $smarty->assign('projName', $projName);
+  $smarty->assign('chores', $allChores);
   $smarty->display('user/visaogeralprojeto.tpl');
 }
 ?>
