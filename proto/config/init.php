@@ -1,13 +1,13 @@
 <?php
-  session_set_cookie_params(3600, '/~ei12037'); //FIXME
+  session_set_cookie_params(3600, '/~ei12040'); //FIXME
   session_start();
 
   error_reporting(E_ERROR | E_WARNING); // E_NOTICE by default
   @ini_set('display_errors', 'on');
   define('_PS_DEBUG_SQL_', true);
 
-  $BASE_DIR = '/usr/users2/mieic2012/ei12037/public_html/LBAW/proto/';
-  $BASE_URL = '/~ei12037/LBAW/proto/';
+  $BASE_DIR = '/usr/users2/mieic2012/ei12040/public_html/LBAW/proto/';
+  $BASE_URL = '/~ei12040/LBAW/proto/';
 
   $conn = new PDO('pgsql:host=vdbm;dbname=lbaw1415', 'lbaw1415', 'developes'); //FIXME
   $conn->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);

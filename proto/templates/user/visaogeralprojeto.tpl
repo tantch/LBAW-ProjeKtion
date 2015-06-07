@@ -38,14 +38,16 @@
                                         </h4>
                                     </div>
                                     <!-- para obter as tarefas dentro de uma dada categoria (não está a funcionar) --> 
-                                    <!--{ foreach $chores=getChoresCategoria($cat.idCat) as $chore } -->
-                                     
+                                    
                                     <div id="collapseOne" class="panel-collapse collapse in">
+                                        { foreach $allChores as $chores } 
+                                        {foreach $chores as $chor}
                                         <div class="panel-body">
-                                            <!-- <a href={$chore.idCat} data-toggle="tab">{$chore.NomeTarefa} </a>-->
+                                            <a href={$chor.idcat} data-toggle="tab">{$chor.nometarefa} </a>
                                         </div>
                                     </div>
                                   <!-- aqui vem o fim do foreach do $chores -->
+                                  {/foreach}
                                 </div>
                                 {/foreach}
                             </div>
