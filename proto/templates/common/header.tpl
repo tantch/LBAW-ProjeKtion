@@ -16,16 +16,12 @@
   <link href="{$BASE_URL}css/fileinput.min.css" rel="stylesheet">
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
   <link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
-  <link href="{$BASE_URL}css/chardinjs.css" rel="stylesheet">
     <!--
     <script src="{$BASE_URL}javascript/scroll.js"></script>
   -->
   <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
   <script src="{$BASE_URL}javascript/bootstrap.min.js"></script>
   <script src="{$BASE_URL}javascript/closemessages.js"></script>
-
-<script src="{$BASE_URL}javascript/chardinjs.min.js"></script>
-
 </head>
 
 <body>
