@@ -1,4 +1,33 @@
-{include file='common/header.tpl'}
+<?php /* Smarty version Smarty-3.1.15, created on 2015-06-07 12:41:33
+         compiled from "/usr/users2/mieic2012/ei12040/public_html/LBAW/proto/templates/user/visaogeralprojeto.tpl" */ ?>
+<?php /*%%SmartyHeaderCode:2324605195573fe86ebed76-97680429%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+$_valid = $_smarty_tpl->decodeProperties(array (
+  'file_dependency' => 
+  array (
+    'f64e86629272f624712c009b022a6aafb49e963e' => 
+    array (
+      0 => '/usr/users2/mieic2012/ei12040/public_html/LBAW/proto/templates/user/visaogeralprojeto.tpl',
+      1 => 1433673687,
+      2 => 'file',
+    ),
+  ),
+  'nocache_hash' => '2324605195573fe86ebed76-97680429',
+  'function' => 
+  array (
+  ),
+  'version' => 'Smarty-3.1.15',
+  'unifunc' => 'content_5573fe87046253_41375539',
+  'variables' => 
+  array (
+    'projName' => 0,
+    'categories' => 0,
+    'cat' => 0,
+    'chore' => 0,
+  ),
+  'has_nocache_code' => false,
+),false); /*/%%SmartyHeaderCode%%*/?>
+<?php if ($_valid && !is_callable('content_5573fe87046253_41375539')) {function content_5573fe87046253_41375539($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ('common/header.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0);?>
+
 
     <div class="mid-container">
   <div class="row">
@@ -23,18 +52,24 @@
                 <div class="col-lg-12" >
                     <div class="panel panel-default" id="editBox">
                         <div class="panel-heading">
-                           {$projName}
+                           <?php echo $_smarty_tpl->tpl_vars['projName']->value;?>
+
                         </div>
                         <!-- .panel-heading -->
 
 
                         <div class="panel-body">
                             <div class="panel-group" id="accordion">
-                                {foreach $categories as $cat}
+                                <?php  $_smarty_tpl->tpl_vars['cat'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['cat']->_loop = false;
+ $_from = $_smarty_tpl->tpl_vars['categories']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+foreach ($_from as $_smarty_tpl->tpl_vars['cat']->key => $_smarty_tpl->tpl_vars['cat']->value) {
+$_smarty_tpl->tpl_vars['cat']->_loop = true;
+?>
                                 <div class="panel panel-default">
                                     <div class="panel-heading">
                                         <h4 class="panel-title">
-                                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">{$cat.NomeCat}</a>
+                                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne"><?php echo $_smarty_tpl->tpl_vars['cat']->value['NomeCat'];?>
+</a>
                                         </h4>
                                     </div>
                                     <!-- para obter as tarefas dentro de uma dada categoria (não está a funcionar) --> 
@@ -42,12 +77,14 @@
                                      
                                     <div id="collapseOne" class="panel-collapse collapse in">
                                         <div class="panel-body">
-                                            <!-- <a href={$chore.idCat} data-toggle="tab">{$chore.NomeTarefa} </a>-->
+                                            <!-- <a href=<?php echo $_smarty_tpl->tpl_vars['chore']->value['idCat'];?>
+ data-toggle="tab"><?php echo $_smarty_tpl->tpl_vars['chore']->value['NomeTarefa'];?>
+ </a>-->
                                         </div>
                                     </div>
                                   <!-- aqui vem o fim do foreach do $chores -->
                                 </div>
-                                {/foreach}
+                                <?php } ?>
                             </div>
                         </div>
                         <!-- .panel-body -->
@@ -192,4 +229,5 @@
     <!-- /#wrapper -->
 </div>
 
-{include file='common/footer.tpl'}
+<?php echo $_smarty_tpl->getSubTemplate ('common/footer.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0);?>
+<?php }} ?>

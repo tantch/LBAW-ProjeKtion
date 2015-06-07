@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2015-06-04 22:16:32
+<?php /* Smarty version Smarty-3.1.15, created on 2015-06-07 10:08:55
          compiled from "/usr/users2/mieic2012/ei12040/public_html/LBAW/proto/templates/user/visaopessoal.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:1087562284556f7b1b60dc07-23384306%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '0e5715f3930afbdf5fdceb164f040f9695bb4193' => 
     array (
       0 => '/usr/users2/mieic2012/ei12040/public_html/LBAW/proto/templates/user/visaopessoal.tpl',
-      1 => 1433440494,
+      1 => 1433545203,
       2 => 'file',
     ),
   ),
@@ -20,8 +20,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'variables' => 
   array (
     'projects' => 0,
-    'proj' => 0,
     'BASE_URL' => 0,
+    'proj' => 0,
+    'USERID' => 0,
     'chores' => 0,
     'chore' => 0,
   ),
@@ -38,9 +39,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 
       </ol>
     </div>
-
-
-
 
     <!-- Header -->
     <a name="visaopessoal"></a>
@@ -73,7 +71,9 @@ $_smarty_tpl->tpl_vars['proj']->_loop = true;
 ?>
                     <tr>
                       <td>
-                        <a href="#nowhere"><?php echo $_smarty_tpl->tpl_vars['proj']->value['nomeproj'];?>
+                        <a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+pages/user/visaogeralprojeto.php?idprojeto=<?php echo $_smarty_tpl->tpl_vars['proj']->value['idprojeto'];?>
+"><?php echo $_smarty_tpl->tpl_vars['proj']->value['nomeproj'];?>
 </a>
                       </td>
                       <td>
@@ -85,27 +85,52 @@ $_smarty_tpl->tpl_vars['proj']->_loop = true;
                     <?php } ?>
                   </tbody>
                 </table>
-                <a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
-pages/user/novoprojeto.php"> Novo Projeto</a>
+               
               </div>
+            </div>
+          </div>
+        </div>
+
+
+  <div class="panel panel-default">
+          <div class="span9">
+            <div class="row">
+              <div class="col-lg-12">
+               <a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+pages/user/novoprojeto.php"> <h3>Novo Projeto </h3> </a>
+              </div>
+
             </div>
           </div>
         </div>
 
         <div class="panel panel-default">
           <div class="span9">
-            <div class="container">
-              <div class="row">
-                <div class="col-lg-12">
-                  <a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
-pages/user/editarperfil.php"> Editar Perfil </a>
-                </div>
+            <div class="row">
+              <div class="col-lg-12">
+              <a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+pages/user/editarperfil.php"> <h3> Editar Perfil </h2></a>
               </div>
+
             </div>
           </div>
         </div>
 
-        <div class="row">
+        <div class="panel panel-default">
+          <div class="span9">
+            <div class="row">
+             <div class="row">
+              <div class="col-lg-12">
+                <a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+pages/user/perfil.php?userid=<?php echo $_smarty_tpl->tpl_vars['USERID']->value;?>
+"> <h3> Visualizar Perfil </h3></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+          <div class="row">
           <div class="col-lg-12">
             <div id="projectBox"class="panel panel-default">
               <div class="span9">

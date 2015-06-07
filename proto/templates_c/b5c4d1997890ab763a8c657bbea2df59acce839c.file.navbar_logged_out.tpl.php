@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2015-06-04 00:09:25
+<?php /* Smarty version Smarty-3.1.15, created on 2015-06-07 10:08:43
          compiled from "/usr/users2/mieic2012/ei12040/public_html/LBAW/proto/templates/common/navbar_logged_out.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:2115220499556f7b1509b8f6-26318264%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'b5c4d1997890ab763a8c657bbea2df59acce839c' => 
     array (
       0 => '/usr/users2/mieic2012/ei12040/public_html/LBAW/proto/templates/common/navbar_logged_out.tpl',
-      1 => 1433350451,
+      1 => 1433545203,
       2 => 'file',
     ),
   ),
@@ -15,17 +15,17 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.15',
+  'unifunc' => 'content_556f7b150a9396_52758896',
   'variables' => 
   array (
     'BASE_URL' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.15',
-  'unifunc' => 'content_556f7b150a9396_52758896',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_556f7b150a9396_52758896')) {function content_556f7b150a9396_52758896($_smarty_tpl) {?><!-- Navigation -->
 <nav class="navbar navbar-default navbar-fixed-top topnav" role="navigation">
-  <div class="container topnav">
+  <div class="container-topnav">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -41,16 +41,17 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
         <li>
-          <a href="index.html#login">Login</a>
+          <a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+">Login</a>
         </li>
         <li>
-          <a href="index.html#oquefazemos">O Que Fazemos</a>
+          <a href="#oquefazemos">O Que Fazemos</a>
         </li>
         <li>
-          <a href="index.html#faq">FAQ</a>
+          <a href="#faq">FAQ</a>
         </li>
         <li>
-          <a href="index.html#contactos">Contactos</a>
+          <a href="#contactos">Contactos</a>
         </li>
 
       </ul>

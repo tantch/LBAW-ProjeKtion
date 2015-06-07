@@ -1,18 +1,18 @@
 <?php
 
   include_once('../../config/init.php');
-  //include_once($BASE_DIR .'database/db_visao_geral_projeto.php');
+  include_once($BASE_DIR .'database/db_visao_geral_projet.php');
 
   if(!$_SESSION['user_id']){
     header('Location: home.php');
 
     }
   else{
-    // Arranjar variavel apra o get do id projeto
+    $idprojeto=$_GET['idprojeto'];
     
-    $projName = getSelectedProject($_SESSION['user_id']); //passar como argumento o GET do id do projeto selecionado
-    $categories=getCategories($_SESSION['user_id']); // passar o id do projeto vindo do GET
-
+    $projName = getSelectedProject($idprojeto); 
+    echo($projName);
+    $categories=getCategories($idprojeto); 
     $smarty->assign('categories', $categories);
     $smarty->assign('projName', $projName);
     $smarty->display('user/visaogeralprojeto.tpl');
