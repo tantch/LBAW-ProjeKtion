@@ -1,7 +1,7 @@
 <?php
 
 include_once('../../config/init.php');
-include_once($BASE_DIR .'database/db_visao_geral_projet.php');
+include_once($BASE_DIR .'database/db_visao_geral_project.php');
 include_once($BASE_DIR .'database/db_project.php');
 
 if(!$_SESSION['user_id']){
