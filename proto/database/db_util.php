@@ -99,7 +99,7 @@ function createUser($username,$name,$password,$email){
   try{
     global $conn;
     echo "here";
-    $conn->prepare("INSERT INTO users (username,password,nome,email) VALUES (?,?,?,?)");
+    $stmt=$conn->prepare("INSERT INTO users (username,password,nome,email) VALUES (?,?,?,?)");
     $stmt->execute(array($username,$password,$name,$email));
   }catch(PDOException $e){
     $log=$e->getMessage()+" | "+date(DATE_RFC2822)+" | non-user \n";
@@ -118,13 +118,7 @@ function fetchProfilePic($userid){
   }catch(PDOException $e){
     return 'http://udara.co/assets/default.png';
   }
-  if((preg_match("/\b(?:(?:https?|ftp):\/\/|www\.)[-a-z0-9+&@#\/%?=~_|!:,.;]*[-a-z0-9+&@#\/%=~_|]/i",$url[profilepic]))){
-    return $url[profilepic];
-  }
-  else{
-
-    return 'http://udara.co/assets/default.png';
-  }
+  return $url[profilepic];
 }
 
 ?>

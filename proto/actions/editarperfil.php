@@ -7,7 +7,7 @@ include_once ($BASE_DIR .'/database/db_profile.php');
 
 if(!$_SESSION['user_id']) {
 
-  $_SESSION['error_messages'][] = 'Not allowed!';
+  $_SESSION['error_messages'][] = 'Inicie sessão para poder editar o seu perfil.';
   header("Location: $BASE_URL");
   exit;
 }
@@ -19,24 +19,44 @@ $genre=$_POST['genre'];
 $phone=$_POST['phone'];
 $email=$_POST['email'];
 $pass=$_POST['password'];
-$profilepic=$_POST['picture'];
-
 $user=getUserSessByUName($_SESSION['username']);
-
 $hashed_pass=hash('sha256',$_POST['password'],false);
 
 if($hashed_pass==$user['password']){
+  if ($_FILES["picture"]["error"] > 0) {
+   $_SESSION['error_messages'][] = "A imagem que submeteu não se encontra dentro das nossas restrições.";
+   header("Location: " . $BASE_URL . "pages/user/editarperfil.php");
+   exit;
+ } else {
+  $exts = array('gif', 'png', 'jpg');
+   if(in_array(end(explode('.', $_FILES['picture']['name'])), $exts)){
+    $picExtension = pathinfo($_FILES["picture"]["name"], PATHINFO_EXTENSION);
+    $picDir=$BASE_DIR."images/".$_SESSION['user_id'].".".$picExtension;
+    $toStore="../../images/".$_SESSION['user_id'].".".$picExtension;;
+    $picName=basename($_FILES['picture']['name']);
+    if(move_uploaded_file($_FILES['picture']['tmp_name'],$picDir)===false){
 
-  $myregex = '~^\d{2}/\d{2}/\d{4}$~';
-
-  if(!preg_match($myregex,$dnascimento)){
-    $dnascimento=null;
+      $_SESSION['error_messages'][] = "Os nossos servidores não conseguiram guardar a sua imagem de perfil";
+      header("Location: " . $BASE_URL . "pages/user/editarperfil.php");
+      exit;
+    }
   }
+  else{
+   $_SESSION['error_messages'][] = "Por favor insira uma imagem válida. (JPG, PNG ou GIF)";
+   header("Location: " . $BASE_URL . "pages/user/editarperfil.php");
+   exit;
+ }
 
-  
-  updateUserInfo($_SESSION['user_id'], $name, $address, $dnascimento, $genre, $phone, $email, $profilepic);
-  $_SESSION['success_messages'][]='User info successfully updated.';
-  header("Location: $BASE_URL/pages/user/visaopessoal.php");
+}
+$myregex = '~^\d{2}/\d{2}/\d{4}$~';
+
+if(!preg_match($myregex,$dnascimento)){
+  $dnascimento=null;
+}
+
+updateUserInfo($_SESSION['user_id'], $name, $address, $dnascimento, $genre, $phone, $email, $toStore);
+$_SESSION['success_messages'][]='User info successfully updated.';
+header("Location: $BASE_URL/pages/user/visaopessoal.php");
 }
 else{
 
@@ -44,4 +64,13 @@ else{
   header("Location: " . $BASE_URL . "pages/user/editarperfil.php");
   exit;
 }
+
+
+
+
+
+
+
+
+
 ?>

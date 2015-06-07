@@ -38,59 +38,66 @@
                 <div class="form-group">
                   <label for="dnascimento">Genre:</label>
                   <p> Male <input class="form-control" name="genre" type="radio"  id="genre" value="M">
-                  Female <input class="form-control" name="genre" type="radio"  id="genre" value="F" checked>
+                    Female <input class="form-control" name="genre" type="radio"  id="genre" value="F" checked>
+                  </div>
+                  <div class="form-group">
+                    <label for="email">Phone:</label>
+                    <input class="form-control" name="phone" type="text" id="phone" value="{$view_telefone}">
+                  </div>
+
+                  <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input class="form-control" name="email" type="email" id="email" value="{$view_email}">
+                  </div>
+
+                  <div class="form-group">
+                    <label for="password">*Password:</label>
+                    <input class="form-control" name="password" type="password" value="password" id="password" required>
+                  </div>
+
+                  <div class="form-group">
+
+                    <label for="picture">Profile picture:</label><br>
+                    <span class="btn btn-default btn-file" >
+
+
+                      Procurar imagem
+
+
+                      <input type="file" name="picture" id="picture"><br>
+                    </span>
+                    
+                  </div>
+
+
+                  <div class="checkbox">
+                    <label for="notify">
+                      <input id="notify" checked="checked" name="notify" type="checkbox">
+                      Email me with updates about current projects.
+                    </label>
+                  </div>
+
+                  <div class="separator"></div>
+                  <div class="form-group">
+                    <input class="btn btn-primary" type="submit" value="Update Profile"></div>
+                  </form>
                 </div>
-                <div class="form-group">
-                  <label for="email">Phone:</label>
-                  <input class="form-control" name="phone" type="text" id="phone" value="{$view_telefone}">
-                </div>
 
-                <div class="form-group">
-                  <label for="email">Email:</label>
-                  <input class="form-control" name="email" type="email" id="email" value="{$view_email}">
-                </div>
 
-                <div class="form-group">
-                  <label for="password">*Password:</label>
-                  <input class="form-control" name="password" type="password" value="password" id="password" required>
-                </div>
+                <div class="col-sm-6 col-centered">
 
-                <div class="form-group">
+                  <div class="well span3" align="center" id="infoEditar">
+                    <h4>Additional Information</h4>
 
-                  <label for="picture">Profile picture:</label>
-                  <input class="form-control" name="picture" type="url" id="picture" value="{$view_picurl}">
-
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A alias aspernatur assumenda at commodi dolorem eos eum exercitationem facere ipsum mollitia nemo perspiciatis quaerat qui quidem, quod repellat repudiandae sed veritatis voluptate? Eos necessitatibus non rem repudiandae similique vero voluptatem?</p>
+                  </div>
                 </div>
 
 
-                <div class="checkbox">
-                  <label for="notify">
-                    <input id="notify" checked="checked" name="notify" type="checkbox">
-                    Email me with updates about current projects.
-                  </label>
-                </div>
-
-                <div class="separator"></div>
-                <div class="form-group">
-                  <input class="btn btn-primary" type="submit" value="Update Profile"></div>
-                </form>
               </div>
-
-
-              <div class="col-sm-6 col-centered">
-
-                <div class="well span3" align="center" id="infoEditar">
-                  <h4>Additional Information</h4>
-
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A alias aspernatur assumenda at commodi dolorem eos eum exercitationem facere ipsum mollitia nemo perspiciatis quaerat qui quidem, quod repellat repudiandae sed veritatis voluptate? Eos necessitatibus non rem repudiandae similique vero voluptatem?</p>
-                </div>
-              </div>
-
-
             </div>
+
           </div>
-
         </div>
-      </div>
 
-      {include file='common/footer.tpl'}
+        {include file='common/footer.tpl'}

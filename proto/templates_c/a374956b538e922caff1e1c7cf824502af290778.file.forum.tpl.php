@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2015-06-06 01:50:40
+<?php /* Smarty version Smarty-3.1.15, created on 2015-06-07 00:16:53
          compiled from "/usr/users2/mieic2012/ei12037/public_html/LBAW/proto/templates/user/forum.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:3938359175571f17c670bd2-01289227%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'a374956b538e922caff1e1c7cf824502af290778' => 
     array (
       0 => '/usr/users2/mieic2012/ei12037/public_html/LBAW/proto/templates/user/forum.tpl',
-      1 => 1433555402,
+      1 => 1433636211,
       2 => 'file',
     ),
   ),
@@ -74,6 +74,7 @@ $_smarty_tpl->tpl_vars['topic']->_loop = true;
              </div>
              <a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
 /pages/user/topico.php?idtopico=<?php echo $_smarty_tpl->tpl_vars['topic']->value['idtopico'];?>
+&idprojeto=<?php echo $_smarty_tpl->tpl_vars['idproj']->value;?>
 ">
                <div class="col-xs-8 message-title"><b><?php echo $_smarty_tpl->tpl_vars['topic']->value['nometopico'];?>
 </b></div>

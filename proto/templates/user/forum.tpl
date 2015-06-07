@@ -31,7 +31,7 @@
                  {$topic['username']}
                </label>
              </div>
-             <a href="{$BASE_URL}/pages/user/topico.php?idtopico={$topic['idtopico']}">
+             <a href="{$BASE_URL}/pages/user/topico.php?idtopico={$topic['idtopico']}&idprojeto={$idproj}">
                <div class="col-xs-8 message-title"><b>{$topic['nometopico']}</b></div>
              </a>
              <div class="col-xs-5 message-date " style="width:auto;">   {$topic['dcriacao']}   </div>

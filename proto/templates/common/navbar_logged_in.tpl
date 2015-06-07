@@ -17,7 +17,7 @@
                   <a href="#" class="dropdown-toggle account" data-toggle="dropdown">
                     <!-- mudar o avatar aqui-->
                     <div class="avatar">
-                      <img src={$USERPIC} class="img-circle" alt="avatar" />
+                      <img src="{$USERPIC}" class="img-circle" alt="avatar" />
                     </div>
 
                     <i class="fa fa-angle-down pull-right"></i><!-- setinha, da para mnudar o fa -->
