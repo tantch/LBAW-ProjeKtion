@@ -15,7 +15,7 @@ function validate(){
   var cpassword = document.getElementById('cpass').value;
   var errors = [];
 
-  if (!ck_name.test(name)) {
+  if (!ck_name.test(name) || name == null || x=="") {
     errors[errors.length] = "Invalid name.";
   }
   if (!ck_email.test(email)) {

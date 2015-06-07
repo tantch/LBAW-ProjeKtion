@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2015-06-07 02:54:05
+<?php /* Smarty version Smarty-3.1.15, created on 2015-06-07 20:50:17
          compiled from "/usr/users2/deec/ei07122/public_html/LBAW/proto/templates/common/header.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:13055400985573962d71ca63-75457313%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '6e11f7f70d1a3343cee9339e24bac8575e9412bd' => 
     array (
       0 => '/usr/users2/deec/ei07122/public_html/LBAW/proto/templates/common/header.tpl',
-      1 => 1433637339,
+      1 => 1433703002,
       2 => 'file',
     ),
   ),
@@ -15,6 +15,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.15',
+  'unifunc' => 'content_5573962d785a59_06693754',
   'variables' => 
   array (
     'BASE_URL' => 0,
@@ -25,8 +27,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'success' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.15',
-  'unifunc' => 'content_5573962d785a59_06693754',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_5573962d785a59_06693754')) {function content_5573962d785a59_06693754($_smarty_tpl) {?><!DOCTYPE html>
 <html lang="en">
@@ -50,6 +50,8 @@ css/fileinput.css" rel="stylesheet">
 css/fileinput.min.css" rel="stylesheet">
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
   <link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+  <link href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+css/chardinjs.css" rel="stylesheet">
     <!--
     <script src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
 javascript/scroll.js"></script>
@@ -59,6 +61,10 @@ javascript/scroll.js"></script>
 javascript/bootstrap.min.js"></script>
   <script src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
 javascript/closemessages.js"></script>
+
+<script src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+javascript/chardinjs.min.js"></script>
+
 </head>
 
 <body>

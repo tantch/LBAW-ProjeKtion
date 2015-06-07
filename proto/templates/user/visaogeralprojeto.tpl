@@ -40,8 +40,8 @@
                                     <!-- para obter as tarefas dentro de uma dada categoria (não está a funcionar) --> 
                                     
                                     <div id="collapseOne" class="panel-collapse collapse in">
-                                        {foreach $allChores as $chores } 
-                                            {foreach $chores as $chor}
+                                        { foreach $allChores as $chores } 
+                                        {foreach $chores as $chor}
                                         <div class="panel-body">
                                             <a href={$chor.idcat} data-toggle="tab">{$chor.nometarefa} </a>
                                         </div>

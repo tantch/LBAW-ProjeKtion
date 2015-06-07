@@ -1,4 +1,26 @@
-{include file='common/header.tpl'}
+<?php /* Smarty version Smarty-3.1.15, created on 2015-06-08 00:52:12
+         compiled from "/usr/users2/deec/ei07122/public_html/LBAW/proto/templates/user/register.tpl" */ ?>
+<?php /*%%SmartyHeaderCode:1755971513557484cd398f72-25232234%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+$_valid = $_smarty_tpl->decodeProperties(array (
+  'file_dependency' => 
+  array (
+    'ea6feaefe0878c1eff9f5e70901b182df0fc0431' => 
+    array (
+      0 => '/usr/users2/deec/ei07122/public_html/LBAW/proto/templates/user/register.tpl',
+      1 => 1433717531,
+      2 => 'file',
+    ),
+  ),
+  'nocache_hash' => '1755971513557484cd398f72-25232234',
+  'function' => 
+  array (
+  ),
+  'version' => 'Smarty-3.1.15',
+  'unifunc' => 'content_557484cd41aba8_39266882',
+  'has_nocache_code' => false,
+),false); /*/%%SmartyHeaderCode%%*/?>
+<?php if ($_valid && !is_callable('content_557484cd41aba8_39266882')) {function content_557484cd41aba8_39266882($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ('common/header.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0);?>
+
 
 <script src="../../javascript/register_vale.js"></script>
 <script src="../../javascript/register_help.js"></script>
@@ -21,6 +43,7 @@
 
                 <div class="col-md-6">
                   <h3 class="dark-grey">Registo</h3>
+                   
 
                   <div class="form-group col-lg-12">
                     <label>Username</label>
@@ -35,7 +58,7 @@
 
                   <div class="form-group col-lg-6">
                     <label>Password</label>
-                    <input type="password" name="password" class="form-control" id="pass" value="" data-intro="Introduza a Password que vai utilizar para se autenticar no sistema, com pelo menos 1 digito e entre 4 a 12 caracteres no total" data-position="top">
+                    <input type="password" name="password" class="form-control" id="pass" value="" data-intro="Introduza a Password que vai utilizar para se autenticar no sistema, entre 4 a 12 caracteres" data-position="top">
                   </div>
 
                   <div class="form-group col-lg-6">
@@ -79,4 +102,6 @@
   <!-- /.container -->
 
 </div>
-{include file='common/footer.tpl'}
+<?php echo $_smarty_tpl->getSubTemplate ('common/footer.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0);?>
+
+<?php }} ?>
