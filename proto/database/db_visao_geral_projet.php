@@ -4,7 +4,7 @@ function getSelectedProject($projectid){
   global $conn;
   $stmt = $conn->prepare("SELECT Projeto.nomeproj FROM Projeto WHERE Projeto.idProjeto = ?");
   $stmt->execute(array($projectid));
-  return $stmt->fetchAll();
+  return $stmt->fetch();
 }
 
 function getCategories($projectid)
@@ -18,7 +18,7 @@ function getCategories($projectid)
 function getChoresCategoria($categoriaid)
  {
  global $conn;
-  $stmt = $conn->prepare("SELECT idTarefa, NomeTarefa, DCriação, DFinal, EstadoTarefa FROM Tarefa WHERE idCategoria=?;");
+  $stmt = $conn->prepare("SELECT * FROM Tarefa WHERE idCategoria=?");
   $stmt->execute(array($categoriaid));
   return $stmt->fetchAll();
 }

@@ -1,20 +1,23 @@
 <?php
 
-  include_once('../../config/init.php');
-  include_once($BASE_DIR .'database/db_visao_geral_projet.php');
+include_once('../../config/init.php');
+include_once($BASE_DIR .'database/db_visao_geral_projet.php');
+include_once($BASE_DIR .'database/db_project.php');
 
-  if(!$_SESSION['user_id']){
-    header('Location: home.php');
+if(!$_SESSION['user_id']){
+  $_SESSION['error_messages'][] = 'Crie uma conta.';
+  header("Location: $BASE_URL");
+  exit;
+}
+else{
+  $idprojeto=$_GET['idprojeto']; 
+  $projInfo = fetchProjectInfo($idprojeto); 
+  $projName=$projInfo['nomeproj'];
 
-    }
-  else{
-    $idprojeto=$_GET['idprojeto'];
-    
-    $projName = getSelectedProject($idprojeto); 
-    echo($projName);
-    $categories=getCategories($idprojeto); 
-    $smarty->assign('categories', $categories);
-    $smarty->assign('projName', $projName);
-    $smarty->display('user/visaogeralprojeto.tpl');
-  }
+  $categories=fetchAssociatedCategories($idprojeto); 
+  
+  $smarty->assign('categories', $categories);
+  $smarty->assign('projName', $projName);
+  $smarty->display('user/visaogeralprojeto.tpl');
+}
 ?>

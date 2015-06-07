@@ -34,7 +34,7 @@
                                 <div class="panel panel-default">
                                     <div class="panel-heading">
                                         <h4 class="panel-title">
-                                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">{$cat.NomeCat}</a>
+                                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">{$cat.nomecat}</a>
                                         </h4>
                                     </div>
                                     <!-- para obter as tarefas dentro de uma dada categoria (não está a funcionar) --> 

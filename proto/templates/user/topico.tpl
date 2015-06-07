@@ -6,9 +6,9 @@
   <div class="row">
     <div id="breadcrumb" class="col-xs-12">
       <ol class="breadcrumb pull-left">
-        <li><a href="projeto.html">Projeto 2</a></li>
-        <li><a href="forum.html">Forum</a></li>
-        <li><a href="topico1.html">Topico 1</a></li>
+        <li><a href="{$BASE_URL}/pages/user/visaogeralprojeto.php?idprojeto={$idproj}">{$nomeproj}</a></li>
+        <li><a href="{$BASE_URL}/pages/user/forum.php?idprojeto={$idproj}">Fórum</a></li>
+        
       </ol>
     </div>
   </div>
@@ -45,6 +45,12 @@
 
   </div>
 </div>
+{foreachelse}
+<div class="box">
+<p> Ainda ninguém respondeu a este tópico</p>
+</div>
+
+
 {/foreach}
 <div class="form-group col-lg-12">
   <br>

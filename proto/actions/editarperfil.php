@@ -55,12 +55,12 @@ if(!preg_match($myregex,$dnascimento)){
 }
 
 updateUserInfo($_SESSION['user_id'], $name, $address, $dnascimento, $genre, $phone, $email, $toStore);
-$_SESSION['success_messages'][]='User info successfully updated.';
+$_SESSION['success_messages'][]='A sua informação de perfil foi atualizada com sucesso.';
 header("Location: $BASE_URL/pages/user/visaopessoal.php");
 }
 else{
 
-  $_SESSION['error_messages'][] = "Wrong password.";
+  $_SESSION['error_messages'][] = "Por favor insira a sua password corretamente.";
   header("Location: " . $BASE_URL . "pages/user/editarperfil.php");
   exit;
 }

@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2015-06-06 22:01:36
+<?php /* Smarty version Smarty-3.1.15, created on 2015-06-07 03:45:07
          compiled from "/usr/users2/mieic2012/ei12037/public_html/LBAW/proto/templates/user/topico.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:14254393515573293ca761b4-60769871%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '9dfd39bba1b79b8786f9bd1ad91b243781214029' => 
     array (
       0 => '/usr/users2/mieic2012/ei12037/public_html/LBAW/proto/templates/user/topico.tpl',
-      1 => 1433628029,
+      1 => 1433648638,
       2 => 'file',
     ),
   ),
@@ -19,12 +19,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'unifunc' => 'content_5573293cad1712_39590068',
   'variables' => 
   array (
+    'BASE_URL' => 0,
+    'idproj' => 0,
+    'nomeproj' => 0,
     'topicInfo' => 0,
     'defaultpic' => 0,
     'respostas' => 0,
     'resposta' => 0,
-    'BASE_URL' => 0,
-    'idproj' => 0,
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
@@ -37,9 +38,14 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   <div class="row">
     <div id="breadcrumb" class="col-xs-12">
       <ol class="breadcrumb pull-left">
-        <li><a href="projeto.html">Projeto 2</a></li>
-        <li><a href="forum.html">Forum</a></li>
-        <li><a href="topico1.html">Topico 1</a></li>
+        <li><a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+/pages/user/visaogeralprojeto.php?idprojeto=<?php echo $_smarty_tpl->tpl_vars['idproj']->value;?>
+"><?php echo $_smarty_tpl->tpl_vars['nomeproj']->value;?>
+</a></li>
+        <li><a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+/pages/user/forum.php?idprojeto=<?php echo $_smarty_tpl->tpl_vars['idproj']->value;?>
+">Fórum</a></li>
+        
       </ol>
     </div>
   </div>
@@ -94,6 +100,14 @@ $_smarty_tpl->tpl_vars['resposta']->_loop = true;
 
   </div>
 </div>
+<?php }
+if (!$_smarty_tpl->tpl_vars['resposta']->_loop) {
+?>
+<div class="box">
+<p> Ainda ninguém respondeu a este tópico</p>
+</div>
+
+
 <?php } ?>
 <div class="form-group col-lg-12">
   <br>

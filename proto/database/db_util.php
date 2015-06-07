@@ -63,24 +63,27 @@ function getUsersCount(){
 
 
 function getUserByPattern($pattern){
+  try{
+    global $conn;
+    $stmt=$conn->prepare("SELECT iduser,username,nome FROM users WHERE admin=0 AND (nome LIKE ".$pattern."OR username LIKE ".$pattern.")" );
+      $found=$stmt->execute();
+      $result = $stmt->fetchAll();
+    }catch(PDOException $e){
+      $log=$e->getMessage()+" | "+date(DATE_RFC2822)+" | "+$USERID+"\n";
+      $dir=$BASE_DIR."error.log";
+      error_log($log,3,$dir);
+      return -1;
+    }
+    if($found==false){
+      return -1;
+    }
+    else{
+     return $result; 
+   }
 
-  global $conn;
-
-  $stmt=$conn->prepare("SELECT iduser,username,nome FROM users WHERE nome LIKE ".$pattern."OR username LIKE ".$pattern );
-
-  $found=$stmt->execute();
-  $result = $stmt->fetchAll();
-
-  
-  if($found==false){
-    return -1;
-  }
-  else{
-   return $result; 
  }
-}
 
-function getUserSessByUName($username){
+ function getUserSessByUName($username){
   global $conn;
   $stmt=$conn->prepare("SELECT iduser,username,password FROM users WHERE username=:uname");
   $stmt->bindValue(':uname',$username,PDO::PARAM_STR);
@@ -103,7 +106,8 @@ function createUser($username,$name,$password,$email){
     $stmt->execute(array($username,$password,$name,$email));
   }catch(PDOException $e){
     $log=$e->getMessage()+" | "+date(DATE_RFC2822)+" | non-user \n";
-    error_log($log,3,$BASE_DIR+"/tmp/error.log");
+    fwrite($LOGFILE, "upsi");
+   // error_log($log,3,$BASE_DIR."tmp/error.log");
     return -1;
   }
 

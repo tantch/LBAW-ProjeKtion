@@ -46,6 +46,36 @@ function fetchProjectInfo($idprojeto){
     return $projs;
 }
 
+function fetchAssociatedCategories($idprojeto){
+    try{
+        global $conn;
+        $stmt = $conn->prepare("SELECT * FROM categoria
+            WHERE idProjeto= ?");
+        $stmt->execute(array($idprojeto));
+        $categories=$stmt->fetchAll();
+    }catch(IOException $e){
+        $log=$e->getMessage()+" | "+date(DATE_RFC2822)+" | "+$USERID+"\n";
+        error_log($log,3,$BASE_DIR+"/tmp/error.log");
+        return -1;
+    }
+    return $categories;
+}
+
+function fetchAssociatedChores($idcategoria){
+    try{
+        global $conn;
+        $stmt = $conn->prepare("SELECT * FROM Tarefa WHERE idCategoria=?");
+        $stmt->execute(array($idcategoria));
+        $chores=$stmt->fetchAll();
+    }catch(IOException $e){
+        $log=$e->getMessage()+" | "+date(DATE_RFC2822)+" | "+$USERID+"\n";
+        error_log($log,3,$BASE_DIR+"/tmp/error.log");
+        return -1;
+    }
+    return $chores;
+}
+
+
 
 
 
