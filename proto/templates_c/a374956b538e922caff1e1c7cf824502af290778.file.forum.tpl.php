@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2015-06-07 00:16:53
+<?php /* Smarty version Smarty-3.1.15, created on 2015-06-07 16:01:41
          compiled from "/usr/users2/mieic2012/ei12037/public_html/LBAW/proto/templates/user/forum.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:3938359175571f17c670bd2-01289227%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'a374956b538e922caff1e1c7cf824502af290778' => 
     array (
       0 => '/usr/users2/mieic2012/ei12037/public_html/LBAW/proto/templates/user/forum.tpl',
-      1 => 1433636211,
+      1 => 1433692248,
       2 => 'file',
     ),
   ),
@@ -90,13 +90,25 @@ $_smarty_tpl->tpl_vars['topic']->_loop = true;
  </div>
 
  <div id="new-post" class="col-xs-3 col-xs-offset-1">
- <a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+   <a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
 /pages/user/novotopico.php?idprojeto=<?php echo $_smarty_tpl->tpl_vars['idproj']->value;?>
 ">
      <button type="button"  class="btn btn-primary">Novo tópico</button>
    </a>
    <br><br><br>
  </div>
+</div>
+
+<div id="text-search-fts" class="form col-xs-3"> 
+  <form class="form col-md-12 center-block" method="post" action="../../actions/searchText.php">
+    <br>
+     <input type="hidden" name="idprojeto" value="<?php echo $_smarty_tpl->tpl_vars['idproj']->value;?>
+">
+    <input type="text" name="texto" class="form-control" value="">
+    <br>
+    <button type="submit"  class="btn btn-primary">Procure dentro do fórum</button>
+    <br>
+  </form>
 </div>
 
 <?php echo $_smarty_tpl->getSubTemplate ('common/footer.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0);?>

@@ -44,11 +44,22 @@
  </div>
 
  <div id="new-post" class="col-xs-3 col-xs-offset-1">
- <a href="{$BASE_URL}/pages/user/novotopico.php?idprojeto={$idproj}">
+   <a href="{$BASE_URL}/pages/user/novotopico.php?idprojeto={$idproj}">
      <button type="button"  class="btn btn-primary">Novo tópico</button>
    </a>
    <br><br><br>
  </div>
+</div>
+
+<div id="text-search-fts" class="form col-xs-3"> 
+  <form class="form col-md-12 center-block" method="post" action="../../actions/searchText.php">
+    <br>
+     <input type="hidden" name="idprojeto" value="{$idproj}">
+    <input type="text" name="texto" class="form-control" value="">
+    <br>
+    <button type="submit"  class="btn btn-primary">Procure dentro do fórum</button>
+    <br>
+  </form>
 </div>
 
 {include file='common/footer.tpl'}

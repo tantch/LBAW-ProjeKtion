@@ -76,5 +76,26 @@ function getAnswers($idtopico){
 		return -1;
 	}
 }
+
+function getAnswersFTS($texto){
+	global $conn;
+	
+	try{
+		
+		$stmt=$conn->prepare("SELECT * 
+			FROM resposta
+			WHERE  to_tsvector(texto) @@ plainto_tsquery(?)
+			ORDER BY dcriacaor DESC
+			LIMIT 10");
+		$stmt->execute(array($texto));
+		$answers=$stmt->fetchAll();
+		return $answers;
+		 
+	}catch(PDOException $e){
+		$log=$e->getMessage()+" | "+date(DATE_RFC2822)+" | "+$USERID+"\n";
+		error_log($log,3,$BASE_DIR+"/tmp/error.log");
+		return -1;
+	}
+}
 ?>
 
