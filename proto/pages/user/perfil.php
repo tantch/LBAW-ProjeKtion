@@ -8,7 +8,10 @@ if($viewing===-1 || !(isset($_GET['userid']))){
 	header("Location: $BASE_URL");
 	exit;
 }
-if($ADMINID==$USERID){
+
+$ADMINID=getAdminId();
+
+if($ADMINID===$_SESSION['user_id']){
 	$newurl="Location: $BASE_URL"."pages/user/adminperfil.php?userid=".$_GET['userid'];
 	header($newurl);
 }

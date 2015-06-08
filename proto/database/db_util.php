@@ -66,34 +66,37 @@ function getUserByPattern($pattern){
   try{
     global $conn;
     $stmt=$conn->prepare("SELECT iduser,username,nome FROM users WHERE admin=0 AND (nome LIKE ".$pattern."OR username LIKE ".$pattern.")" );
-      $found=$stmt->execute();
-      $result = $stmt->fetchAll();
-    }catch(PDOException $e){
-      $log=$e->getMessage()+" | "+date(DATE_RFC2822)+" | "+$USERID+"\n";
-      $dir=$BASE_DIR."error.log";
-      error_log($log,3,$dir);
-      return -1;
-    }
-    if($found==false){
-      return -1;
-    }
-    else{
-     return $result; 
-   }
-
+    $found=$stmt->execute();
+    $result = $stmt->fetchAll();
+  }catch(PDOException $e){
+    $log=$e->getMessage()+" | "+date(DATE_RFC2822)+" | "+$USERID+"\n";
+    $dir=$BASE_DIR."error.log";
+    error_log($log,3,$dir);
+    return -1;
+  }
+  if($found==false){
+    return -1;
+  }
+  else{
+   return $result; 
  }
 
- function getUserSessByUName($username){
-  global $conn;
-  $stmt=$conn->prepare("SELECT iduser,username,password FROM users WHERE username=:uname");
-  $stmt->bindValue(':uname',$username,PDO::PARAM_STR);
-  $found=$stmt->execute();
-  $columns=$stmt->fetch();
+}
+
+function getUserSessByUName($username){
+  try{
+    global $conn;
+    $stmt=$conn->prepare("SELECT iduser,username,password FROM users WHERE username=:uname");
+    $stmt->bindValue(':uname',$username,PDO::PARAM_STR);
+    $found=$stmt->execute();
+    $columns=$stmt->fetch();
+  }catch(PDOException $e){
+  //mandar erro para o admin
+  }
   if($found){
     return $columns;
   }
   else{
-    print_r($stmt->errorInfo());
     return -1;
   }
 }

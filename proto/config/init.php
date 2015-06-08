@@ -22,7 +22,7 @@
   $smarty->template_dir = $BASE_DIR . 'templates/';
   $smarty->compile_dir = $BASE_DIR . 'templates_c/';
 
-  $errorLog = fopen($BASE_DIR."tmp/error.txt", "w");
+
   $smarty->assign('LOGFILE', $errorLog);
   $smarty->assign('BASE_URL', $BASE_URL);
   $smarty->assign('BASE_DIR', $BASE_DIR);
