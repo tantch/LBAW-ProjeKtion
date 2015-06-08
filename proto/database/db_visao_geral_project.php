@@ -1,5 +1,9 @@
 <?php
 
+function getRoleOnProj($idproject,$iduser){
+  
+}
+
 function allChores($idproject){
   try{
    global $conn;

@@ -21,9 +21,15 @@
              </div>
 
 
+             {if $view_picurl}
              <div class="col-lg-12"><a href="" ><br><img title="profile image" class="img-responsive center-block" src={$view_picurl} width="340em"></a>
                <br>
              </div>
+             {else}
+             <div class="col-lg-12"><a href="" ><br><img title="profile image" class="img-responsive center-block" src="{$defaultpic}" width="340em"></a>
+               <br>
+             </div>
+             {/if}
            </div>
 
 
@@ -107,19 +113,19 @@
           <div class="panel-body"> 
             {if $isBanned eq 0} 
             <form method="post" action="../../actions/banUser.php">
-            <input type="hidden" name="userid" value="{$INSPECTED_USER_ID}">
+              <input type="hidden" name="userid" value="{$INSPECTED_USER_ID}">
               <button class="btn btn-primary btn-lg btn-block" type="submit" >Banir</button>
             </form>
             <br>
             {else}
             <form method="post" action="../../actions/banUser.php">
-            <input type="hidden" name="userid" value="{$INSPECTED_USER_ID}">
+              <input type="hidden" name="userid" value="{$INSPECTED_USER_ID}">
               <button class="btn btn-primary btn-lg btn-block" type="submit">Restituir</button>
             </form>
             <br>
             {/if}
-           <form method="post" action="../../actions/deleteuser.php">
-            <input type="hidden" name="userid" value="{$INSPECTED_USER_ID}">
+            <form method="post" action="../../actions/deleteuser.php">
+              <input type="hidden" name="userid" value="{$INSPECTED_USER_ID}">
               <button class="btn btn-primary btn-lg btn-block" type="submit" >Apagar definitivamente esta conta</button>
             </form>
             <br>

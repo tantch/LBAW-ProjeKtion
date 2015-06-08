@@ -91,11 +91,12 @@
 
                                     {foreach $assignements as $assignement}
                                     {if $assignement.idtarefa eq $chore.idtarefa }
-                                    <p>
+                                    <p><a href="{$BASE_URL}pages/user/perfil.php?userid={$assignement.iduser}">
                                     {$assignement.nome}
+                                    </a>
                                     </p>
                                     {/if}
-                                   
+
                                     {/foreach}
                                 </div>
 

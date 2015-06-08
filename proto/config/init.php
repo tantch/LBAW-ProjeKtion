@@ -34,7 +34,7 @@
   $smarty->assign('USERID',$_SESSION['user_id']);
   $smarty->assign('USERPIC',fetchProfilePic($_SESSION['user_id']));
   $smarty->assign('ADMINID',getAdminId());
-  $smarty->assign('defaultpic',"http://udara.co/assets/default.png");
+  $smarty->assign('defaultpic',"../../images/default.png");
   unset($_SESSION['success_messages']);
   unset($_SESSION['error_messages']);
   unset($_SESSION['field_errors']);

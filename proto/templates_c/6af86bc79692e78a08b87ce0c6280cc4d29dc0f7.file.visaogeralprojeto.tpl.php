@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2015-06-08 01:25:10
+<?php /* Smarty version Smarty-3.1.15, created on 2015-06-08 02:59:06
          compiled from "/usr/users2/mieic2012/ei12037/public_html/LBAW/proto/templates/user/visaogeralprojeto.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:21745106255743221dd08c8-05094365%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '6af86bc79692e78a08b87ce0c6280cc4d29dc0f7' => 
     array (
       0 => '/usr/users2/mieic2012/ei12037/public_html/LBAW/proto/templates/user/visaogeralprojeto.tpl',
-      1 => 1433719509,
+      1 => 1433725145,
       2 => 'file',
     ),
   ),
@@ -26,6 +26,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'chore' => 0,
     'assignements' => 0,
     'assignement' => 0,
+    'BASE_URL' => 0,
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
@@ -149,12 +150,15 @@ foreach ($_from as $_smarty_tpl->tpl_vars['assignement']->key => $_smarty_tpl->t
 $_smarty_tpl->tpl_vars['assignement']->_loop = true;
 ?>
                                     <?php if ($_smarty_tpl->tpl_vars['assignement']->value['idtarefa']==$_smarty_tpl->tpl_vars['chore']->value['idtarefa']) {?>
-                                    <p>
+                                    <p><a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+pages/user/perfil.php?userid=<?php echo $_smarty_tpl->tpl_vars['assignement']->value['iduser'];?>
+">
                                     <?php echo $_smarty_tpl->tpl_vars['assignement']->value['nome'];?>
 
+                                    </a>
                                     </p>
                                     <?php }?>
-                                   
+
                                     <?php } ?>
                                 </div>
 

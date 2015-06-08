@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2015-06-06 12:37:39
+<?php /* Smarty version Smarty-3.1.15, created on 2015-06-08 01:35:43
          compiled from "/usr/users2/mieic2012/ei12037/public_html/LBAW/proto/templates/common/header.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:2080608208556f1237e89e88-84358824%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'ba871c94053b3f2808c3d816d2f2f1fcd0f9f1ae' => 
     array (
       0 => '/usr/users2/mieic2012/ei12037/public_html/LBAW/proto/templates/common/header.tpl',
-      1 => 1433594225,
+      1 => 1433719808,
       2 => 'file',
     ),
   ),
@@ -50,6 +50,8 @@ css/fileinput.css" rel="stylesheet">
 css/fileinput.min.css" rel="stylesheet">
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
   <link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+  <link href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+css/chardinjs.css" rel="stylesheet">
     <!--
     <script src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
 javascript/scroll.js"></script>
@@ -59,6 +61,10 @@ javascript/scroll.js"></script>
 javascript/bootstrap.min.js"></script>
   <script src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
 javascript/closemessages.js"></script>
+
+<script src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+javascript/chardinjs.min.js"></script>
+
 </head>
 
 <body>

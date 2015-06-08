@@ -21,9 +21,15 @@
                      </div>
 
                  </div>
+                 {if $view_picurl}
                  <div class="col-lg-12"><a href="" ><br><img title="profile image" class="img-responsive center-block" src={$view_picurl} width="340em"></a>
                      <br>
                  </div>
+                 {else}
+                 <div class="col-lg-12"><a href="" ><br><img title="profile image" class="img-responsive center-block" src="{$defaultpic}" width="340em"></a>
+                     <br>
+                 </div>
+                 {/if}
              </div>
          </div>
 

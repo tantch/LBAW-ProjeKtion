@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2015-06-05 16:29:13
+<?php /* Smarty version Smarty-3.1.15, created on 2015-06-08 02:10:02
          compiled from "/usr/users2/mieic2012/ei12037/public_html/LBAW/proto/templates/user/adminperfil.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:1378420846557162b00d1225-95738977%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'bcb1b2ee9adf697f012f3c9600b62a9c032d80a2' => 
     array (
       0 => '/usr/users2/mieic2012/ei12037/public_html/LBAW/proto/templates/user/adminperfil.tpl',
-      1 => 1433521288,
+      1 => 1433729400,
       2 => 'file',
     ),
   ),
@@ -22,6 +22,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'profileurl' => 0,
     'view_username' => 0,
     'view_picurl' => 0,
+    'defaultpic' => 0,
     'view_nome' => 0,
     'view_dnascimento' => 0,
     'view_genero' => 0,
@@ -62,10 +63,17 @@ $_valid = $_smarty_tpl->decodeProperties(array (
              </div>
 
 
+             <?php if ($_smarty_tpl->tpl_vars['view_picurl']->value) {?>
              <div class="col-lg-12"><a href="" ><br><img title="profile image" class="img-responsive center-block" src=<?php echo $_smarty_tpl->tpl_vars['view_picurl']->value;?>
  width="340em"></a>
                <br>
              </div>
+             <?php } else { ?>
+             <div class="col-lg-12"><a href="" ><br><img title="profile image" class="img-responsive center-block" src="<?php echo $_smarty_tpl->tpl_vars['defaultpic']->value;?>
+" width="340em"></a>
+               <br>
+             </div>
+             <?php }?>
            </div>
 
 
@@ -163,21 +171,21 @@ pages/user/visaogeralprojeto.php?idprojeto=<?php echo $_smarty_tpl->tpl_vars['pr
           <div class="panel-body"> 
             <?php if ($_smarty_tpl->tpl_vars['isBanned']->value==0) {?> 
             <form method="post" action="../../actions/banUser.php">
-            <input type="hidden" name="userid" value="<?php echo $_smarty_tpl->tpl_vars['INSPECTED_USER_ID']->value;?>
+              <input type="hidden" name="userid" value="<?php echo $_smarty_tpl->tpl_vars['INSPECTED_USER_ID']->value;?>
 ">
               <button class="btn btn-primary btn-lg btn-block" type="submit" >Banir</button>
             </form>
             <br>
             <?php } else { ?>
             <form method="post" action="../../actions/banUser.php">
-            <input type="hidden" name="userid" value="<?php echo $_smarty_tpl->tpl_vars['INSPECTED_USER_ID']->value;?>
+              <input type="hidden" name="userid" value="<?php echo $_smarty_tpl->tpl_vars['INSPECTED_USER_ID']->value;?>
 ">
               <button class="btn btn-primary btn-lg btn-block" type="submit">Restituir</button>
             </form>
             <br>
             <?php }?>
-           <form method="post" action="../../actions/deleteuser.php">
-            <input type="hidden" name="userid" value="<?php echo $_smarty_tpl->tpl_vars['INSPECTED_USER_ID']->value;?>
+            <form method="post" action="../../actions/deleteuser.php">
+              <input type="hidden" name="userid" value="<?php echo $_smarty_tpl->tpl_vars['INSPECTED_USER_ID']->value;?>
 ">
               <button class="btn btn-primary btn-lg btn-block" type="submit" >Apagar definitivamente esta conta</button>
             </form>

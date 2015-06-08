@@ -34,7 +34,7 @@ function getTopics($idprojeto){
 	try{
 		global $conn;
 		$stmt = $conn->prepare("SELECT idTopico,dcriacao,nometopico,descricao,username FROM topico, users
-			WHERE idProjeto=? AND idcriador=iduser");
+			WHERE idProjeto=? AND idcriador=iduser ORDER BY dcriacao DESC");
 		$stmt->execute(array($idprojeto));
 		$topics=$stmt->fetchAll();
 	}catch(PDOException $e){

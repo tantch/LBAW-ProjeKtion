@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2015-06-05 10:43:22
+<?php /* Smarty version Smarty-3.1.15, created on 2015-06-08 03:07:16
          compiled from "/usr/users2/mieic2012/ei12037/public_html/LBAW/proto/templates/user/perfil.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:1297821095556f7e2eed5307-13506693%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '6c50eccccb41409d15d02e7394634585bfd5806c' => 
     array (
       0 => '/usr/users2/mieic2012/ei12037/public_html/LBAW/proto/templates/user/perfil.tpl',
-      1 => 1433492288,
+      1 => 1433725619,
       2 => 'file',
     ),
   ),
@@ -22,6 +22,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'profileurl' => 0,
     'view_username' => 0,
     'view_picurl' => 0,
+    'defaultpic' => 0,
     'view_nome' => 0,
     'view_dnascimento' => 0,
     'view_genero' => 0,
@@ -55,10 +56,17 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                      </div>
 
                  </div>
+                 <?php if ($_smarty_tpl->tpl_vars['view_picurl']->value) {?>
                  <div class="col-lg-12"><a href="" ><br><img title="profile image" class="img-responsive center-block" src=<?php echo $_smarty_tpl->tpl_vars['view_picurl']->value;?>
  width="340em"></a>
                      <br>
                  </div>
+                 <?php } else { ?>
+                 <div class="col-lg-12"><a href="" ><br><img title="profile image" class="img-responsive center-block" src="<?php echo $_smarty_tpl->tpl_vars['defaultpic']->value;?>
+" width="340em"></a>
+                     <br>
+                 </div>
+                 <?php }?>
              </div>
          </div>
 
