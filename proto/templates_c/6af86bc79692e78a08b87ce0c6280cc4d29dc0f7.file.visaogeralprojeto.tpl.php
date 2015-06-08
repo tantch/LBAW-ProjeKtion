@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2015-06-08 19:24:16
+<?php /* Smarty version Smarty-3.1.15, created on 2015-06-08 20:37:28
          compiled from "/usr/users2/mieic2012/ei12037/public_html/LBAW/proto/templates/user/visaogeralprojeto.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:21745106255743221dd08c8-05094365%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '6af86bc79692e78a08b87ce0c6280cc4d29dc0f7' => 
     array (
       0 => '/usr/users2/mieic2012/ei12037/public_html/LBAW/proto/templates/user/visaogeralprojeto.tpl',
-      1 => 1433784255,
+      1 => 1433788645,
       2 => 'file',
     ),
   ),
@@ -81,15 +81,15 @@ $_smarty_tpl->tpl_vars['cat']->_loop = true;
                             <div class="panel panel-default">
                                 <div class="panel-heading">
                                     <h4 class="panel-title">
-                                        
+
                                         <br>
                                         <h4>
-                                        <?php echo $_smarty_tpl->tpl_vars['cat']->value['nomecat'];?>
+                                            <?php echo $_smarty_tpl->tpl_vars['cat']->value['nomecat'];?>
 
                                         </h4>
                                         <br>
-                                        
-                                       
+
+
                                     </h4>
                                 </div>
 
@@ -280,22 +280,22 @@ pages/user/perfil.php?userid=<?php echo $_smarty_tpl->tpl_vars['assignement']->v
             </div>
         </div>
         <!-- /.panel-body -->
-         <br>
-    <br>
-    <form action="../../actions/allocateUserTask.php"  method="post">
-        <label>Username</label>
-        <input type="text" name="username" class="form-control" value="" required>
-        <input type="hidden" name="tarefaid" value=<?php echo $_smarty_tpl->tpl_vars['chore']->value['idtarefa'];?>
+        <br>
+        <br>
+        <form action="../../actions/allocateUserTask.php"  method="post">
+            <label>Username</label>
+            <input type="text" name="username" class="form-control" value="" required>
+            <input type="hidden" name="tarefaid" value=<?php echo $_smarty_tpl->tpl_vars['chore']->value['idtarefa'];?>
 >
-        <input type="hidden" name="projetoid" value=<?php echo $_smarty_tpl->tpl_vars['idproj']->value;?>
+            <input type="hidden" name="projetoid" value=<?php echo $_smarty_tpl->tpl_vars['idproj']->value;?>
 >
-        <button class="btn btn-primary btn-lg btn-block" type="submit" >Alocar colaborador</button>
+            <button class="btn btn-primary btn-lg btn-block" type="submit" >Alocar colaborador</button>
 
-    </form>
-    <br>
-    <br>
+        </form>
+        <br>
+        <br>
     </div>
-    
+
     <!-- /.panel -->
 </div>
 <!-- /.col-lg-6 -->
@@ -303,7 +303,8 @@ pages/user/perfil.php?userid=<?php echo $_smarty_tpl->tpl_vars['assignement']->v
 
 <br>
 <br>
-<a href="http://paginas.fe.up.pt/~ei12037/LBAW/proto/pages/user/forum.php?idprojeto=<?php echo $_smarty_tpl->tpl_vars['idproj']->value;?>
+<a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+pages/user/forum.php?idprojeto=<?php echo $_smarty_tpl->tpl_vars['idproj']->value;?>
 ">
     <button class="btn btn-primary btn-lg btn-block" >Fórum</button>
 </a>
@@ -325,22 +326,28 @@ pages/user/perfil.php?userid=<?php echo $_smarty_tpl->tpl_vars['assignement']->v
 foreach ($_from as $_smarty_tpl->tpl_vars['roleUsers']->key => $_smarty_tpl->tpl_vars['roleUsers']->value) {
 $_smarty_tpl->tpl_vars['roleUsers']->_loop = true;
 ?>
-    
+     <form action="../../actions/promoteToCoord.php" method="post">
     <p class="text-center"> 
         <?php echo $_smarty_tpl->tpl_vars['roleUsers']->value['username'];?>
  - <?php echo $_smarty_tpl->tpl_vars['roleUsers']->value['funcaoproj'];?>
  
-        <?php if ('role'=='Master') {?>
-        <button type="button" class="btn btn-default btn-xs glyphicon glyphicon-name">Despromover a colaborador</button>
-
-        <?php }?>
 
         <?php if ($_smarty_tpl->tpl_vars['role']->value!='Colaborador') {?>
+        <?php if ($_smarty_tpl->tpl_vars['roleUsers']->value['funcaoproj']=='Colaborador') {?>
+       
+           <input type="hidden" name="iduser" value=<?php echo $_smarty_tpl->tpl_vars['roleUsers']->value['iduser'];?>
+>
+           <input type="hidden" name="idproj" value=<?php echo $_smarty_tpl->tpl_vars['idproj']->value;?>
+>
+           <button type="submit" class="btn btn-default btn-xs">Promover a Coordenador</button>
+      
 
-        <button type="button" class="btn btn-default btn-xs">Promover a Coordenador</button>
-        <?php }?>
-    </p>
-    <?php } ?>
+       <?php }?>
+       <?php }?>
+   </p>
+    </form>
+   <?php } ?>
+
 </div>
 <?php echo $_smarty_tpl->getSubTemplate ('common/footer.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0);?>
 <?php }} ?>

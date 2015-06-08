@@ -38,14 +38,14 @@
                             <div class="panel panel-default">
                                 <div class="panel-heading">
                                     <h4 class="panel-title">
-                                        
+
                                         <br>
                                         <h4>
-                                        {$cat.nomecat}
+                                            {$cat.nomecat}
                                         </h4>
                                         <br>
-                                        
-                                       
+
+
                                     </h4>
                                 </div>
 
@@ -207,20 +207,20 @@
             </div>
         </div>
         <!-- /.panel-body -->
-         <br>
-    <br>
-    <form action="../../actions/allocateUserTask.php"  method="post">
-        <label>Username</label>
-        <input type="text" name="username" class="form-control" value="" required>
-        <input type="hidden" name="tarefaid" value={$chore.idtarefa}>
-        <input type="hidden" name="projetoid" value={$idproj}>
-        <button class="btn btn-primary btn-lg btn-block" type="submit" >Alocar colaborador</button>
+        <br>
+        <br>
+        <form action="../../actions/allocateUserTask.php"  method="post">
+            <label>Username</label>
+            <input type="text" name="username" class="form-control" value="" required>
+            <input type="hidden" name="tarefaid" value={$chore.idtarefa}>
+            <input type="hidden" name="projetoid" value={$idproj}>
+            <button class="btn btn-primary btn-lg btn-block" type="submit" >Alocar colaborador</button>
 
-    </form>
-    <br>
-    <br>
+        </form>
+        <br>
+        <br>
     </div>
-    
+
     <!-- /.panel -->
 </div>
 <!-- /.col-lg-6 -->
@@ -228,7 +228,7 @@
 
 <br>
 <br>
-<a href="http://paginas.fe.up.pt/~ei12037/LBAW/proto/pages/user/forum.php?idprojeto={$idproj}">
+<a href="{$BASE_URL}pages/user/forum.php?idprojeto={$idproj}">
     <button class="btn btn-primary btn-lg btn-block" >Fórum</button>
 </a>
 <br>
@@ -245,19 +245,23 @@
 </div>
 <div class="panel-body">
     {foreach $allroles as $roleUsers}
-    
+     <form action="../../actions/promoteToCoord.php" method="post">
     <p class="text-center"> 
         {$roleUsers.username} - {$roleUsers.funcaoproj} 
-        {if role eq 'Master'}
-        <button type="button" class="btn btn-default btn-xs glyphicon glyphicon-name">Despromover a colaborador</button>
-
-        {/if}
 
         {if $role neq 'Colaborador'}
+        {if $roleUsers.funcaoproj eq 'Colaborador'}
+       
+           <input type="hidden" name="iduser" value={$roleUsers.iduser}>
+           <input type="hidden" name="idproj" value={$idproj}>
+           <button type="submit" class="btn btn-default btn-xs">Promover a Coordenador</button>
+      
 
-        <button type="button" class="btn btn-default btn-xs">Promover a Coordenador</button>
-        {/if}
-    </p>
-    {/foreach}
+       {/if}
+       {/if}
+   </p>
+    </form>
+   {/foreach}
+
 </div>
 {include file='common/footer.tpl'}

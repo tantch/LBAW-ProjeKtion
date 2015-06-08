@@ -15,7 +15,6 @@ if(checkIfBanned($_POST['userid'])==0){
 }
 else{
 	if(banUser($_POST['userid'],0)==TRUE){
-		echo 'nana';
 		$_SESSION['success_messages'][] = 'Os serviços ao utilizador foram restituídos.';
 		header("Location: $BASE_URL");
 		exit;
