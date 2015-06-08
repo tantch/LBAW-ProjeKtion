@@ -60,19 +60,20 @@
                                 </div>
                                 {/foreach}
                             </div>
+
                             <div class="panel panel-default">
                                 <div class="panel-heading">
                                     <h4 class="panel-title">
                                        <div class="panel-heading">
-                                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">Adicionar categoria</a>
+                                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">Adicionar categoria
+                                        </a>
                                     </div>
                                 </h4>
+                            </div>
 
-                                <!-- para obter as tarefas dentro de uma dada categoria (não está a funcionar) --> 
+                            <div id="collapseOne" class="panel-collapse collapse in">
 
-                                <div id="collapseOne" class="panel-collapse collapse in">
-
-                                 <form action="../../actions/novacategoria.php" method="post" enctype="multipart/form-data">
+                                <form action="../../actions/novacategoria.php" method="post" enctype="multipart/form-data">
                                     <div class="panel-body">
                                         <div class="form-group col-lg-6 style="float: none;" ">
                                             <label>Titúlo da categoria</label>
@@ -80,125 +81,131 @@
                                             <button type="submit" class="btn btn-primary" >Submeter</button>
                                         </div>
                                         <input type="hidden" name="idprojeto" value="{$idproj}">
-
                                     </div>
-
-
-                                </div>
-                            </div><!-- aqui vem o fim do foreach do $chores -->
-
-                        </div>
-                    </div>  
-
-
-                    <!-- .panel-body -->
-                </div>
-
-            </section>
-            <!-- /.panel -->
-        </div>
-        <!-- /.col-lg-12 -->
-    </div>
-    <br>
-    {if $role ne 'colaborador'}
-    <form method="post" action="../../actions/novocolaborador.php">
-        <div class="row infos">
-            <div class="box-content">
-                <H4 class="text-center">Insira o username de um utilizador para o adicionar ao projeto como colaborador</H4>
-                <div id="messages" class="container-fluid">
-                    <div class="row" id="test">
-                        <div class="col-sm-6 col-sm-offset-3">
-                            <form class="" id="searchForm" method="get">
-                                <div class="form-group">
-                                    <input class="form-control" type="text" id="usersearch" name="usersearch" onfocus="this.value = this.value" autofocus="autofocus">
-                                </div>
-                                <input type="submit" hidden="true">
-                            </form>
-                            <div id="results">
-                                <br>
+                                </form>
                             </div>
-                            <input type="hidden" name="idprojeto" value="{$idproj}">
-
-                            <button class="btn btn-primary btn-lg btn-block" type="submit" >Adicionar utilizador</button>
-                            <br>
-                        </div>
                     </div>
-                </div>
+                </div>  
+
+
+                <!-- .panel-body -->
             </div>
-        </div>
-    </form>
-    {/if}
 
-
-    <br>
-    {foreach $chores as $chore}
-    <!-- /.row -->
-    <div class="row">
-
-        <div class="col-lg-4">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h4 >{$chore.nometarefa}</h4>
-                </div>
-                <!-- /.panel-heading -->
-                <div class="panel-body">
-                    <!-- Nav tabs -->
-                    <ul class="nav nav-tabs">
-                        <li class="active"><a href="##description{$chore.idtarefa}" data-toggle="tab">Descrição</a>
-                        </li>
-                        <li><a href="#colaboradores{$chore.idtarefa}" data-toggle="tab">Colaboradores Escalonados</a>
-                        </li>
-                    </ul>
-
-                    <!-- Tab panes -->
-                    <div class="tab-content">
-                        <div class="tab-pane fade in active" id="description{$chore.idtarefa}">
-                            <p>{$chore.descricaotarefa}</p>
-                        </div>
-                        <div class="tab-pane fade" id="colaboradores{$chore.idtarefa}">
-
-                            {foreach $assignements as $assignement}
-                            {if $assignement.idtarefa eq $chore.idtarefa }
-                            <p><a href="{$BASE_URL}pages/user/perfil.php?userid={$assignement.iduser}">
-                                {$assignement.nome}
-                            </a>
-                        </p>
-                        {/if}
-
-                        {/foreach}
-                    </div>
-
-                </div>
-            </div>
-            <!-- /.panel-body -->
-        </div>
+        </section>
         <!-- /.panel -->
     </div>
-    <!-- /.col-lg-6 -->
-    {/foreach}
+    <!-- /.col-lg-12 -->
+</div>
+<br>
+{if $role ne 'colaborador'}
+<form method="post" action="../../actions/novocolaborador.php">
+    <div class="row infos">
+        <div class="box-content">
+            <H4 class="text-center">Insira o username de um utilizador para o adicionar ao projeto como colaborador</H4>
+            <div id="messages" class="container-fluid">
+                <div class="row" id="test">
+                    <div class="col-sm-6 col-sm-offset-3">
+                        <form class="" id="searchForm" method="get">
+                            <div class="form-group">
+                                <input class="form-control" type="text" id="usersearch" name="usersearch" onfocus="this.value = this.value" autofocus="autofocus">
+                            </div>
+                            <input type="submit" hidden="true">
+                        </form>
+                        <div id="results">
+                            <br>
+                        </div>
+                        <input type="hidden" name="idprojeto" value="{$idproj}">
 
-    <div class="row">
-        <div class="col-lg-12" >
-            <div class="panel panel-default" id="editBox">
-                <div class="panel-heading">
-                   Gerir permissões
-               </div>
+                        <button class="btn btn-primary btn-lg btn-block" type="submit" >Adicionar utilizador</button>
+                        <br>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+{/if}
+
+
+<br>
+{foreach $chores as $chore}
+<!-- /.row -->
+<div class="row">
+
+    <div class="col-lg-4">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 >{$chore.nometarefa}</h4>
+            </div>
+            <!-- /.panel-heading -->
+            <div class="panel-body">
+                <!-- Nav tabs -->
+                <ul class="nav nav-tabs">
+                    <li class="active"><a href="##description{$chore.idtarefa}" data-toggle="tab">Descrição</a>
+                    </li>
+                    <li><a href="#colaboradores{$chore.idtarefa}" data-toggle="tab">Colaboradores Escalonados</a>
+                    </li>
+                </ul>
+
+                <!-- Tab panes -->
+                <div class="tab-content">
+                    <div class="tab-pane fade in active" id="description{$chore.idtarefa}">
+                        <p>{$chore.descricaotarefa}</p>
+                    </div>
+                    <div class="tab-pane fade" id="colaboradores{$chore.idtarefa}">
+
+                        {foreach $assignements as $assignement}
+                        {if $assignement.idtarefa eq $chore.idtarefa }
+                        <p><a href="{$BASE_URL}pages/user/perfil.php?userid={$assignement.iduser}">
+                            {$assignement.nome}
+                        </a>
+                    </p>
+                    {/if}
+
+                    {/foreach}
+                </div>
+
+            </div>
+        </div>
+        <!-- /.panel-body -->
+    </div>
+    <!-- /.panel -->
+</div>
+<!-- /.col-lg-6 -->
+{/foreach}
+
+<br>
+<br>
+<a href="http://paginas.fe.up.pt/~ei12037/LBAW/proto/pages/user/forum.php?idprojeto={$idproj}">
+    <button class="btn btn-primary btn-lg btn-block" >Fórum</button>
+</a>
+<br>
+<br>
+
+<div class="row">
+    <div class="col-lg-12" >
+        <div class="panel panel-default" id="editBox">
+            <div class="panel-heading">
+               Gerir permissões
            </div>
        </div>
    </div>
-   <div class="panel-body">
+</div>
+<div class="panel-body">
     {foreach $allroles as $roleUsers}
     
-    <p class="text-center"> {$roleUsers.username} - {$roleUsers.funcaoproj} </p>
-    {if role eq 'Master'}
-    <button type="button" class="btn btn-default btn-xs glyphicon glyphicon-name">Despromover a colaborador</button>
-    
-    {/if}
-    
-    {if $role neq 'Colaborador'}
-    
-    <button type="button" class="btn btn-default btn-xs">Promover a Coordenador</button>
-    {/if}
+    <p class="text-center"> 
+        {$roleUsers.username} - {$roleUsers.funcaoproj} 
+        {if role eq 'Master'}
+        <button type="button" class="btn btn-default btn-xs glyphicon glyphicon-name">Despromover a colaborador</button>
+
+        {/if}
+
+        {if $role neq 'Colaborador'}
+
+        <button type="button" class="btn btn-default btn-xs">Promover a Coordenador</button>
+        {/if}
+    </p>
     {/foreach}
 </div>
 {include file='common/footer.tpl'}
