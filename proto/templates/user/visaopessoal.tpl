@@ -4,7 +4,7 @@
   <div class="row">
     <div id="breadcrumb" class="col-xs-12">
       <ol class="breadcrumb pull-left">
-        <li><a href="visaopessoal.php">Visao Pessoal</a></li>
+        <li><a href="{$BASE_URL}pages/user/visaopessoal.php">Visao Pessoal</a></li>
 
       </ol>
     </div>

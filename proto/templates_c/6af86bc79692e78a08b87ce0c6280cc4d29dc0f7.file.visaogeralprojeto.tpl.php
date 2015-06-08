@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2015-06-08 20:37:28
+<?php /* Smarty version Smarty-3.1.15, created on 2015-06-08 22:54:12
          compiled from "/usr/users2/mieic2012/ei12037/public_html/LBAW/proto/templates/user/visaogeralprojeto.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:21745106255743221dd08c8-05094365%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '6af86bc79692e78a08b87ce0c6280cc4d29dc0f7' => 
     array (
       0 => '/usr/users2/mieic2012/ei12037/public_html/LBAW/proto/templates/user/visaogeralprojeto.tpl',
-      1 => 1433788645,
+      1 => 1433796850,
       2 => 'file',
     ),
   ),
@@ -19,17 +19,17 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'unifunc' => 'content_55743221eb9ac2_23436833',
   'variables' => 
   array (
+    'BASE_URL' => 0,
+    'idproj' => 0,
     'projName' => 0,
     'categories' => 0,
     'cat' => 0,
     'chores' => 0,
     'chore' => 0,
-    'USERID' => 0,
-    'idproj' => 0,
     'role' => 0,
+    'USERID' => 0,
     'assignements' => 0,
     'assignement' => 0,
-    'BASE_URL' => 0,
     'allroles' => 0,
     'roleUsers' => 0,
   ),
@@ -44,8 +44,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   <div class="row">
     <div id="breadcrumb" class="col-xs-12">
       <ol class="breadcrumb pull-left">
-        <li><a href="visaopessoal.php">Visao Pessoal</a></li>
-        <li><a href="projeto.php">Visao Projeto</a></li>
+        <li><a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+pages/user/visaopessoal.php">Visao Pessoal</a></li>
+        <li><a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+pages/user/visaogeralprojeto.php?idprojeto=<?php echo $_smarty_tpl->tpl_vars['idproj']->value;?>
+">Visao Projeto</a></li>
 
     </ol>
 </div>
@@ -103,14 +106,15 @@ $_smarty_tpl->tpl_vars['chore']->_loop = true;
 ?>
                                     <?php if ($_smarty_tpl->tpl_vars['chore']->value['idcat']===$_smarty_tpl->tpl_vars['cat']->value['idcat']) {?>
                                     <div class="panel-body">
-                                        <a href=<?php echo $_smarty_tpl->tpl_vars['chore']->value['idcat'];?>
- data-toggle="tab"><?php echo $_smarty_tpl->tpl_vars['chore']->value['nometarefa'];?>
+                                        <a href="#sel<?php echo $_smarty_tpl->tpl_vars['chore']->value['idtarefa'];?>
+" data-toggle="tab"><?php echo $_smarty_tpl->tpl_vars['chore']->value['nometarefa'];?>
  </a>
                                     </div>
                                     <?php }?>
 
 
                                     <?php } ?>
+                                    <?php if ($_smarty_tpl->tpl_vars['role']->value!='Colaborador') {?>
                                     <div class="panel panel-default">
                                         <div class="panel-heading">
                                             <h4 class="panel-title">
@@ -147,13 +151,14 @@ $_smarty_tpl->tpl_vars['chore']->_loop = true;
                                             </div>
                                         </form>
                                     </div>
+                                    <?php }?>
                                 </div>
                                 <!-- aqui vem o fim do foreach do $chores -->
 
                             </div>
                             <?php } ?>
                         </div>
-
+                        <?php if ($_smarty_tpl->tpl_vars['role']->value!='Colaborador') {?>
                         <div class="panel panel-default">
                             <div class="panel-heading">
                                 <h4 class="panel-title">
@@ -178,6 +183,7 @@ $_smarty_tpl->tpl_vars['chore']->_loop = true;
                                 </div>
                             </form>
                         </div>
+                        <?php }?>
                     </div>
                 </div>  
 
@@ -191,7 +197,7 @@ $_smarty_tpl->tpl_vars['chore']->_loop = true;
     <!-- /.col-lg-12 -->
 </div>
 <br>
-<?php if ($_smarty_tpl->tpl_vars['role']->value!='colaborador') {?>
+<?php if ($_smarty_tpl->tpl_vars['role']->value!='Colaborador') {?>
 <form method="post" action="../../actions/novocolaborador.php">
     <div class="row infos">
         <div class="box-content">
@@ -233,8 +239,9 @@ $_smarty_tpl->tpl_vars['chore']->_loop = true;
 
     <div class="col-lg-4">
         <div class="panel panel-default">
-            <div class="panel-heading">
-                <h4 ><?php echo $_smarty_tpl->tpl_vars['chore']->value['nometarefa'];?>
+            <div class="panel-heading"  >
+                <h4 id="sel<?php echo $_smarty_tpl->tpl_vars['chore']->value['idtarefa'];?>
+"><?php echo $_smarty_tpl->tpl_vars['chore']->value['nometarefa'];?>
 </h4>
             </div>
             <!-- /.panel-heading -->
@@ -280,6 +287,7 @@ pages/user/perfil.php?userid=<?php echo $_smarty_tpl->tpl_vars['assignement']->v
             </div>
         </div>
         <!-- /.panel-body -->
+        <?php if ($_smarty_tpl->tpl_vars['role']->value!='Colaborador') {?>
         <br>
         <br>
         <form action="../../actions/allocateUserTask.php"  method="post">
@@ -294,6 +302,7 @@ pages/user/perfil.php?userid=<?php echo $_smarty_tpl->tpl_vars['assignement']->v
         </form>
         <br>
         <br>
+        <?php }?>
     </div>
 
     <!-- /.panel -->
@@ -315,7 +324,11 @@ pages/user/forum.php?idprojeto=<?php echo $_smarty_tpl->tpl_vars['idproj']->valu
     <div class="col-lg-12" >
         <div class="panel panel-default" id="editBox">
             <div class="panel-heading">
+            <?php if ($_smarty_tpl->tpl_vars['role']->value!='Colaborador') {?>
              Gerir permissões
+            <?php } else { ?>
+            Utilizadores associados ao projeto
+            <?php }?>
          </div>
      </div>
  </div>

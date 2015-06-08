@@ -6,8 +6,8 @@
   <div class="row">
     <div id="breadcrumb" class="col-xs-12">
       <ol class="breadcrumb pull-left">
-        <li><a href="visaopessoal.php">Visao Pessoal</a></li>
-        <li><a href="projeto.php">Visao Projeto</a></li>
+        <li><a href="{$BASE_URL}pages/user/visaopessoal.php">Visao Pessoal</a></li>
+        <li><a href="{$BASE_URL}pages/user/visaogeralprojeto.php?idprojeto={$idproj}">Visao Projeto</a></li>
 
     </ol>
 </div>
@@ -55,12 +55,13 @@
                                     {foreach $chores as $chore}
                                     {if $chore.idcat===$cat.idcat}
                                     <div class="panel-body">
-                                        <a href={$chore.idcat} data-toggle="tab">{$chore.nometarefa} </a>
+                                        <a href="#sel{$chore.idtarefa}" data-toggle="tab">{$chore.nometarefa} </a>
                                     </div>
                                     {/if}
 
 
                                     {/foreach}
+                                    {if $role neq 'Colaborador'}
                                     <div class="panel panel-default">
                                         <div class="panel-heading">
                                             <h4 class="panel-title">
@@ -93,13 +94,14 @@
                                             </div>
                                         </form>
                                     </div>
+                                    {/if}
                                 </div>
                                 <!-- aqui vem o fim do foreach do $chores -->
 
                             </div>
                             {/foreach}
                         </div>
-
+                        {if $role neq 'Colaborador'}
                         <div class="panel panel-default">
                             <div class="panel-heading">
                                 <h4 class="panel-title">
@@ -123,6 +125,7 @@
                                 </div>
                             </form>
                         </div>
+                        {/if}
                     </div>
                 </div>  
 
@@ -136,7 +139,7 @@
     <!-- /.col-lg-12 -->
 </div>
 <br>
-{if $role ne 'colaborador'}
+{if $role neq 'Colaborador'}
 <form method="post" action="../../actions/novocolaborador.php">
     <div class="row infos">
         <div class="box-content">
@@ -173,8 +176,8 @@
 
     <div class="col-lg-4">
         <div class="panel panel-default">
-            <div class="panel-heading">
-                <h4 >{$chore.nometarefa}</h4>
+            <div class="panel-heading"  >
+                <h4 id="sel{$chore.idtarefa}">{$chore.nometarefa}</h4>
             </div>
             <!-- /.panel-heading -->
             <div class="panel-body">
@@ -207,6 +210,7 @@
             </div>
         </div>
         <!-- /.panel-body -->
+        {if $role neq 'Colaborador'}
         <br>
         <br>
         <form action="../../actions/allocateUserTask.php"  method="post">
@@ -219,6 +223,7 @@
         </form>
         <br>
         <br>
+        {/if}
     </div>
 
     <!-- /.panel -->
@@ -238,7 +243,11 @@
     <div class="col-lg-12" >
         <div class="panel panel-default" id="editBox">
             <div class="panel-heading">
+            {if $role neq 'Colaborador'}
              Gerir permissões
+            {else}
+            Utilizadores associados ao projeto
+            {/if}
          </div>
      </div>
  </div>

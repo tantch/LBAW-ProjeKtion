@@ -139,7 +139,8 @@ function checkIfUserExists($username,$email){
       FROM users
       WHERE username=?
       OR email=?");
-    $success=$stmt->execute(array($username,$email));
+    $stmt->execute(array($username,$email));
+    $result=$stmt->fetch();
   }catch(PDOException $e){
     if(isset($_SESSION['user_id'])){
       $log=$e->getMessage()." ___Date=".date("Y-m-d")." ___ idUser=".$_SESSION['user_id'].PHP_EOL;
@@ -149,7 +150,7 @@ function checkIfUserExists($username,$email){
     error_log($log,3,"../error.log");
     return -1;
   }
-  return $success;
+  return count($result);
 
 }
 function fetchProfilePic($userid){

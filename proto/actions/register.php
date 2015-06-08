@@ -40,14 +40,9 @@ $check=checkparams();
 
 if ($check>0){
   $result=checkIfUserExists($username,$email);
-  if($result!=false){
-    $_SESSION['error_messages'][]='Já existe um utilizador com este username ou e-mail.';
-    header("Location: {$BASE_URL}pages/user/register.php");
-    exit;
-
-  }else{
+  if($result>0){
     $hashed_pass=hash('sha256',$_POST['password'],false);
-    echo "here1";
+   
     $success=createUser($_POST['username'],$_POST['name'],$hashed_pass,$_POST['email']);
     if($success===-1) {
       $_SESSION['error_messages'][]='Houve um erro interno. Faremos o máximo para o resolver brevemente. Tente novamente mais tarde.';
@@ -60,6 +55,10 @@ if ($check>0){
     $_SESSION['username']=$user['username'];
     $_SESSION['user_id']=$user['iduser'];
     header("Location: ". $BASE_URL . "pages/user/visaopessoal.php");
-  }
+  }else{
+   $_SESSION['error_messages'][]='Já existe um utilizador com este username ou e-mail.';
+   header("Location: {$BASE_URL}pages/user/register.php");
+   exit;
+ }
 }
 ?>

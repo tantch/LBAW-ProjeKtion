@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2015-06-05 19:25:46
+<?php /* Smarty version Smarty-3.1.15, created on 2015-06-08 22:40:01
          compiled from "/usr/users2/mieic2012/ei12037/public_html/LBAW/proto/templates/user/visaopessoal.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:872144589556f123e615f81-66401422%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '85e0bbfa8af101efce0a528b10b1faadd5303065' => 
     array (
       0 => '/usr/users2/mieic2012/ei12037/public_html/LBAW/proto/templates/user/visaopessoal.tpl',
-      1 => 1433524935,
+      1 => 1433795959,
       2 => 'file',
     ),
   ),
@@ -19,8 +19,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'unifunc' => 'content_556f123e702184_10089076',
   'variables' => 
   array (
-    'projects' => 0,
     'BASE_URL' => 0,
+    'projects' => 0,
     'proj' => 0,
     'USERID' => 0,
     'chores' => 0,
@@ -35,7 +35,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   <div class="row">
     <div id="breadcrumb" class="col-xs-12">
       <ol class="breadcrumb pull-left">
-        <li><a href="visaopessoal.php">Visao Pessoal</a></li>
+        <li><a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+pages/user/visaopessoal.php">Visao Pessoal</a></li>
 
       </ol>
     </div>
