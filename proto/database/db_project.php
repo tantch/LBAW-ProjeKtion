@@ -81,6 +81,19 @@ function fetchAssociatedChores($idcategoria){
     return $chores;
 }
 
+function alocateUserTask($iduser,$idtarefa){
+	try{
+		global $conn;
+		$stmt = $conn->prepare("INSERT INTO ueralocadotarefa
+            VALUES (?,?)");
+		$stmt->execute(array($iduser,$idtarefa));
+	}catch(PDOException $e){
+		$log=$e->getMessage()+" | "+date(DATE_RFC2822)+" | "+$USERID+"\n";
+		error_log($log,3,$BASE_DIR+"/tmp/error.log");
+		return -1;
+	}
+}
+
 
 
 
