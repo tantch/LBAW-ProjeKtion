@@ -35,3 +35,42 @@ SQLSTATE[23505]: Unique violation: 7 ERROR:  duplicate key value violates unique
 DETAIL:  Key (username, email)=(bellamy, vanialeite94@gmail.com) already exists. ___Date= 2015-06-08
 SQLSTATE[23505]: Unique violation: 7 ERROR:  duplicate key value violates unique constraint "users_username_email_key"
 DETAIL:  Key (username, email)=(bellamy, vanialeite94@gmail.com) already exists. ___Date= 2015-06-08
+SQLSTATE[42703]: Undefined column: 7 ERROR:  column "phone" of relation "users" does not exist
+LINE 1: UPDATE users SET phone=$1 WHERE iduser=$2
+                         ^ ___Date=2015-06-08 ___ idUser=10
+SQLSTATE[42703]: Undefined column: 7 ERROR:  column "phone" of relation "users" does not exist
+LINE 1: UPDATE users SET phone=$1 WHERE iduser=$2
+                         ^ ___Date=2015-06-08 ___ idUser=175
+SQLSTATE[42703]: Undefined column: 7 ERROR:  column "phone" of relation "users" does not exist
+LINE 1: UPDATE users SET phone=$1 WHERE iduser=$2
+                         ^ ___Date=2015-06-08 ___ idUser=175
+SQLSTATE[42703]: Undefined column: 7 ERROR:  column "phone" of relation "users" does not exist
+LINE 1: UPDATE users SET phone=$1 WHERE iduser=$2
+                         ^ ___Date=2015-06-09 ___ idUser=175
+SQLSTATE[42703]: Undefined column: 7 ERROR:  column "phone" of relation "users" does not exist
+LINE 1: UPDATE users SET phone=$1 WHERE iduser=$2
+                         ^ ___Date=2015-06-09 ___ idUser=175
+SQLSTATE[42703]: Undefined column: 7 ERROR:  column "phone" of relation "users" does not exist
+LINE 1: UPDATE users SET phone=$1 WHERE iduser=$2
+                         ^ ___Date=2015-06-09 ___ idUser=175
+SQLSTATE[42703]: Undefined column: 7 ERROR:  column "phone" of relation "users" does not exist
+LINE 1: UPDATE users SET phone=$1 WHERE iduser=$2
+                         ^ ___Date=2015-06-09 ___ idUser=177
+SQLSTATE[42703]: Undefined column: 7 ERROR:  column "phone" of relation "users" does not exist
+LINE 1: UPDATE users SET phone=$1 WHERE iduser=$2
+                         ^ ___Date=2015-06-09 ___ idUser=177
+SQLSTATE[42703]: Undefined column: 7 ERROR:  column "phone" of relation "users" does not exist
+LINE 1: UPDATE users SET phone=$1 WHERE iduser=$2
+                         ^ ___Date=2015-06-09 ___ idUser=177
+SQLSTATE[42703]: Undefined column: 7 ERROR:  column "phone" of relation "users" does not exist
+LINE 1: UPDATE users SET phone=$1 WHERE iduser=$2
+                         ^ ___Date=2015-06-09 ___ idUser=177
+SQLSTATE[42703]: Undefined column: 7 ERROR:  column "phone" of relation "users" does not exist
+LINE 1: UPDATE users SET phone=$1 WHERE iduser=$2
+                         ^ ___Date=2015-06-09 ___ idUser=177
+SQLSTATE[42703]: Undefined column: 7 ERROR:  column "phone" of relation "users" does not exist
+LINE 1: UPDATE users SET phone=$1 WHERE iduser=$2
+                         ^ ___Date=2015-06-09 ___ idUser=177
+SQLSTATE[42703]: Undefined column: 7 ERROR:  column "phone" of relation "users" does not exist
+LINE 1: UPDATE users SET phone=$1 WHERE iduser=$2
+                         ^ ___Date=2015-06-09 ___ idUser=177
