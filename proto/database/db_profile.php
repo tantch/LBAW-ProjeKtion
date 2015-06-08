@@ -6,8 +6,12 @@ function updateUserInfo($userid, $name, $morada, $dnascimento, $genero, $phone, 
 		$stmt = $conn->prepare("UPDATE users SET nome=?, dnascimento=?, genero=?, morada=?, telefone=?, email=?, profilepic=? WHERE iduser=?");
 		$stmt->execute(array($name,$dnascimento,$genero,$morada, $phone, $email,$profilepic,$userid));
 	}catch(PDOException $e){
-		$log=$e->getMessage()+" | "+date(DATE_RFC2822)+" | "+$userid+"\n";
-		error_log($log,3,$BASE_DIR+"/tmp/error.log");
+		if(isset($_SESSION['user_id'])){
+			$log=$e->getMessage()." ___Date=".date("Y-m-d")." ___ idUser=".$_SESSION['user_id']."\n";
+		}else{
+			$log=$e->getMessage()." ___Date= ".date("Y-m-d")."\n";
+		}
+		error_log($log,3,"../error.log");
 		return -1;
 	}
 

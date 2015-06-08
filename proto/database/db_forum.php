@@ -8,9 +8,12 @@ function createTopic($idproj,$nometopico,$descricao,$idcriador){
 		$stmt->execute(array($idproj,$nometopico,$descricao,$idcriador));
 		$lastId = $conn->lastInsertId("topico_idtopico_seq");
 	}catch(PDOException $e){
-		$log=$e->getMessage()+" | "+date(DATE_RFC2822)+" | "+$USERID+"\n";
-		$dir=$BASE_DIR+"/error.log";
-		error_log($log,3,$dir);
+		if(isset($_SESSION['user_id'])){
+			$log=$e->getMessage()." ___Date=".date("Y-m-d")." ___ idUser=".$_SESSION['user_id']."\n";
+		}else{
+			$log=$e->getMessage()." ___Date= ".date("Y-m-d")."\n";
+		}
+		error_log($log,3,"../error.log");
 		return -1;
 	}
 	return $lastId;
@@ -22,9 +25,12 @@ function createAnswer($idtopico,$texto,$iduser){
 		$stmt = $conn->prepare("INSERT INTO resposta (idtopico,texto,iduser) VALUES ( ?,?,?)");
 		$success=$stmt->execute(array($idtopico,$texto,$iduser));
 	}catch(PDOException $e){
-		$log=$e->getMessage()+" | "+date(DATE_RFC2822)+" | "+$USERID+"\n";
-		$dir=$BASE_DIR+"/error.log";
-		error_log($log,3,$dir);
+		if(isset($_SESSION['user_id'])){
+			$log=$e->getMessage()." ___Date=".date("Y-m-d")." ___ idUser=".$_SESSION['user_id']."\n";
+		}else{
+			$log=$e->getMessage()." ___Date= ".date("Y-m-d")."\n";
+		}
+		error_log($log,3,"../error.log");
 		return -1;
 	}
 	return $success;
@@ -38,8 +44,12 @@ function getTopics($idprojeto){
 		$stmt->execute(array($idprojeto));
 		$topics=$stmt->fetchAll();
 	}catch(PDOException $e){
-		$log=$e->getMessage()+" | "+date(DATE_RFC2822)+" | "+$USERID+"\n";
-		error_log($log,3,$BASE_DIR+"/tmp/error.log");
+		if(isset($_SESSION['user_id'])){
+			$log=$e->getMessage()." ___Date=".date("Y-m-d")." ___ idUser=".$_SESSION['user_id']."\n";
+		}else{
+			$log=$e->getMessage()." ___Date= ".date("Y-m-d")."\n";
+		}
+		error_log($log,3,"../error.log");
 		return -1;
 	}
 	return $topics;
@@ -53,8 +63,12 @@ function getTopicInfo($idtopico){
 		$stmt->execute(array($idtopico));
 		$topicInfo=$stmt->fetch();
 	}catch(PDOException $e){
-		$log=$e->getMessage()+" | "+date(DATE_RFC2822)+" | "+$USERID+"\n";
-		error_log($log,3,$BASE_DIR+"/tmp/error.log");
+		if(isset($_SESSION['user_id'])){
+			$log=$e->getMessage()." ___Date=".date("Y-m-d")." ___ idUser=".$_SESSION['user_id']."\n";
+		}else{
+			$log=$e->getMessage()." ___Date= ".date("Y-m-d")."\n";
+		}
+		error_log($log,3,"../error.log");
 		return -1;
 	}
 	return $topicInfo;
@@ -71,8 +85,12 @@ function getAnswers($idtopico){
 		$answers=$stmt->fetchAll();
 		return $answers;
 	}catch(PDOException $e){
-		$log=$e->getMessage()+" | "+date(DATE_RFC2822)+" | "+$USERID+"\n";
-		error_log($log,3,$BASE_DIR+"/tmp/error.log");
+		if(isset($_SESSION['user_id'])){
+			$log=$e->getMessage()." ___Date=".date("Y-m-d")." ___ idUser=".$_SESSION['user_id']."\n";
+		}else{
+			$log=$e->getMessage()." ___Date= ".date("Y-m-d")."\n";
+		}
+		error_log($log,3,"../error.log");
 		return -1;
 	}
 }
@@ -92,10 +110,14 @@ function getAnswersFTS($texto){
 		$stmt->execute(array($texto));
 		$answers=$stmt->fetchAll();
 		return $answers;
-		 
+		
 	}catch(PDOException $e){
-		$log=$e->getMessage()+" | "+date(DATE_RFC2822)+" | "+$USERID+"\n";
-		error_log($log,3,$BASE_DIR+"/tmp/error.log");
+		if(isset($_SESSION['user_id'])){
+			$log=$e->getMessage()." ___Date=".date("Y-m-d")." ___ idUser=".$_SESSION['user_id']."\n";
+		}else{
+			$log=$e->getMessage()." ___Date= ".date("Y-m-d")."\n";
+		}
+		error_log($log,3,"../error.log");
 		return -1;
 	}
 }

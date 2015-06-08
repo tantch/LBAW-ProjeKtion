@@ -10,9 +10,13 @@ function getRoleOnProj($idproject,$iduser){
    $stmt->execute(array($idproject,$iduser));
    $role= $stmt->fetch();
  }catch(PDOException $e){
-   $log=$e->getMessage()+" | "+date(DATE_RFC2822)+" | "+$USERID+"\n";
-   error_log($log,3,"../tmp/error.log");
-   return -1;
+   if(isset($_SESSION['user_id'])){
+      $log=$e->getMessage()." ___Date=".date("Y-m-d")." ___ idUser=".$_SESSION['user_id']."\n";
+    }else{
+      $log=$e->getMessage()." ___Date= ".date("Y-m-d")."\n";
+    }
+    error_log($log,3,"../error.log");
+    return -1;
  }
  return $role[funcaoproj];
 }
@@ -24,8 +28,30 @@ function addColaborador($iduser,$idproj){
       VALUES (?, ?, 'Colaborador')");
     $success=$stmt->execute(array($idproj,$iduser));
   }catch(PDOException $e){
-    $log=$e->getMessage()+" | "+date(DATE_RFC2822)+" | "+$userid+"\n";
-    error_log($log,3,$BASE_DIR+"/tmp/error.log");
+    if(isset($_SESSION['user_id'])){
+      $log=$e->getMessage()." ___Date=".date("Y-m-d")." ___ idUser=".$_SESSION['user_id']."\n";
+    }else{
+      $log=$e->getMessage()." ___Date= ".date("Y-m-d")."\n";
+    }
+    error_log($log,3,"../error.log");
+    return -1;
+  }
+  return $success;
+}
+
+function addTarefa($idcategoria,$idcriador,$nometarefa,$dfinal,$estado,$tipo,$idaceitepor,$descricaotarefa){
+  try{
+    global $conn;
+    $stmt = $conn->prepare("INSERT INTO tarefa (idcategoria,idcriador,nometarefa,dfinal,estadotarefa,tipotarefa,idaceitepor,descricaotarefa)
+      VALUES (?,?,?,?,?,?,?,?)");
+    $success=$stmt->execute(array($idcategoria,$idcriador,$nometarefa,$dfinal,$estado,$tipo,$idaceitepor,$descricaotarefa));
+  }catch(PDOException $e){
+    if(isset($_SESSION['user_id'])){
+      $log=$e->getMessage()." ___Date=".date("Y-m-d")." ___ idUser=".$_SESSION['user_id']."\n";
+    }else{
+      $log=$e->getMessage()." ___Date= ".date("Y-m-d")."\n";
+    }
+    error_log($log,3,"../error.log");
     return -1;
   }
   return $success;
@@ -38,8 +64,12 @@ function addCategoria($titulo,$idproj){
       VALUES (?, ?)");
     $success=$stmt->execute(array($titulo,$idproj));
   }catch(PDOException $e){
-    $log=$e->getMessage()+" | "+date(DATE_RFC2822)+" | "+$userid+"\n";
-    error_log($log,3,$BASE_DIR+"/tmp/error.log");
+    if(isset($_SESSION['user_id'])){
+      $log=$e->getMessage()." ___Date=".date("Y-m-d")." ___ idUser=".$_SESSION['user_id']."\n";
+    }else{
+      $log=$e->getMessage()." ___Date= ".date("Y-m-d")."\n";
+    }
+    error_log($log,3,"../error.log");
     return -1;
   }
   return $success;
@@ -55,9 +85,13 @@ function usersRoles($idproject){
    $stmt->execute(array($idproject));
    $users= $stmt->fetchAll();
  }catch(PDOException $e){
-   $log=$e->getMessage()+" | "+date(DATE_RFC2822)+" | "+$USERID+"\n";
-   error_log($log,3,$BASE_DIR."/tmp/error.log");
-   return -1;
+   if(isset($_SESSION['user_id'])){
+      $log=$e->getMessage()." ___Date=".date("Y-m-d")." ___ idUser=".$_SESSION['user_id']."\n";
+    }else{
+      $log=$e->getMessage()." ___Date= ".date("Y-m-d")."\n";
+    }
+    error_log($log,3,"../error.log");
+    return -1;
  }
  return $users;
 
@@ -75,9 +109,13 @@ function allChores($idproject){
    $stmt->execute(array($idproject));
    $chores= $stmt->fetchAll();
  }catch(PDOException $e){
-   $log=$e->getMessage()+" | "+date(DATE_RFC2822)+" | "+$USERID+"\n";
-   error_log($log,3,$BASE_DIR."/tmp/error.log");
-   return -1;
+   if(isset($_SESSION['user_id'])){
+      $log=$e->getMessage()." ___Date=".date("Y-m-d")." ___ idUser=".$_SESSION['user_id']."\n";
+    }else{
+      $log=$e->getMessage()." ___Date= ".date("Y-m-d")."\n";
+    }
+    error_log($log,3,"../error.log");
+    return -1;
  }
  return $chores;
 
@@ -95,9 +133,13 @@ function usersAsigned($idprojeto){
    $stmt->execute(array($idprojeto));
    $chores= $stmt->fetchAll();
  }catch(PDOException $e){
-   $log=$e->getMessage()+" | "+date(DATE_RFC2822)+" | "+$USERID+"\n";
-   error_log($log,3,$BASE_DIR."/tmp/error.log");
-   return -1;
+    if(isset($_SESSION['user_id'])){
+      $log=$e->getMessage()." ___Date=".date("Y-m-d")." ___ idUser=".$_SESSION['user_id']."\n";
+    }else{
+      $log=$e->getMessage()." ___Date= ".date("Y-m-d")."\n";
+    }
+    error_log($log,3,"../error.log");
+    return -1;
  }
  return $chores;
 

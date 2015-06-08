@@ -25,65 +25,97 @@
                     <div class="col-lg-12" >
                         <div class="panel panel-default" id="editBox">
                             <div class="panel-heading">
-                               {$projName}
-                           </div>
-                           <!-- .panel-heading -->
+                             {$projName}
+                         </div>
+                         <!-- .panel-heading -->
 
 
-                           <div class="panel-body">
-                              <H4 class="text-center">Categorias:</H4>
-                              <br>
-                              <div class="panel-group" id="accordion">
-                                {foreach $categories as $cat}
-                                <div class="panel panel-default">
-                                    <div class="panel-heading">
-                                        <h4 class="panel-title">
-                                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">{$cat.nomecat}</a>
-                                        </h4>
-                                    </div>
-                                    <!-- para obter as tarefas dentro de uma dada categoria (não está a funcionar) --> 
-
-                                    <div id="collapseOne" class="panel-collapse collapse in">
-
-                                        {foreach $chores as $chore}
-                                        {if $chore.idcat===$cat.idcat}
-                                        <div class="panel-body">
-                                            <a href={$chore.idcat} data-toggle="tab">{$chore.nometarefa} </a>
-                                        </div>
-                                        {/if}
-
-                                        {/foreach}
-
-                                    </div>
-                                    <!-- aqui vem o fim do foreach do $chores -->
-
-                                </div>
-                                {/foreach}
-                            </div>
-
+                         <div class="panel-body">
+                          <H4 class="text-center">Categorias:</H4>
+                          <br>
+                          <div class="panel-group" id="accordion">
+                            {foreach $categories as $cat}
                             <div class="panel panel-default">
                                 <div class="panel-heading">
                                     <h4 class="panel-title">
-                                       <div class="panel-heading">
-                                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">Adicionar categoria
-                                        </a>
-                                    </div>
-                                </h4>
-                            </div>
+                                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">{$cat.nomecat}</a>
+                                    </h4>
+                                </div>
 
-                            <div id="collapseOne" class="panel-collapse collapse in">
 
-                                <form action="../../actions/novacategoria.php" method="post" enctype="multipart/form-data">
+                                <div id="collapseOne" class="panel-collapse collapse in">
+
+                                    {foreach $chores as $chore}
+                                    {if $chore.idcat===$cat.idcat}
                                     <div class="panel-body">
-                                        <div class="form-group col-lg-6 style="float: none;" ">
-                                            <label>Titúlo da categoria</label>
-                                            <input type="text" name="titulo" class="form-control" id="title" value="" >
-                                            <button type="submit" class="btn btn-primary" >Submeter</button>
-                                        </div>
-                                        <input type="hidden" name="idprojeto" value="{$idproj}">
+                                        <a href={$chore.idcat} data-toggle="tab">{$chore.nometarefa} </a>
                                     </div>
-                                </form>
+                                    {/if}
+
+
+                                    {/foreach}
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <h4 class="panel-title">
+                                               <div class="panel-heading">
+                                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">Adicionar tarefa
+                                                </a>
+                                            </div>
+                                        </h4>
+                                    </div>
+
+                                    <div id="collapseOne" class="panel-collapse collapse in">
+
+
+                                        <form action="../../actions/novatarefa.php" method="post" enctype="multipart/form-data">
+                                            <div class="panel-body">
+                                                <div class="form-group col-lg-6 style="float: none;" ">
+                                                    <label>Nome da tarefa</label>
+                                                    <input type="text" name="nometarefa" class="form-control" id="title" value="" required>
+                                                    <label>Descrição da tarefa.</label>
+                                                    <input type="text" name="descricaotarefa" class="form-control" id="title" value="" required>
+                                                    <input type="hidden" name="idcategoria" value="{$cat.idcat}">
+                                                    <input type="hidden" name="idcriador" value="{$USERID}">
+                                                    <input type="hidden" name="estado" value="Execucao">
+                                                    <input type="hidden" name="tipo" value="Aceite">
+                                                    <input type="hidden" name="idaceitepor" value="{$USERID}">
+                                                    <input type="date" name="dfinal">
+                                                    <button type="submit" class="btn btn-primary" >Submeter</button>
+                                                </div>
+                                                <input type="hidden" name="idprojeto" value="{$idproj}">
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                                <!-- aqui vem o fim do foreach do $chores -->
+
                             </div>
+                            {/foreach}
+                        </div>
+
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                 <div class="panel-heading">
+                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">Adicionar categoria
+                                    </a>
+                                </div>
+                            </h4>
+                        </div>
+
+                        <div id="collapseOne" class="panel-collapse collapse in">
+
+                            <form action="../../actions/novacategoria.php" method="post" enctype="multipart/form-data">
+                                <div class="panel-body">
+                                    <div class="form-group col-lg-6 style="float: none;" ">
+                                        <label>Titúlo da categoria</label>
+                                        <input type="text" name="titulo" class="form-control" id="title" value="" >
+                                        <button type="submit" class="btn btn-primary" >Submeter</button>
+                                    </div>
+                                    <input type="hidden" name="idprojeto" value="{$idproj}">
+                                </div>
+                            </form>
+                        </div>
                     </div>
                 </div>  
 
@@ -186,10 +218,10 @@
     <div class="col-lg-12" >
         <div class="panel panel-default" id="editBox">
             <div class="panel-heading">
-               Gerir permissões
-           </div>
-       </div>
-   </div>
+             Gerir permissões
+         </div>
+     </div>
+ </div>
 </div>
 <div class="panel-body">
     {foreach $allroles as $roleUsers}

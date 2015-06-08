@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2015-06-08 12:33:50
+<?php /* Smarty version Smarty-3.1.15, created on 2015-06-08 13:51:22
          compiled from "/usr/users2/mieic2012/ei12037/public_html/LBAW/proto/templates/user/visaogeralprojeto.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:21745106255743221dd08c8-05094365%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '6af86bc79692e78a08b87ce0c6280cc4d29dc0f7' => 
     array (
       0 => '/usr/users2/mieic2012/ei12037/public_html/LBAW/proto/templates/user/visaogeralprojeto.tpl',
-      1 => 1433759628,
+      1 => 1433764273,
       2 => 'file',
     ),
   ),
@@ -24,6 +24,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'cat' => 0,
     'chores' => 0,
     'chore' => 0,
+    'USERID' => 0,
     'idproj' => 0,
     'role' => 0,
     'assignements' => 0,
@@ -62,78 +63,114 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                     <div class="col-lg-12" >
                         <div class="panel panel-default" id="editBox">
                             <div class="panel-heading">
-                               <?php echo $_smarty_tpl->tpl_vars['projName']->value;?>
+                             <?php echo $_smarty_tpl->tpl_vars['projName']->value;?>
 
-                           </div>
-                           <!-- .panel-heading -->
+                         </div>
+                         <!-- .panel-heading -->
 
 
-                           <div class="panel-body">
-                              <H4 class="text-center">Categorias:</H4>
-                              <br>
-                              <div class="panel-group" id="accordion">
-                                <?php  $_smarty_tpl->tpl_vars['cat'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['cat']->_loop = false;
+                         <div class="panel-body">
+                          <H4 class="text-center">Categorias:</H4>
+                          <br>
+                          <div class="panel-group" id="accordion">
+                            <?php  $_smarty_tpl->tpl_vars['cat'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['cat']->_loop = false;
  $_from = $_smarty_tpl->tpl_vars['categories']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
 foreach ($_from as $_smarty_tpl->tpl_vars['cat']->key => $_smarty_tpl->tpl_vars['cat']->value) {
 $_smarty_tpl->tpl_vars['cat']->_loop = true;
 ?>
-                                <div class="panel panel-default">
-                                    <div class="panel-heading">
-                                        <h4 class="panel-title">
-                                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne"><?php echo $_smarty_tpl->tpl_vars['cat']->value['nomecat'];?>
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne"><?php echo $_smarty_tpl->tpl_vars['cat']->value['nomecat'];?>
 </a>
-                                        </h4>
-                                    </div>
-                                    <!-- para obter as tarefas dentro de uma dada categoria (não está a funcionar) --> 
+                                    </h4>
+                                </div>
 
-                                    <div id="collapseOne" class="panel-collapse collapse in">
 
-                                        <?php  $_smarty_tpl->tpl_vars['chore'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['chore']->_loop = false;
+                                <div id="collapseOne" class="panel-collapse collapse in">
+
+                                    <?php  $_smarty_tpl->tpl_vars['chore'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['chore']->_loop = false;
  $_from = $_smarty_tpl->tpl_vars['chores']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
 foreach ($_from as $_smarty_tpl->tpl_vars['chore']->key => $_smarty_tpl->tpl_vars['chore']->value) {
 $_smarty_tpl->tpl_vars['chore']->_loop = true;
 ?>
-                                        <?php if ($_smarty_tpl->tpl_vars['chore']->value['idcat']===$_smarty_tpl->tpl_vars['cat']->value['idcat']) {?>
-                                        <div class="panel-body">
-                                            <a href=<?php echo $_smarty_tpl->tpl_vars['chore']->value['idcat'];?>
+                                    <?php if ($_smarty_tpl->tpl_vars['chore']->value['idcat']===$_smarty_tpl->tpl_vars['cat']->value['idcat']) {?>
+                                    <div class="panel-body">
+                                        <a href=<?php echo $_smarty_tpl->tpl_vars['chore']->value['idcat'];?>
  data-toggle="tab"><?php echo $_smarty_tpl->tpl_vars['chore']->value['nometarefa'];?>
  </a>
-                                        </div>
-                                        <?php }?>
-
-                                        <?php } ?>
-
                                     </div>
-                                    <!-- aqui vem o fim do foreach do $chores -->
+                                    <?php }?>
 
-                                </div>
-                                <?php } ?>
-                            </div>
 
-                            <div class="panel panel-default">
-                                <div class="panel-heading">
-                                    <h4 class="panel-title">
-                                       <div class="panel-heading">
-                                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">Adicionar categoria
-                                        </a>
+                                    <?php } ?>
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <h4 class="panel-title">
+                                               <div class="panel-heading">
+                                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">Adicionar tarefa
+                                                </a>
+                                            </div>
+                                        </h4>
                                     </div>
-                                </h4>
-                            </div>
 
-                            <div id="collapseOne" class="panel-collapse collapse in">
+                                    <div id="collapseOne" class="panel-collapse collapse in">
 
-                                <form action="../../actions/novacategoria.php" method="post" enctype="multipart/form-data">
-                                    <div class="panel-body">
-                                        <div class="form-group col-lg-6 style="float: none;" ">
-                                            <label>Titúlo da categoria</label>
-                                            <input type="text" name="titulo" class="form-control" id="title" value="" >
-                                            <button type="submit" class="btn btn-primary" >Submeter</button>
-                                        </div>
-                                        <input type="hidden" name="idprojeto" value="<?php echo $_smarty_tpl->tpl_vars['idproj']->value;?>
+
+                                        <form action="../../actions/novatarefa.php" method="post" enctype="multipart/form-data">
+                                            <div class="panel-body">
+                                                <div class="form-group col-lg-6 style="float: none;" ">
+                                                    <label>Nome da tarefa</label>
+                                                    <input type="text" name="nometarefa" class="form-control" id="title" value="" required>
+                                                    <label>Descrição da tarefa.</label>
+                                                    <input type="text" name="descricaotarefa" class="form-control" id="title" value="" required>
+                                                    <input type="hidden" name="idcategoria" value="<?php echo $_smarty_tpl->tpl_vars['cat']->value['idcat'];?>
 ">
+                                                    <input type="hidden" name="idcriador" value="<?php echo $_smarty_tpl->tpl_vars['USERID']->value;?>
+">
+                                                    <input type="hidden" name="estado" value="Execucao">
+                                                    <input type="hidden" name="tipo" value="Aceite">
+                                                    <input type="hidden" name="idaceitepor" value="<?php echo $_smarty_tpl->tpl_vars['USERID']->value;?>
+">
+                                                    <input type="date" name="dfinal">
+                                                    <button type="submit" class="btn btn-primary" >Submeter</button>
+                                                </div>
+                                                <input type="hidden" name="idprojeto" value="<?php echo $_smarty_tpl->tpl_vars['idproj']->value;?>
+">
+                                            </div>
+                                        </form>
                                     </div>
-                                </form>
+                                </div>
+                                <!-- aqui vem o fim do foreach do $chores -->
+
                             </div>
+                            <?php } ?>
+                        </div>
+
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                 <div class="panel-heading">
+                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">Adicionar categoria
+                                    </a>
+                                </div>
+                            </h4>
+                        </div>
+
+                        <div id="collapseOne" class="panel-collapse collapse in">
+
+                            <form action="../../actions/novacategoria.php" method="post" enctype="multipart/form-data">
+                                <div class="panel-body">
+                                    <div class="form-group col-lg-6 style="float: none;" ">
+                                        <label>Titúlo da categoria</label>
+                                        <input type="text" name="titulo" class="form-control" id="title" value="" >
+                                        <button type="submit" class="btn btn-primary" >Submeter</button>
+                                    </div>
+                                    <input type="hidden" name="idprojeto" value="<?php echo $_smarty_tpl->tpl_vars['idproj']->value;?>
+">
+                                </div>
+                            </form>
+                        </div>
                     </div>
                 </div>  
 
@@ -255,10 +292,10 @@ pages/user/perfil.php?userid=<?php echo $_smarty_tpl->tpl_vars['assignement']->v
     <div class="col-lg-12" >
         <div class="panel panel-default" id="editBox">
             <div class="panel-heading">
-               Gerir permissões
-           </div>
-       </div>
-   </div>
+             Gerir permissões
+         </div>
+     </div>
+ </div>
 </div>
 <div class="panel-body">
     <?php  $_smarty_tpl->tpl_vars['roleUsers'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['roleUsers']->_loop = false;

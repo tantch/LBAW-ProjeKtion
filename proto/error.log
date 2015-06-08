@@ -1,0 +1,3 @@
+SQLSTATE[42703]: Undefined column: 7 ERROR:  column "idctegoria" of relation "tarefa" does not exist
+LINE 1: INSERT INTO tarefa (idctegoria,idcriador,nometarefa,dfinal,e...
+                            ^ ___2015-06-08 ___ 10

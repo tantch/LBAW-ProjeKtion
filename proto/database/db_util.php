@@ -53,8 +53,12 @@ function getUsersCount(){
     $count=$stmt->fetch();
 
   }catch(PDOException $e){
-    $log=$e->getMessage()+" | "+date(DATE_RFC2822)+" | "+$userid+"\n";
-    error_log($log,3,$BASE_DIR+"/tmp/error.log");
+    if(isset($_SESSION['user_id'])){
+      $log=$e->getMessage()." ___Date=".date("Y-m-d")." ___ idUser=".$_SESSION['user_id']."\n";
+    }else{
+      $log=$e->getMessage()." ___Date= ".date("Y-m-d")."\n";
+    }
+    error_log($log,3,"../error.log");
     return -1;
   }
   return $count['count'];
@@ -69,17 +73,20 @@ function getUserByPattern($pattern){
     $found=$stmt->execute();
     $result = $stmt->fetchAll();
   }catch(PDOException $e){
-    $log=$e->getMessage()+" | "+date(DATE_RFC2822)+" | "+$USERID+"\n";
-    $dir=$BASE_DIR."error.log";
-    error_log($log,3,$dir);
-    return -1;
+   if(isset($_SESSION['user_id'])){
+    $log=$e->getMessage()." ___Date=".date("Y-m-d")." ___ idUser=".$_SESSION['user_id']."\n";
+  }else{
+    $log=$e->getMessage()." ___Date= ".date("Y-m-d")."\n";
   }
-  if($found==false){
-    return -1;
-  }
-  else{
-   return $result; 
- }
+  error_log($log,3,"../error.log");
+  return -1;
+}
+if($found==false){
+  return -1;
+}
+else{
+ return $result; 
+}
 
 }
 
@@ -91,14 +98,20 @@ function getUserSessByUName($username){
     $found=$stmt->execute();
     $columns=$stmt->fetch();
   }catch(PDOException $e){
-  //mandar erro para o admin
+   if(isset($_SESSION['user_id'])){
+    $log=$e->getMessage()." ___Date=".date("Y-m-d")." ___ idUser=".$_SESSION['user_id']."\n";
+  }else{
+    $log=$e->getMessage()." ___Date= ".date("Y-m-d")."\n";
   }
-  if($found){
-    return $columns;
-  }
-  else{
-    return -1;
-  }
+  error_log($log,3,"../error.log");
+  return -1;
+}
+if($found){
+  return $columns;
+}
+else{
+  return -1;
+}
 }
 
 function createUser($username,$name,$password,$email){
@@ -108,11 +121,14 @@ function createUser($username,$name,$password,$email){
     $stmt=$conn->prepare("INSERT INTO users (username,password,nome,email) VALUES (?,?,?,?)");
     $stmt->execute(array($username,$password,$name,$email));
   }catch(PDOException $e){
-    $log=$e->getMessage()+" | "+date(DATE_RFC2822)+" | non-user \n";
-    fwrite($LOGFILE, "upsi");
-   // error_log($log,3,$BASE_DIR."tmp/error.log");
-    return -1;
+   if(isset($_SESSION['user_id'])){
+    $log=$e->getMessage()." ___Date=".date("Y-m-d")." ___ idUser=".$_SESSION['user_id']."\n";
+  }else{
+    $log=$e->getMessage()." ___Date= ".date("Y-m-d")."\n";
   }
+  error_log($log,3,"../error.log");
+  return -1;
+}
 
 }
 
@@ -123,9 +139,15 @@ function fetchProfilePic($userid){
     $stmt->execute(array($userid));
     $url=$stmt->fetch();
   }catch(PDOException $e){
-    return 'http://udara.co/assets/default.png';
+   if(isset($_SESSION['user_id'])){
+    $log=$e->getMessage()." ___Date=".date("Y-m-d")." ___ idUser=".$_SESSION['user_id']."\n";
+  }else{
+    $log=$e->getMessage()." ___Date= ".date("Y-m-d")."\n";
   }
-  return $url[profilepic];
+  error_log($log,3,"../error.log");
+  return -1;
+}
+return $url[profilepic];
 }
 
 ?>
