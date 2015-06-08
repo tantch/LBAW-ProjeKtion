@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2015-06-08 01:35:47
+<?php /* Smarty version Smarty-3.1.15, created on 2015-06-08 23:00:32
          compiled from "/usr/users2/mieic2012/ei12037/public_html/LBAW/proto/templates/user/register.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:434085884556f253bd9cbb9-61870274%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '68f50dea4f56097ccd187a55ab93124061d488d7' => 
     array (
       0 => '/usr/users2/mieic2012/ei12037/public_html/LBAW/proto/templates/user/register.tpl',
-      1 => 1433719808,
+      1 => 1433797121,
       2 => 'file',
     ),
   ),
@@ -52,7 +52,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                   <div class="form-group col-lg-12">
                     <label>Full Name</label>
                     <input type="" name="name" class="form-control" id="name" value=""  data-intro="Introduza o Nome Completo com o qual se pretende registar, utilize no maximo 20 caracteres alfanumericos" data-position="right">
-                    <br><br><br><br>                   
+                    <br><br><br><br><br><br>                  
                   </div>
 
                   <div class="form-group col-lg-6">
@@ -74,17 +74,26 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                     <label>Repetir Endereço de Email</label>
                     <input type="email" name="remail" class="form-control" id="cemail" value="" data-intro="Repita o Email para confirmar" data-position="bottom">
                   </div>
-
+<button type="submit"  class="btn btn-primary" OnClick="return validate(this);">Registar</button>
                 </div>
                 <div class="col-md-6"  >
                   <h3 class="dark-grey" data-intro="Termos e condições do serviço" data-position="top">Termos e Condições</h3>
                   <ul>
-                    <li>Morbi in sem quis dui placerat ornare. Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu. Cras consequat.</li>
-                    <li>Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus.</li>
-                    <li>Phasellus ultrices nulla quis nibh. Quisque a lectus. Donec consectetuer ligula vulputate sem tristique cursus. Nam nulla quam, gravida non, commodo a, sodales sit amet, nisi.</li>
-                    <li>Pellentesque fermentum dolor. Aliquam quam lectus, facilisis auctor, ultrices ut, elementum vulputate, nunc.</li>
+                    <li>Para utilizar as funcionalidades e recursos do ProjeKtion precisará de efectuar um registo. Poderemos, nessa oportunidade, solicitar alguns dados pessoais, tais como nome, endereço de e-mail, dentre outros.
+                    Você deve ter 18 anos ou mais e plena capacidade civil para utilizar o Site e seus recursos; nos demais casos você deverá ter a autorização de seus pais ou responsáveis legais.
+                  Enquanto estivermos em posse de informações ou dados seus, poderemos fornecê-los às autoridades competentes para colaborar em investigações ou procedimentos judiciais, ainda que preparatórios ou cautelares, desde que permitido por lei.</li>
+                    <li>O Site e os recursos que estão nele são destinados ao seu uso pessoal e recreativo. Ao utilizar o Site não deve:
+                        Disseminar conteúdo ilegal, ofensivo, violento ou que viole a privacidade e a intimidade de terceiros.
+                        Violar propriedade intelectual de terceiros.
+                        Disseminar vírus ou código malicioso, ficheiros ou programas desenvolvidos para recolher dados não autorizados, interromper, destruir ou limitar a funcionalidade do Site, de qualquer software ou hardware ou equipamentos de telecomunicações em geral (malware ou spyware).
+                        Interferir com a arquitetura do Site de qualquer forma, meio ou técnica.
+                        Disfarçar ou ocultar o número de IP (internet protocol) que identifica sua conexão à internet.
+                        Usar qualquer um dos elementos do Site para fins que nao se enquadrem no contexto do Site.
+                        Criar ou utilizar mais que uma forma de identificação, utilizar identificação de um terceiro, ou permitir que terceiros utilizem a sua identificação.
+                        Poderemos impedir que utilize o Site, no nosso entendimento, caso viole quaisquer das condições destes Termos. Informaremos da suspensão de seu uso do Site.</li>
+                    <li>O ProjeKtion reserva o direito de modificar a qualquer momento a apresentação, configuração e disponibilização do Site.</li>
                   </ul>
-                  <button type="submit" class="btn btn-primary" OnClick="return validate(this);">Registar</button>
+                  
                 </form>
                 <div data-intro="Para qualquer duvida, questao ou sugestao por favor contacte-nos pelo nosso email: projektion@projektion.com"></div>
 

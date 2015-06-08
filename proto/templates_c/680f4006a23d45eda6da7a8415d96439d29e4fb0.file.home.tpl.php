@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2015-06-05 20:27:39
+<?php /* Smarty version Smarty-3.1.15, created on 2015-06-08 23:00:34
          compiled from "/usr/users2/mieic2012/ei12037/public_html/LBAW/proto/templates/user/home.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:1713528717556f1237cb8dd3-30479797%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '680f4006a23d45eda6da7a8415d96439d29e4fb0' => 
     array (
       0 => '/usr/users2/mieic2012/ei12037/public_html/LBAW/proto/templates/user/home.tpl',
-      1 => 1433528135,
+      1 => 1433797120,
       2 => 'file',
     ),
   ),
@@ -49,7 +49,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
             <div class="form-group">
               <button class="btn btn-primary btn-lg btn-block" type="submit" onClick="return validate();">Sign In</button>
               <span class="pull-right"><a href="register.php">Registar</a></span>
-              <span class="pull-left"><a href="#faq">Need help?</a></span>
+              <span class="pull-left"><a href="#faq">Ajuda-FAQ</a></span>
             </div>
           </form>
           <div class="panel-body">
@@ -77,7 +77,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
         <hr class="section-heading-spacer">
         <div class="clearfix"></div>
         <h2 class="section-heading">O Que Fazemos<br>ProjeKtion</h2>
-        <p class="lead">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+        <p class="lead">O ProjeKtion apresenta-se como uma solução simples e completa para a gestão de projectos de qualquer dimensão. Desde o mais comum projeto uni-pessoal, até projetos com várias equipas e fases, tudo é contemplado e introduzido numa interface minimal e funcional.</p>
       </div>
       <div class="col-lg-5 col-lg-offset-2 col-sm-6">
         <img class="img-responsive" src="../../images/ipad.png" alt="">
@@ -102,10 +102,10 @@ $_valid = $_smarty_tpl->decodeProperties(array (
         <hr class="section-heading-spacer">
         <div class="clearfix"></div>
         <h2 class="section-heading">Ágil<br>E simples</h2>
-        <p class="lead">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+        <p class="lead">O foco na simplicidade da interface, sendo um dos pontos mais visiveis, possibilita a colaboração ao mesmo nível de utilizadores de areas do projecto diferente, numa interface o mais comum possível.</p>
       </div>
       <div class="col-lg-5 col-lg-offset-2 col-sm-6">
-        <img class="img-responsive" src="../../images/phones.png" alt="">
+        <img class="img-responsive" src="../../images/projeto.png" alt="cenas">
       </div>
     </div>
 
@@ -125,17 +125,15 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       <div class="col-lg-5 col-sm-6">
         <hr class="section-heading-spacer">
         <div class="clearfix"></div>
-        <h2 class="section-heading">FAQ <br> Frequent Asked Questions</h2>
+        <h2 class="section-heading">FAQ <br> Questões Frequentes</h2>
         <p class="lead">
           <dl>
-            <dt>Definition list</dt>
-            <dd>Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-              aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-              commodo consequat.</dd>
-              <dt>Lorem ipsum dolor sit amet</dt>
-              <dd>Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-                aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-                commodo consequat.</dd>
+            <dt><h4>O que necessito para usar o serviço?</h4></dt>
+            <dd>Para usufruir da nossa aplicaçao é apenas necessário uma conta de utilizador ProjeKtion</dd>
+              <dt><h4>Como posso obter uma conta de utilizador ProjeKtion?</h4></dt>
+              <dd>Para tal, basta rregistar-se na pagina inicial, fornecendo alguns dados de identificação, necessarios ao serviço.</dd>
+              <dt><h4>Quem tem acesso aos projetos?</h4></dt>
+              <dd>Cada projeto é acessível pelo Master do projeto (utilizador que iniciou o projeto ou a que foi promovido), todos os Coordenadores presentes no momento assim como Colaboradores </dd>
               </dl>
             </p>
           </div>
