@@ -5,8 +5,8 @@
   <div class="row">
     <div id="breadcrumb" class="col-xs-12">
       <ol class="breadcrumb pull-left">
-        <li><a href="visaopessoal.html">Visao Pessoal</a></li>
-        <li><a href="projetonovo.html">Projeto Novo</a></li>
+        <li><a href="visaopessoal.php">Visao Pessoal</a></li>
+        <li><a href="novoprojeto.php">Projeto Novo</a></li>
       </ol>
     </div>
 

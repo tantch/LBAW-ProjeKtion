@@ -35,3 +35,11 @@ SQLSTATE[23505]: Unique violation: 7 ERROR:  duplicate key value violates unique
 DETAIL:  Key (username, email)=(bellamy, vanialeite94@gmail.com) already exists. ___Date= 2015-06-08
 SQLSTATE[23505]: Unique violation: 7 ERROR:  duplicate key value violates unique constraint "users_username_email_key"
 DETAIL:  Key (username, email)=(bellamy, vanialeite94@gmail.com) already exists. ___Date= 2015-06-08
+SQLSTATE[22008]: Datetime field overflow: 7 ERROR:  date/time field value out of range: "21/07/2017"
+HINT:  Perhaps you need a different "datestyle" setting. ___Date=2015-06-08 ___ idUser=174
+SQLSTATE[22007]: Invalid datetime format: 7 ERROR:  invalid input syntax for type date: "" ___Date=2015-06-08 ___ idUser=10
+SQLSTATE[22001]: String data, right truncated: 7 ERROR:  value too long for type character varying(30) ___Date=2015-06-08 ___ idUser=174
+SQLSTATE[22001]: String data, right truncated: 7 ERROR:  value too long for type character varying(30) ___Date=2015-06-08 ___ idUser=174
+SQLSTATE[22001]: String data, right truncated: 7 ERROR:  value too long for type character varying(30) ___Date=2015-06-08 ___ idUser=174
+SQLSTATE[22001]: String data, right truncated: 7 ERROR:  value too long for type character varying(30) ___Date=2015-06-08 ___ idUser=174
+SQLSTATE[22001]: String data, right truncated: 7 ERROR:  value too long for type character varying(30) ___Date=2015-06-08 ___ idUser=174

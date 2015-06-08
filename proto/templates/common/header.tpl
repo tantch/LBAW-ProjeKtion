@@ -38,15 +38,15 @@
   </header>
   <div id="error_messages" class="state">
     {foreach $ERROR_MESSAGES as $error}
-    <br><br>
+
     <div class="error" >{$error}<a class="close" href="#" onclick="closemessages()">X</a></div>
-    <br>
+
     {/foreach}
   </div>
   <div id="success_messages" class="state">
     {foreach $SUCCESS_MESSAGES as $success}
-    <br><br>
+
     <div class="success" >{$success}<a class="close" href="#" onclick="closemessages()">X</a></div>
-    <br>
+
     {/foreach}
   </div>
