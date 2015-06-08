@@ -11,12 +11,11 @@ function getProjectsThisMonth(){
 		$results= $stmt->fetchAll();
 	}catch(PDOException $e){
 		if(isset($_SESSION['user_id'])){
-			$log=$e->getMessage()." ___Date=".date("Y-m-d")." ___ idUser=".$_SESSION['user_id']."\n";
+			$log=$e->getMessage()." ___Date=".date("Y-m-d")." ___ idUser=".$_SESSION['user_id'].PHP_EOL;
 		}else{
 			$log=$e->getMessage()." ___Date= ".date("Y-m-d")."\n";
 		}
 		error_log($log,3,"../error.log");
-		
         return -1;
 	}
 	return $results;
@@ -31,7 +30,7 @@ function getFinishedProjects($userid){
 		$results= $stmt->fetch()['count'];
 	}catch(PDOException $e){
 		if(isset($_SESSION['user_id'])){
-			$log=$e->getMessage()." ___Date=".date("Y-m-d")." ___ idUser=".$_SESSION['user_id']."\n";
+			$log=$e->getMessage()." ___Date=".date("Y-m-d")." ___ idUser=".$_SESSION['user_id'].PHP_EOL;
 		}else{
 			$log=$e->getMessage()." ___Date= ".date("Y-m-d")."\n";
 		}
@@ -49,7 +48,7 @@ function banUser($userid,$Val){
 		return $success;
 	}catch(PDOException $e){
 		if(isset($_SESSION['user_id'])){
-			$log=$e->getMessage()." ___Date=".date("Y-m-d")." ___ idUser=".$_SESSION['user_id']."\n";
+			$log=$e->getMessage()." ___Date=".date("Y-m-d")." ___ idUser=".$_SESSION['user_id'].PHP_EOL;
 		}else{
 			$log=$e->getMessage()." ___Date= ".date("Y-m-d")."\n";
 		}
@@ -66,11 +65,12 @@ function checkIfBanned($userid){
 		return $stmt->fetch()['banned'];
 	}catch(PDOException $e){
 		if(isset($_SESSION['user_id'])){
-			$log=$e->getMessage()." ___Date=".date("Y-m-d")." ___ idUser=".$_SESSION['user_id']."\n";
+			$log=$e->getMessage()." ___Date=".date("Y-m-d")." ___ idUser=".$_SESSION['user_id'].PHP_EOL;
 		}else{
 			$log=$e->getMessage()." ___Date= ".date("Y-m-d")."\n";
 		}
 		error_log($log,3,"../error.log");
+        return -1;
 	}
 }
 

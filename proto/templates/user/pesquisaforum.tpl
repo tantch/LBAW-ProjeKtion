@@ -36,6 +36,12 @@
              </a>
              <div class="col-xs-5 message-date " style="width:auto;">   {$topic['dcriacao']}   </div>
            </div>
+           {foreachelse}
+           <h3 class="text-center">
+           Não foram encontrados resultados para a sua pesquisa.
+           </h3>
+           <br>
+           <br>
            {/foreach}
          </div>
        </div>

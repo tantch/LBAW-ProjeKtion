@@ -53,15 +53,15 @@ function getUsersCount(){
     $count=$stmt->fetch();
 
   }catch(PDOException $e){
-   if(isset($_SESSION['user_id'])){
-    $log=$e->getMessage()." ___Date=".date("Y-m-d")." ___ idUser=".$_SESSION['user_id'].PHP_EOL;
-  }else{
-    $log=$e->getMessage()." ___Date= ".date("Y-m-d")."\n";
+    if(isset($_SESSION['user_id'])){
+      $log=$e->getMessage()." ___Date=".date("Y-m-d")." ___ idUser=".$_SESSION['user_id'].PHP_EOL;
+    }else{
+      $log=$e->getMessage()." ___Date= ".date("Y-m-d")."\n";
+    }
+    error_log($log,3,"../error.log");
+    return -1;
   }
-  error_log($log,3,"../error.log");
-  return -1;
-}
-return $count['count'];
+  return $count['count'];
 
 }
 
@@ -73,20 +73,20 @@ function getUserByPattern($pattern){
     $found=$stmt->execute();
     $result = $stmt->fetchAll();
   }catch(PDOException $e){
-   if(isset($_SESSION['user_id'])){
-    $log=$e->getMessage()." ___Date=".date("Y-m-d")." ___ idUser=".$_SESSION['user_id'].PHP_EOL;
-  }else{
-    $log=$e->getMessage()." ___Date= ".date("Y-m-d")."\n";
+    if(isset($_SESSION['user_id'])){
+      $log=$e->getMessage()." ___Date=".date("Y-m-d")." ___ idUser=".$_SESSION['user_id'].PHP_EOL;
+    }else{
+      $log=$e->getMessage()." ___Date= ".date("Y-m-d")."\n";
+    }
+    error_log($log,3,"../error.log");
+    return -1;
   }
-  error_log($log,3,"../error.log");
-  return -1;
-}
-if($found==false){
-  return -1;
-}
-else{
- return $result; 
-}
+  if($found==false){
+    return -1;
+  }
+  else{
+   return $result; 
+ }
 
 }
 
@@ -98,20 +98,20 @@ function getUserSessByUName($username){
     $found=$stmt->execute();
     $columns=$stmt->fetch();
   }catch(PDOException $e){
-   if(isset($_SESSION['user_id'])){
-    $log=$e->getMessage()." ___Date=".date("Y-m-d")." ___ idUser=".$_SESSION['user_id']."\n";
-  }else{
-    $log=$e->getMessage()." ___Date= ".date("Y-m-d")."\n";
+    if(isset($_SESSION['user_id'])){
+      $log=$e->getMessage()." ___Date=".date("Y-m-d")." ___ idUser=".$_SESSION['user_id'].PHP_EOL;
+    }else{
+      $log=$e->getMessage()." ___Date= ".date("Y-m-d")."\n";
+    }
+    error_log($log,3,"../error.log");
+    return -1;
   }
-  error_log($log,3,"../error.log");
-  return -1;
-}
-if($found){
-  return $columns;
-}
-else{
-  return -1;
-}
+  if($found){
+    return $columns;
+  }
+  else{
+    return -1;
+  }
 }
 
 function createUser($username,$name,$password,$email){
@@ -122,7 +122,7 @@ function createUser($username,$name,$password,$email){
     $stmt->execute(array($username,$password,$name,$email));
   }catch(PDOException $e){
    if(isset($_SESSION['user_id'])){
-    $log=$e->getMessage()." ___Date=".date("Y-m-d")." ___ idUser=".$_SESSION['user_id']."\n";
+    $log=$e->getMessage()." ___Date=".date("Y-m-d")." ___ idUser=".$_SESSION['user_id'].PHP_EOL;
   }else{
     $log=$e->getMessage()." ___Date= ".date("Y-m-d")."\n";
   }
@@ -132,6 +132,26 @@ function createUser($username,$name,$password,$email){
 
 }
 
+function checkIfUserExists($username,$email){
+  try{
+    global $conn;
+    $stmt=$conn->prepare("SELECT username,email
+      FROM users
+      WHERE username=?
+      OR email=?");
+    $success=$stmt->execute(array($username,$email));
+  }catch(PDOException $e){
+    if(isset($_SESSION['user_id'])){
+      $log=$e->getMessage()." ___Date=".date("Y-m-d")." ___ idUser=".$_SESSION['user_id'].PHP_EOL;
+    }else{
+      $log=$e->getMessage()." ___Date= ".date("Y-m-d")."\n";
+    }
+    error_log($log,3,"../error.log");
+    return -1;
+  }
+  return $success;
+
+}
 function fetchProfilePic($userid){
   global $conn;
   try{
@@ -139,15 +159,15 @@ function fetchProfilePic($userid){
     $stmt->execute(array($userid));
     $url=$stmt->fetch();
   }catch(PDOException $e){
-   if(isset($_SESSION['user_id'])){
-    $log=$e->getMessage()." ___Date=".date("Y-m-d")." ___ idUser=".$_SESSION['user_id']."\n";
-  }else{
-    $log=$e->getMessage()." ___Date= ".date("Y-m-d")."\n";
+    if(isset($_SESSION['user_id'])){
+      $log=$e->getMessage()." ___Date=".date("Y-m-d")." ___ idUser=".$_SESSION['user_id'].PHP_EOL;
+    }else{
+      $log=$e->getMessage()." ___Date= ".date("Y-m-d")."\n";
+    }
+    error_log($log,3,"../error.log");
+    return -1;
   }
-  error_log($log,3,"../error.log");
-  return -1;
-}
-return $url[profilepic];
+  return $url[profilepic];
 }
 
 ?>

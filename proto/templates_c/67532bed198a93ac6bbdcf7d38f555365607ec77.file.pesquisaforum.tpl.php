@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2015-06-07 16:04:19
+<?php /* Smarty version Smarty-3.1.15, created on 2015-06-08 19:04:52
          compiled from "/usr/users2/mieic2012/ei12037/public_html/LBAW/proto/templates/user/pesquisaforum.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:171360251155746b8318b189-62193697%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '67532bed198a93ac6bbdcf7d38f555365607ec77' => 
     array (
       0 => '/usr/users2/mieic2012/ei12037/public_html/LBAW/proto/templates/user/pesquisaforum.tpl',
-      1 => 1433692992,
+      1 => 1433790292,
       2 => 'file',
     ),
   ),
@@ -15,6 +15,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.15',
+  'unifunc' => 'content_55746b83288f78_61319738',
   'variables' => 
   array (
     'BASE_URL' => 0,
@@ -24,8 +26,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'topic' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.15',
-  'unifunc' => 'content_55746b83288f78_61319738',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_55746b83288f78_61319738')) {function content_55746b83288f78_61319738($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ('common/header.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0);?>
 
@@ -81,6 +81,14 @@ $_smarty_tpl->tpl_vars['topic']->_loop = true;
              <div class="col-xs-5 message-date " style="width:auto;">   <?php echo $_smarty_tpl->tpl_vars['topic']->value['dcriacao'];?>
    </div>
            </div>
+           <?php }
+if (!$_smarty_tpl->tpl_vars['topic']->_loop) {
+?>
+           <h3 class="text-center">
+           Não foram encontrados resultados para a sua pesquisa.
+           </h3>
+           <br>
+           <br>
            <?php } ?>
          </div>
        </div>

@@ -100,7 +100,7 @@ function getAnswersFTS($texto){
 	
 	try{
 		
-		$stmt=$conn->prepare("SELECT users.username , topico.nometopico, topico.descricao, topico.dcriacao
+		$stmt=$conn->prepare("SELECT users.username , topico.nometopico, topico.idtopico, topico.descricao, topico.dcriacao
 			FROM resposta, topico, users
 			WHERE  resposta.idTopico = topico.idTopico
 			AND users.iduser = topico.idcriador

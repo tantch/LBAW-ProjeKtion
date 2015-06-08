@@ -28,4 +28,5 @@ $topicos = getAnswersFTS($_GET['texto']);
 
 $smarty->assign('idproj',$_GET['idprojeto']);
 $smarty->assign('topicos',$topicos);
+
 $smarty->display('user/pesquisaforum.tpl');

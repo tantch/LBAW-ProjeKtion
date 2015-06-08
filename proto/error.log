@@ -13,3 +13,15 @@ HINT:  Perhaps you need a different "datestyle" setting. ___Date=2015-06-08 ___ 
 SQLSTATE[23502]: Not null violation: 7 ERROR:  null value in column "idtarefa" violates not-null constraint ___Date=2015-06-08 ___ idUser=10
 SQLSTATE[23502]: Not null violation: 7 ERROR:  null value in column "idtarefa" violates not-null constraint ___Date=2015-06-08 ___ idUser=10
 SQLSTATE[23502]: Not null violation: 7 ERROR:  null value in column "idtarefa" violates not-null constraint ___Date=2015-06-08 ___ idUser=10
+SQLSTATE[23505]: Unique violation: 7 ERROR:  duplicate key value violates unique constraint "users_username_email_key"
+DETAIL:  Key (username, email)=(bellamy, vanialeite94@gmail.com) already exists. ___Date= 2015-06-08
+SQLSTATE[23505]: Unique violation: 7 ERROR:  duplicate key value violates unique constraint "users_username_email_key"
+DETAIL:  Key (username, email)=(bellamy, vanialeite94@gmail.com) already exists. ___Date= 2015-06-08
+SQLSTATE[23505]: Unique violation: 7 ERROR:  duplicate key value violates unique constraint "users_username_email_key"
+DETAIL:  Key (username, email)=(bellamy, vanialeite94@gmail.com) already exists. ___Date= 2015-06-08
+SQLSTATE[23505]: Unique violation: 7 ERROR:  duplicate key value violates unique constraint "users_username_email_key"
+DETAIL:  Key (username, email)=(bellamy, vanialeite94@gmail.com) already exists. ___Date= 2015-06-08
+SQLSTATE[23505]: Unique violation: 7 ERROR:  duplicate key value violates unique constraint "users_username_email_key"
+DETAIL:  Key (username, email)=(bellamy, vanialeite94@gmail.com) already exists. ___Date= 2015-06-08
+SQLSTATE[23505]: Unique violation: 7 ERROR:  duplicate key value violates unique constraint "users_username_email_key"
+DETAIL:  Key (username, email)=(bellamy, vanialeite94@gmail.com) already exists. ___Date= 2015-06-08

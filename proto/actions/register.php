@@ -37,25 +37,29 @@ else return 1;
 
 
 $check=checkparams();
+
 if ($check>0){
-
-
-
-  $hashed_pass=hash('sha256',$_POST['password'],false);
-  echo "here1";
-
-  $success=createUser($_POST['username'],$_POST['name'],$hashed_pass,$_POST['email']);
-  if($success===-1) {
-  //  $_SESSION['error_messages'][]=$BASE_DIR."tmp/error.log";
-   $_SESSION['error_messages'][]='Houve um erro interno. Faremos o máximo para o resolver brevemente. Tente novamente mais tarde.';
+  $result=checkIfUserExists($username,$email);
+  if($result!=false){
+    $_SESSION['error_messages'][]='Já existe um utilizador com este username ou e-mail.';
     header("Location: {$BASE_URL}pages/user/register.php");
     exit;
-  }
 
-  $_SESSION['success_messages'][] = 'A sua conta foi registada com sucesso';  
-  $user=getUserSessByUName($_POST['username']);
-  $_SESSION['username']=$user['username'];
-  $_SESSION['user_id']=$user['iduser'];
-  header("Location: ". $BASE_URL . "pages/user/visaopessoal.php");
+  }else{
+    $hashed_pass=hash('sha256',$_POST['password'],false);
+    echo "here1";
+    $success=createUser($_POST['username'],$_POST['name'],$hashed_pass,$_POST['email']);
+    if($success===-1) {
+      $_SESSION['error_messages'][]='Houve um erro interno. Faremos o máximo para o resolver brevemente. Tente novamente mais tarde.';
+      header("Location: {$BASE_URL}pages/user/register.php");
+      exit;
+    }
+
+    $_SESSION['success_messages'][] = 'A sua conta foi registada com sucesso';  
+    $user=getUserSessByUName($_POST['username']);
+    $_SESSION['username']=$user['username'];
+    $_SESSION['user_id']=$user['iduser'];
+    header("Location: ". $BASE_URL . "pages/user/visaopessoal.php");
+  }
 }
 ?>
