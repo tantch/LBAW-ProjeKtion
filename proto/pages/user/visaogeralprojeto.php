@@ -4,6 +4,10 @@ include_once('../../config/init.php');
 include_once($BASE_DIR .'database/db_visao_geral_project.php');
 include_once($BASE_DIR .'database/db_project.php');
 
+
+$hasAccess=false;
+
+$users=fetchAssociatedUsers($_GET['idprojeto']);
 if(!$_SESSION['user_id']){
 	$_SESSION['error_messages'][] = 'Crie uma conta.';
 	header("Location: $BASE_URL");
@@ -16,7 +20,20 @@ else{
 		header("Location: $BASE_URL");
 		exit;
 	}
-
+	
+	
+	foreach($users as $user){
+		if($user['iduser']==$_SESSION['user_id']){
+			$hasAccess=true;
+		}
+	}
+	
+	
+	if(!$hasAccess){
+		$_SESSION['error_messages'][] = 'Nao tem acesso a este projeto';
+		header("Location: $BASE_URL");
+		exit;
+	}
 
 	$idprojeto=$_GET['idprojeto']; 
 

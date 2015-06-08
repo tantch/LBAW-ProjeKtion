@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2015-06-08 01:35:43
+<?php /* Smarty version Smarty-3.1.15, created on 2015-06-09 00:37:53
          compiled from "/usr/users2/mieic2012/ei12037/public_html/LBAW/proto/templates/common/header.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:2080608208556f1237e89e88-84358824%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'ba871c94053b3f2808c3d816d2f2f1fcd0f9f1ae' => 
     array (
       0 => '/usr/users2/mieic2012/ei12037/public_html/LBAW/proto/templates/common/header.tpl',
-      1 => 1433719808,
+      1 => 1433802970,
       2 => 'file',
     ),
   ),
@@ -83,10 +83,10 @@ javascript/chardinjs.min.js"></script>
 foreach ($_from as $_smarty_tpl->tpl_vars['error']->key => $_smarty_tpl->tpl_vars['error']->value) {
 $_smarty_tpl->tpl_vars['error']->_loop = true;
 ?>
-    <br><br>
+
     <div class="error" ><?php echo $_smarty_tpl->tpl_vars['error']->value;?>
 <a class="close" href="#" onclick="closemessages()">X</a></div>
-    <br>
+
     <?php } ?>
   </div>
   <div id="success_messages" class="state">
@@ -95,10 +95,10 @@ $_smarty_tpl->tpl_vars['error']->_loop = true;
 foreach ($_from as $_smarty_tpl->tpl_vars['success']->key => $_smarty_tpl->tpl_vars['success']->value) {
 $_smarty_tpl->tpl_vars['success']->_loop = true;
 ?>
-    <br><br>
+
     <div class="success" ><?php echo $_smarty_tpl->tpl_vars['success']->value;?>
 <a class="close" href="#" onclick="closemessages()">X</a></div>
-    <br>
+
     <?php } ?>
   </div>
 <?php }} ?>
