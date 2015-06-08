@@ -52,7 +52,7 @@
                     <label>Repetir Endereço de Email</label>
                     <input type="email" name="remail" class="form-control" id="cemail" value="" data-intro="Repita o Email para confirmar" data-position="bottom">
                   </div>
-
+<button type="submit"  class="btn btn-primary" OnClick="return validate(this);">Registar</button>
                 </div>
                 <div class="col-md-6"  >
                   <h3 class="dark-grey" data-intro="Termos e condições do serviço" data-position="top">Termos e Condições</h3>
@@ -71,7 +71,7 @@
                         Poderemos impedir que utilize o Site, no nosso entendimento, caso viole quaisquer das condições destes Termos. Informaremos da suspensão de seu uso do Site.</li>
                     <li>O ProjeKtion reserva o direito de modificar a qualquer momento a apresentação, configuração e disponibilização do Site.</li>
                   </ul>
-                  <button type="submit" class="btn btn-primary" OnClick="return validate(this);">Registar</button>
+                  
                 </form>
                 <div data-intro="Para qualquer duvida, questao ou sugestao por favor contacte-nos pelo nosso email: projektion@projektion.com"></div>
 
