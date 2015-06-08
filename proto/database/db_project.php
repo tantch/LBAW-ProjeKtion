@@ -1,24 +1,45 @@
 <?php
 
-//inserts
+function alocateUserTask($iduser,$idtarefa){
+    try{
+        global $conn;
+        $stmt = $conn->prepare("INSERT INTO useralocadotarefa
+            VALUES (?,?)");
+        $result=$stmt->execute(array($iduser,$idtarefa));
+    }catch(PDOException $e){
+        if(isset($_SESSION['user_id'])){
+            $log=$e->getMessage()." ___Date=".date("Y-m-d")." ___ idUser=".$_SESSION['user_id'].PHP_EOL;
+        }else{
+            $log=$e->getMessage()." ___Date= ".date("Y-m-d")."\n";
+        }
+        error_log($log,3,"../error.log");
+        return -1;
+    }
+    return $result;
+}
 
 function createProject($userid, $name,$fdate) {
     try{
         global $conn;
         $obs="temp";
         $stmt = $conn->prepare("INSERT INTO projeto 
-            VALUES (DEFAULT, ?, ?,DEFAULT, ?,?)");
-        $stmt->execute(array($name,$obs,$fdate,$userid));
+            VALUES (DEFAULT, ?, ?,DEFAULT, ?)");
+        $result1=$stmt->execute(array($name,$obs,$fdate));
         $lastId = $conn->lastInsertId("projeto_idprojeto_seq");
         $role = "Master";
         $stmt = $conn->prepare("INSERT INTO papel 
             VALUES (?, ?,?)");
-        $stmt->execute(array($lastId,$userid,$role));
+        $result2=$stmt->execute(array($lastId,$userid,$role));
     }catch(PDOException $e){
-        $log=$e->getMessage()+" | "+date(DATE_RFC2822)+" | "+$USERID+"\n";
-        error_log($log,3,$BASE_DIR+"/tmp/error.log");
+        if(isset($_SESSION['user_id'])){
+            $log=$e->getMessage()." ___Date=".date("Y-m-d")." ___ idUser=".$_SESSION['user_id'].PHP_EOL;
+        }else{
+            $log=$e->getMessage()." ___Date= ".date("Y-m-d")."\n";
+        }
+        error_log($log,3,"../error.log");
         return -1;
     }
+
 
 }
 
@@ -30,11 +51,15 @@ function fetchAssociatedUsers($idprojeto){
         $stmt->execute(array($idprojeto));
         $users=$stmt->fetchAll();
     }catch(IOException $e){
-        $log=$e->getMessage()+" | "+date(DATE_RFC2822)+" | "+$USERID+"\n";
-        error_log($log,3,$BASE_DIR+"/tmp/error.log");
-        return -1;
+      if(isset($_SESSION['user_id'])){
+        $log=$e->getMessage()." ___Date=".date("Y-m-d")." ___ idUser=".$_SESSION['user_id'].PHP_EOL;
+    }else{
+        $log=$e->getMessage()." ___Date= ".date("Y-m-d")."\n";
     }
-    return $users;
+    error_log($log,3,"../error.log");
+    return -1;
+}
+return $users;
 }
 
 function fetchProjectInfo($idprojeto){
@@ -45,11 +70,15 @@ function fetchProjectInfo($idprojeto){
         $stmt->execute(array($idprojeto));
         $projs=$stmt->fetch();
     }catch(IOException $e){
-        $log=$e->getMessage()+" | "+date(DATE_RFC2822)+" | "+$USERID+"\n";
-        error_log($log,3,$BASE_DIR+"/tmp/error.log");
-        return -1;
+      if(isset($_SESSION['user_id'])){
+        $log=$e->getMessage()." ___Date=".date("Y-m-d")." ___ idUser=".$_SESSION['user_id'].PHP_EOL;
+    }else{
+        $log=$e->getMessage()." ___Date= ".date("Y-m-d")."\n";
     }
-    return $projs;
+    error_log($log,3,"../error.log");
+    return -1;
+}
+return $projs;
 }
 
 function fetchAssociatedCategories($idprojeto){
@@ -60,11 +89,15 @@ function fetchAssociatedCategories($idprojeto){
         $stmt->execute(array($idprojeto));
         $categories=$stmt->fetchAll();
     }catch(IOException $e){
-        $log=$e->getMessage()+" | "+date(DATE_RFC2822)+" | "+$USERID+"\n";
-        error_log($log,3,$BASE_DIR+"/tmp/error.log");
-        return -1;
+      if(isset($_SESSION['user_id'])){
+        $log=$e->getMessage()." ___Date=".date("Y-m-d")." ___ idUser=".$_SESSION['user_id'].PHP_EOL;
+    }else{
+        $log=$e->getMessage()." ___Date= ".date("Y-m-d")."\n";
     }
-    return $categories;
+    error_log($log,3,"../error.log");
+    return -1;
+}
+return $categories;
 }
 
 function fetchAssociatedChores($idcategoria){
@@ -74,11 +107,15 @@ function fetchAssociatedChores($idcategoria){
         $stmt->execute(array($idcategoria));
         $chores=$stmt->fetchAll();
     }catch(IOException $e){
-        $log=$e->getMessage()+" | "+date(DATE_RFC2822)+" | "+$USERID+"\n";
-        error_log($log,3,$BASE_DIR+"/tmp/error.log");
-        return -1;
+      if(isset($_SESSION['user_id'])){
+        $log=$e->getMessage()." ___Date=".date("Y-m-d")." ___ idUser=".$_SESSION['user_id'].PHP_EOL;
+    }else{
+        $log=$e->getMessage()." ___Date= ".date("Y-m-d")."\n";
     }
-    return $chores;
+    error_log($log,3,"../error.log");
+    return -1;
+}
+return $chores;
 }
 
 

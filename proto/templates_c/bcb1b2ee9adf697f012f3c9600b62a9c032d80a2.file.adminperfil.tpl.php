@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2015-06-08 02:10:02
+<?php /* Smarty version Smarty-3.1.15, created on 2015-06-08 15:10:30
          compiled from "/usr/users2/mieic2012/ei12037/public_html/LBAW/proto/templates/user/adminperfil.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:1378420846557162b00d1225-95738977%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'bcb1b2ee9adf697f012f3c9600b62a9c032d80a2' => 
     array (
       0 => '/usr/users2/mieic2012/ei12037/public_html/LBAW/proto/templates/user/adminperfil.tpl',
-      1 => 1433729400,
+      1 => 1433729410,
       2 => 'file',
     ),
   ),

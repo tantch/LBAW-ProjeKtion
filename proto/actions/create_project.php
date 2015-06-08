@@ -13,24 +13,23 @@ include_once($BASE_DIR .'database/db_project.php');
     header("Location: $BASE_URL/pages/user/novoprojeto.php");
     exit;
   }
+
   $userid = $_SESSION['user_id'];
   $name = $_POST['name'];
   $fdate = $_POST['fdate'];
 
-  try {
+  $result=createProject($userid, $name,$fdate);
 
-    createProject($userid, $name,$fdate);
+  if($result===-1){
 
-  } catch (PDOException $e) {
-
-    $_SESSION['error_messages'][] = 'Error creating project: ' . $e->getMessage();
+    $_SESSION['error_messages'][] = 'Houve um erro interno. Os nossos engenheiros serão informados e resolverão a situação. Tente novalemnte mais tarde';
 
     $_SESSION['form_values'] = $_POST;
     header("Location: $BASE_URL/pages/user/novoprojeto.php");
     exit;
   }
 
-  $_SESSION['success_messages'][] = 'project created';
+  $_SESSION['success_messages'][] = 'Projeto criado com sucesso.';
   header("Location: $BASE_URL/pages/user/visaopessoal.php");
 
 ?>

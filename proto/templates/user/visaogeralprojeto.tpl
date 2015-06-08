@@ -38,7 +38,14 @@
                             <div class="panel panel-default">
                                 <div class="panel-heading">
                                     <h4 class="panel-title">
-                                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">{$cat.nomecat}</a>
+                                        
+                                        <br>
+                                        <h4>
+                                        {$cat.nomecat}
+                                        </h4>
+                                        <br>
+                                        
+                                       
                                     </h4>
                                 </div>
 
@@ -139,7 +146,7 @@
                     <div class="col-sm-6 col-sm-offset-3">
                         <form class="" id="searchForm" method="get">
                             <div class="form-group">
-                                <input class="form-control" type="text" id="usersearch" name="usersearch" onfocus="this.value = this.value" autofocus="autofocus">
+                                <input class="form-control" type="text" id="usersearch" name="usersearch" onfocus="this.value = this.value" >
                             </div>
                             <input type="submit" hidden="true">
                         </form>
@@ -200,7 +207,20 @@
             </div>
         </div>
         <!-- /.panel-body -->
+         <br>
+    <br>
+    <form action="../../actions/allocateUserTask.php"  method="post">
+        <label>Username</label>
+        <input type="text" name="username" class="form-control" value="" required>
+        <input type="hidden" name="tarefaid" value={$chore.idtarefa}>
+        <input type="hidden" name="projetoid" value={$idproj}>
+        <button class="btn btn-primary btn-lg btn-block" type="submit" >Alocar colaborador</button>
+
+    </form>
+    <br>
+    <br>
     </div>
+    
     <!-- /.panel -->
 </div>
 <!-- /.col-lg-6 -->

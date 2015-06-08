@@ -1,3 +1,15 @@
-SQLSTATE[42703]: Undefined column: 7 ERROR:  column "idctegoria" of relation "tarefa" does not exist
-LINE 1: INSERT INTO tarefa (idctegoria,idcriador,nometarefa,dfinal,e...
-                            ^ ___2015-06-08 ___ 10
+SQLSTATE[2F005]: Function executed no return statement: 7 ERROR:  control reached end of trigger procedure without RETURN
+CONTEXT:  PL/pgSQL function "masteroncreatefunc" ___Date=2015-06-08 ___ idUser=157
+SQLSTATE[22008]: Datetime field overflow: 7 ERROR:  date/time field value out of range: "21-5-2016"
+HINT:  Perhaps you need a different "datestyle" setting. ___Date=2015-06-08 ___ idUser=157
+SQLSTATE[2F005]: Function executed no return statement: 7 ERROR:  control reached end of trigger procedure without RETURN
+CONTEXT:  PL/pgSQL function "masteroncreatefunc" ___Date=2015-06-08 ___ idUser=10
+SQLSTATE[2F005]: Function executed no return statement: 7 ERROR:  control reached end of trigger procedure without RETURN
+CONTEXT:  PL/pgSQL function "masteroncreatefunc" ___Date=2015-06-08 ___ idUser=10
+SQLSTATE[22008]: Datetime field overflow: 7 ERROR:  date/time field value out of range: "21-5-2016"
+HINT:  Perhaps you need a different "datestyle" setting. ___Date=2015-06-08 ___ idUser=158
+SQLSTATE[22008]: Datetime field overflow: 7 ERROR:  date/time field value out of range: "21/07/2017"
+HINT:  Perhaps you need a different "datestyle" setting. ___Date=2015-06-08 ___ idUser=158
+SQLSTATE[23502]: Not null violation: 7 ERROR:  null value in column "idtarefa" violates not-null constraint ___Date=2015-06-08 ___ idUser=10
+SQLSTATE[23502]: Not null violation: 7 ERROR:  null value in column "idtarefa" violates not-null constraint ___Date=2015-06-08 ___ idUser=10
+SQLSTATE[23502]: Not null violation: 7 ERROR:  null value in column "idtarefa" violates not-null constraint ___Date=2015-06-08 ___ idUser=10

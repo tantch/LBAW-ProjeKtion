@@ -9,12 +9,12 @@ function createTopic($idproj,$nometopico,$descricao,$idcriador){
 		$lastId = $conn->lastInsertId("topico_idtopico_seq");
 	}catch(PDOException $e){
 		if(isset($_SESSION['user_id'])){
-			$log=$e->getMessage()." ___Date=".date("Y-m-d")." ___ idUser=".$_SESSION['user_id']."\n";
+			$log=$e->getMessage()." ___Date=".date("Y-m-d")." ___ idUser=".$_SESSION['user_id'].PHP_EOL;
 		}else{
 			$log=$e->getMessage()." ___Date= ".date("Y-m-d")."\n";
 		}
 		error_log($log,3,"../error.log");
-		return -1;
+        return -1;
 	}
 	return $lastId;
 }
@@ -26,12 +26,12 @@ function createAnswer($idtopico,$texto,$iduser){
 		$success=$stmt->execute(array($idtopico,$texto,$iduser));
 	}catch(PDOException $e){
 		if(isset($_SESSION['user_id'])){
-			$log=$e->getMessage()." ___Date=".date("Y-m-d")." ___ idUser=".$_SESSION['user_id']."\n";
+			$log=$e->getMessage()." ___Date=".date("Y-m-d")." ___ idUser=".$_SESSION['user_id'].PHP_EOL;
 		}else{
 			$log=$e->getMessage()." ___Date= ".date("Y-m-d")."\n";
 		}
 		error_log($log,3,"../error.log");
-		return -1;
+        return -1;
 	}
 	return $success;
 }
@@ -45,12 +45,12 @@ function getTopics($idprojeto){
 		$topics=$stmt->fetchAll();
 	}catch(PDOException $e){
 		if(isset($_SESSION['user_id'])){
-			$log=$e->getMessage()." ___Date=".date("Y-m-d")." ___ idUser=".$_SESSION['user_id']."\n";
+			$log=$e->getMessage()." ___Date=".date("Y-m-d")." ___ idUser=".$_SESSION['user_id'].PHP_EOL;
 		}else{
 			$log=$e->getMessage()." ___Date= ".date("Y-m-d")."\n";
 		}
 		error_log($log,3,"../error.log");
-		return -1;
+        return -1;
 	}
 	return $topics;
 }
@@ -64,12 +64,12 @@ function getTopicInfo($idtopico){
 		$topicInfo=$stmt->fetch();
 	}catch(PDOException $e){
 		if(isset($_SESSION['user_id'])){
-			$log=$e->getMessage()." ___Date=".date("Y-m-d")." ___ idUser=".$_SESSION['user_id']."\n";
+			$log=$e->getMessage()." ___Date=".date("Y-m-d")." ___ idUser=".$_SESSION['user_id'].PHP_EOL;
 		}else{
 			$log=$e->getMessage()." ___Date= ".date("Y-m-d")."\n";
 		}
 		error_log($log,3,"../error.log");
-		return -1;
+        return -1;
 	}
 	return $topicInfo;
 }
@@ -86,12 +86,12 @@ function getAnswers($idtopico){
 		return $answers;
 	}catch(PDOException $e){
 		if(isset($_SESSION['user_id'])){
-			$log=$e->getMessage()." ___Date=".date("Y-m-d")." ___ idUser=".$_SESSION['user_id']."\n";
+			$log=$e->getMessage()." ___Date=".date("Y-m-d")." ___ idUser=".$_SESSION['user_id'].PHP_EOL;
 		}else{
 			$log=$e->getMessage()." ___Date= ".date("Y-m-d")."\n";
 		}
 		error_log($log,3,"../error.log");
-		return -1;
+        return -1;
 	}
 }
 
@@ -113,12 +113,12 @@ function getAnswersFTS($texto){
 		
 	}catch(PDOException $e){
 		if(isset($_SESSION['user_id'])){
-			$log=$e->getMessage()." ___Date=".date("Y-m-d")." ___ idUser=".$_SESSION['user_id']."\n";
+			$log=$e->getMessage()." ___Date=".date("Y-m-d")." ___ idUser=".$_SESSION['user_id'].PHP_EOL;
 		}else{
 			$log=$e->getMessage()." ___Date= ".date("Y-m-d")."\n";
 		}
 		error_log($log,3,"../error.log");
-		return -1;
+        return -1;
 	}
 }
 ?>

@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2015-06-08 13:51:22
+<?php /* Smarty version Smarty-3.1.15, created on 2015-06-08 19:24:16
          compiled from "/usr/users2/mieic2012/ei12037/public_html/LBAW/proto/templates/user/visaogeralprojeto.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:21745106255743221dd08c8-05094365%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '6af86bc79692e78a08b87ce0c6280cc4d29dc0f7' => 
     array (
       0 => '/usr/users2/mieic2012/ei12037/public_html/LBAW/proto/templates/user/visaogeralprojeto.tpl',
-      1 => 1433764273,
+      1 => 1433784255,
       2 => 'file',
     ),
   ),
@@ -81,8 +81,15 @@ $_smarty_tpl->tpl_vars['cat']->_loop = true;
                             <div class="panel panel-default">
                                 <div class="panel-heading">
                                     <h4 class="panel-title">
-                                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne"><?php echo $_smarty_tpl->tpl_vars['cat']->value['nomecat'];?>
-</a>
+                                        
+                                        <br>
+                                        <h4>
+                                        <?php echo $_smarty_tpl->tpl_vars['cat']->value['nomecat'];?>
+
+                                        </h4>
+                                        <br>
+                                        
+                                       
                                     </h4>
                                 </div>
 
@@ -194,7 +201,7 @@ $_smarty_tpl->tpl_vars['chore']->_loop = true;
                     <div class="col-sm-6 col-sm-offset-3">
                         <form class="" id="searchForm" method="get">
                             <div class="form-group">
-                                <input class="form-control" type="text" id="usersearch" name="usersearch" onfocus="this.value = this.value" autofocus="autofocus">
+                                <input class="form-control" type="text" id="usersearch" name="usersearch" onfocus="this.value = this.value" >
                             </div>
                             <input type="submit" hidden="true">
                         </form>
@@ -273,7 +280,22 @@ pages/user/perfil.php?userid=<?php echo $_smarty_tpl->tpl_vars['assignement']->v
             </div>
         </div>
         <!-- /.panel-body -->
+         <br>
+    <br>
+    <form action="../../actions/allocateUserTask.php"  method="post">
+        <label>Username</label>
+        <input type="text" name="username" class="form-control" value="" required>
+        <input type="hidden" name="tarefaid" value=<?php echo $_smarty_tpl->tpl_vars['chore']->value['idtarefa'];?>
+>
+        <input type="hidden" name="projetoid" value=<?php echo $_smarty_tpl->tpl_vars['idproj']->value;?>
+>
+        <button class="btn btn-primary btn-lg btn-block" type="submit" >Alocar colaborador</button>
+
+    </form>
+    <br>
+    <br>
     </div>
+    
     <!-- /.panel -->
 </div>
 <!-- /.col-lg-6 -->

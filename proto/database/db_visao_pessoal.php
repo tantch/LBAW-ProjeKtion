@@ -8,15 +8,15 @@ function getUserProjects($userid){
     $stmt->execute(array($userid));
     $result =$stmt->fetchAll();
   }catch(PDOException $e){
-   if(isset($_SESSION['user_id'])){
-    $log=$e->getMessage()." ___Date=".date("Y-m-d")." ___ idUser=".$_SESSION['user_id']."\n";
-  }else{
-    $log=$e->getMessage()." ___Date= ".date("Y-m-d")."\n";
+    if(isset($_SESSION['user_id'])){
+      $log=$e->getMessage()." ___Date=".date("Y-m-d")." ___ idUser=".$_SESSION['user_id'].PHP_EOL;
+    }else{
+      $log=$e->getMessage()." ___Date= ".date("Y-m-d")."\n";
+    }
+    error_log($log,3,"../error.log");
+    return -1;
   }
-  error_log($log,3,"../error.log");
-  return -1;
-}
-return $result;
+  return $result;
 }
 
 function getChores($userid){
@@ -30,7 +30,7 @@ function getChores($userid){
     $result= $stmt->fetchAll();
   }catch(PDOException $e){
    if(isset($_SESSION['user_id'])){
-    $log=$e->getMessage()." ___Date=".date("Y-m-d")." ___ idUser=".$_SESSION['user_id']."\n";
+    $log=$e->getMessage()." ___Date=".date("Y-m-d")." ___ idUser=".$_SESSION['user_id'].PHP_EOL;
   }else{
     $log=$e->getMessage()." ___Date= ".date("Y-m-d")."\n";
   }

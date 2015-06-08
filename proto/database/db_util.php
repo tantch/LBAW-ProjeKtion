@@ -53,16 +53,16 @@ function getUsersCount(){
     $count=$stmt->fetch();
 
   }catch(PDOException $e){
-    if(isset($_SESSION['user_id'])){
-      $log=$e->getMessage()." ___Date=".date("Y-m-d")." ___ idUser=".$_SESSION['user_id']."\n";
-    }else{
-      $log=$e->getMessage()." ___Date= ".date("Y-m-d")."\n";
-    }
-    error_log($log,3,"../error.log");
-    return -1;
+   if(isset($_SESSION['user_id'])){
+    $log=$e->getMessage()." ___Date=".date("Y-m-d")." ___ idUser=".$_SESSION['user_id'].PHP_EOL;
+  }else{
+    $log=$e->getMessage()." ___Date= ".date("Y-m-d")."\n";
   }
-  return $count['count'];
-  
+  error_log($log,3,"../error.log");
+  return -1;
+}
+return $count['count'];
+
 }
 
 
@@ -74,7 +74,7 @@ function getUserByPattern($pattern){
     $result = $stmt->fetchAll();
   }catch(PDOException $e){
    if(isset($_SESSION['user_id'])){
-    $log=$e->getMessage()." ___Date=".date("Y-m-d")." ___ idUser=".$_SESSION['user_id']."\n";
+    $log=$e->getMessage()." ___Date=".date("Y-m-d")." ___ idUser=".$_SESSION['user_id'].PHP_EOL;
   }else{
     $log=$e->getMessage()." ___Date= ".date("Y-m-d")."\n";
   }
